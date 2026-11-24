@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+
+# Do not include assignment-provided documents or answers
+sample-data-documents/
+sample-data-output-validated/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
