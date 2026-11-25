@@ -215,3 +215,148 @@ def test_every_final_entry_carries_every_schema_field():
     assert result.entries[0]["x"].value == 1
     assert result.entries[0]["y"].value == 2
     assert result.entries[0]["z"].value is None
+
+
+def _primary_schema():
+    return normalize_schema(
+        {
+            "name": "rows",
+            "fields": {
+                "row_id": {"name": "Row Id", "description": "The 'Row Id' column.", "primary": True},
+                "alpha": {"name": "Alpha", "description": "Alpha value."},
+                "beta": {"name": "Beta", "description": "Beta value."},
+            },
+        }
+    )
+
+
+def _plain_schema():
+    return normalize_schema(
+        {
+            "name": "widgets",
+            "fields": {
+                "alpha": {"name": "Alpha", "description": "Alpha value."},
+                "beta": {"name": "Beta", "description": "Beta value."},
+            },
+        }
+    )
+
+
+def test_multi_entry_llm_response_preserved_for_primary_schema():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps(
+        {
+            "entries": [
+                {"row_id": {"value": "R-1", "citation": "[Page 1] R-1", "confidence": 0.9}, "alpha": 1, "beta": "x"},
+                {"row_id": {"value": "R-2", "citation": "[Page 1] R-2", "confidence": 0.9}, "alpha": 2, "beta": "y"},
+                {"row_id": {"value": "R-3", "citation": "[Page 1] R-3", "confidence": 0.9}, "alpha": 3, "beta": "z"},
+            ]
+        }
+    )
+    transport, stub = make_transport([fake_response(content)] * 5)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(_primary_schema(), doc)
+    assert len(stub.calls) == 1
+    assert len(result.entries) == 3
+    assert [e["row_id"].value for e in result.entries] == ["R-1", "R-2", "R-3"]
+    assert [e["alpha"].value for e in result.entries] == [1, 2, 3]
+    assert [e["row_id"].citation for e in result.entries] == ["[Page 1] R-1", "[Page 1] R-2", "[Page 1] R-3"]
+    assert not any("merged the first" in w for w in result.warnings)
+
+
+def test_multi_record_merge_across_calls_fills_nulls_only():
+    doc = _pdf_doc(["nothing useful"])
+    transport, stub = make_transport([
+        fake_response(json.dumps({"entries": [
+            {"row_id": "R-1", "alpha": 1},
+            {"row_id": "R-2", "alpha": 2},
+        ]})),
+        fake_response(json.dumps({"entries": [
+            {"row_id": "R-1", "beta": 10},
+            {"row_id": "R-2", "beta": 20},
+        ]})),
+    ] * 3)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(_primary_schema(), doc)
+    assert len(stub.calls) == 2
+    assert len(result.entries) == 2
+    assert [e["alpha"].value for e in result.entries] == [1, 2]
+    assert [e["beta"].value for e in result.entries] == [10, 20]
+    assert result.conflicts == []
+
+
+def test_duplicate_primary_conflicting_values_keep_first_and_record_conflict():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps(
+        {
+            "entries": [
+                {"row_id": "R-1", "alpha": 1, "beta": "x"},
+                {"row_id": "R-1", "alpha": 99, "beta": "y"},
+            ]
+        }
+    )
+    transport, _ = make_transport([fake_response(content)] * 5)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(_primary_schema(), doc)
+    assert len(result.entries) == 1
+    assert result.entries[0]["alpha"].value == 1
+    assert result.entries[0]["beta"].value == "x"
+    assert any("R-1" in c and "99" in c for c in result.conflicts)
+
+
+def test_document_level_deterministic_values_repeat_across_records():
+    doc = _pdf_doc(["Source Name: Foo\nnothing useful"])
+    schema = normalize_schema(
+        {
+            "name": "rows",
+            "fields": {
+                "row_id": {"name": "Row Id", "description": "The 'Row Id' column.", "primary": True},
+                "source_name": {"name": "Source Name", "description": "The source name."},
+                "alpha": {"name": "Alpha", "description": "Alpha value."},
+            },
+        }
+    )
+    content = json.dumps(
+        {"entries": [{"row_id": "R-1", "alpha": 1}, {"row_id": "R-2", "alpha": 2}]}
+    )
+    transport, stub = make_transport([fake_response(content)] * 5)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(schema, doc)
+    assert len(stub.calls) == 1
+    assert len(result.entries) == 2
+    for entry in result.entries:
+        assert entry["source_name"].value == "Foo"
+        assert entry["source_name"].citation == "[Page 1] Source Name: Foo"
+        assert entry["alpha"].value in (1, 2)
+    assert result.provenance["source_name"] == "deterministic"
+
+
+def test_entries_without_primary_value_dropped_with_warning():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps(
+        {
+            "entries": [
+                {"row_id": None, "alpha": 7, "beta": "x"},
+                {"row_id": "R-1", "alpha": 1, "beta": "x"},
+            ]
+        }
+    )
+    transport, _ = make_transport([fake_response(content)] * 5)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(_primary_schema(), doc)
+    assert len(result.entries) == 1
+    assert result.entries[0]["row_id"].value == "R-1"
+    assert any("dropped" in w for w in result.warnings)
+
+
+def test_single_entry_mode_unchanged_without_primary():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps(
+        {"entries": [{"alpha": 1, "beta": "x"}, {"alpha": 2, "beta": "y"}]}
+    )
+    transport, _ = make_transport([fake_response(content)] * 5)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(_plain_schema(), doc)
+    assert len(result.entries) == 1
+    assert result.entries[0]["alpha"].value == 1
+    assert any("merged the first" in w for w in result.warnings)

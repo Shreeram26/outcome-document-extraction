@@ -264,12 +264,21 @@ class ExtractionEngine:
     ) -> ExtractionResult:
         entry = dict(det.entries[0])
         responses: list[LlmResponse] = []
+        multi = schema.primary_key is not None
+        records: list[dict[str, FieldResult]] = []
+        by_primary: dict[str, dict[str, FieldResult]] = {}
+
+        def unresolved() -> list[str]:
+            if not multi or not records:
+                return [k for k in schema.fields if entry[k].value is None]
+            return [k for k in schema.fields if all(rec[k].value is None for rec in records)]
+
         if not _document_has_text(document):
             warnings.append(
                 "no extractable text (scanned or empty document); LLM fallback skipped"
             )
             det_resolved = {k for k, fr in det.entries[0].items() if fr.value is not None}
-            return self._finish_single(schema, entry, warnings, responses, det_resolved, conflicts)
+            return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
         det_resolved = {k for k, fr in det.entries[0].items() if fr.value is not None}
         stages = (
             ("targeted", min(TARGETED_CHARS, self.chunk_chars)),
@@ -277,19 +286,19 @@ class ExtractionEngine:
             ("full", None),
         )
         for stage, budget in stages:
-            if not [k for k in schema.fields if entry[k].value is None]:
+            if not unresolved():
                 break
             if not self._calls_left():
                 warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
-            if self._cost_exhausted:
                 break
+            if self._cost_exhausted:
                 break
             if self._gateway_broken(warnings):
                 break
             if stage == "full":
                 plan = [(chunk, None) for chunk in self._chunks(document)]
             else:
-                still = [k for k in schema.fields if entry[k].value is None]
+                still = unresolved()
                 context_doc, note = select_context(
                     document, [schema.fields[k] for k in still], max_chars=budget
                 )
@@ -297,13 +306,13 @@ class ExtractionEngine:
                     warnings.append(note)
                 plan = [(context_doc, stage)]
             for context_doc, _tag in plan:
-                still = [k for k in schema.fields if entry[k].value is None]
+                still = unresolved()
                 if not still:
                     break
                 if not self._calls_left():
                     warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
-                if self._cost_exhausted:
                     break
+                if self._cost_exhausted:
                     break
                 if self._gateway_broken(warnings):
                     break
@@ -314,19 +323,80 @@ class ExtractionEngine:
                 )
                 if not relevant:
                     continue
+                if multi and schema.primary_key not in relevant:
+                    relevant = relevant + [schema.primary_key]
                 sub = sub_schema(schema, relevant)
                 parsed, response = self._attempt(sub, context_doc, stage, warnings)
                 if parsed is None:
                     continue
                 responses.append(response)
                 warnings.extend(f"llm: {w}" for w in parsed.warnings)
-                if parsed.entries:
+                if not parsed.entries:
+                    continue
+                if multi:
+                    self._merge_records(
+                        schema, parsed.entries, records, by_primary,
+                        det.entries[0], conflicts, warnings,
+                    )
+                else:
                     if len(parsed.entries) > 1:
                         warnings.append(
                             f"llm: returned {len(parsed.entries)} entries; merged the first"
                         )
                     self._merge_single(entry, parsed.entries[0], conflicts)
-        return self._finish_single(schema, entry, warnings, responses, det_resolved, conflicts)
+        if records:
+            return self._finish_single(schema, records, warnings, responses, det_resolved, conflicts)
+        return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
+
+    def _merge_records(
+        self,
+        schema: ExtractionSchema,
+        parsed_entries: list[dict[str, FieldResult]],
+        records: list[dict[str, FieldResult]],
+        by_primary: dict[str, dict[str, FieldResult]],
+        det_single: dict[str, FieldResult],
+        conflicts: list[str],
+        warnings: list[str],
+    ):
+        """Merge LLM entries into records keyed by the primary field. New
+        primary values append records (document-level deterministic values are
+        repeated into them); known primary values fill null fields only, and
+        conflicting non-null values are recorded without overwriting. Entries
+        without a usable primary value are dropped with a warning."""
+        dropped = 0
+        for llm_entry in parsed_entries:
+            primary_fr = llm_entry.get(schema.primary_key)
+            pvalue = primary_fr.value if primary_fr is not None else None
+            pnorm = norm_label(pvalue) if pvalue is not None else ""
+            if not pnorm:
+                dropped += 1
+                continue
+            existing = by_primary.get(pnorm)
+            if existing is None:
+                record: dict[str, FieldResult] = {}
+                for key in schema.fields:
+                    fr = llm_entry.get(key)
+                    if fr is None and det_single[key].value is not None:
+                        fr = det_single[key]
+                    record[key] = fr or FieldResult(value=None)
+                by_primary[pnorm] = record
+                records.append(record)
+                continue
+            for key in schema.fields:
+                fr = llm_entry.get(key)
+                if fr is None:
+                    continue
+                if existing[key].value is None:
+                    existing[key] = fr
+                elif fr.value is not None and fr.value != existing[key].value:
+                    conflicts.append(
+                        f"{schema.primary_key}={pvalue!r} field {key!r}: kept"
+                        f" {existing[key].value!r}; also got {fr.value!r}"
+                    )
+        if dropped:
+            warnings.append(
+                f"llm: {dropped} entry(ies) dropped for missing primary value"
+            )
 
     def _merge_single(self, entry: dict[str, FieldResult], llm_entry: dict[str, FieldResult], conflicts: list[str]):
         for key, fr in llm_entry.items():
@@ -410,13 +480,14 @@ class ExtractionEngine:
     def _finish_single(
         self,
         schema: ExtractionSchema,
-        entry: dict[str, FieldResult],
+        entries: list[dict[str, FieldResult]],
         warnings: list[str],
         responses: list[LlmResponse],
         det_resolved: set[str],
         conflicts: list[str],
     ) -> ExtractionResult:
-        unresolved = {k for k, fr in entry.items() if fr.value is None}
+        first = entries[0]
+        unresolved = {k for k, fr in first.items() if fr.value is None}
         provenance = {
             k: (
                 "deterministic"
@@ -427,7 +498,7 @@ class ExtractionEngine:
             for k in schema.fields
         }
         return ExtractionResult(
-            entries=[entry], warnings=warnings,
+            entries=entries, warnings=warnings,
             llm=responses[-1] if responses else None, llm_responses=responses,
             mode="single", provenance=provenance, call_log=list(self._call_log),
             conflicts=conflicts,
