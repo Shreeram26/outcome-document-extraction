@@ -1,0 +1,67 @@
+"""Serialization of ExtractionResult into the assignment's output contract shape
+({schema, entries, metadata}), ready for tools/validate.py."""
+from __future__ import annotations
+
+from app.extraction.engine import ExtractionResult
+
+
+def field_result_to_dict(fr) -> dict:
+    confidence = max(0.0, min(1.0, float(fr.confidence)))
+    value = fr.value
+    if value is None:
+        confidence = 0.0
+    d: dict = {
+        "value": value,
+        "citation": fr.citation if value is not None else "",
+        "confidence": round(confidence, 4),
+    }
+    if value is not None:
+        if fr.page_numbers:
+            d["page_numbers"] = list(fr.page_numbers)
+        if fr.source_locations:
+            d["source_locations"] = list(fr.source_locations)
+    return d
+
+
+def result_to_contract(result: ExtractionResult, schema_name: str, latency_ms: int) -> dict:
+    """Contract-shaped result: top-level schema key, entries carrying every field,
+    and metadata with model calls, tokens, cost and latency (aggregated over all
+    LLM calls made for the document, chunked or not)."""
+    entries = [
+        {key: field_result_to_dict(fr) for key, fr in entry.items()} for entry in result.entries
+    ]
+    responses = result.llm_responses
+    models: dict[str, dict] = {}
+    for response in responses:
+        entry = models.setdefault(
+            response.model, {"calls": 0, "tokens_in": 0, "tokens_out": 0, "cost_usd": 0.0}
+        )
+        entry["calls"] += 1
+        entry["tokens_in"] += response.tokens_in
+        entry["tokens_out"] += response.tokens_out
+        entry["cost_usd"] += _usage_cost(response)
+    metadata: dict = {
+        "model_calls": len(result.call_log),
+        "tokens_in": sum(m["tokens_in"] for m in models.values()),
+        "tokens_out": sum(m["tokens_out"] for m in models.values()),
+        "cost_usd": round(sum(m["cost_usd"] for m in models.values()), 6),
+        "latency_ms": int(latency_ms),
+        "calls": list(result.call_log),
+    }
+    if result.conflicts:
+        metadata["conflicts"] = list(result.conflicts)
+    if models:
+        metadata["models"] = {
+            name: {**m, "cost_usd": round(m["cost_usd"], 6)} for name, m in models.items()
+        }
+    return {"schema": schema_name, "entries": entries, "metadata": metadata}
+
+
+def _usage_cost(llm) -> float:
+    """Provider-reported cost when available (OpenRouter returns usage.cost);
+    0.0 otherwise — tokens are always reported."""
+    usage = getattr(llm.raw, "usage", None)
+    cost = getattr(usage, "cost", None)
+    if isinstance(cost, (int, float)) and cost >= 0:
+        return float(cost)
+    return 0.0

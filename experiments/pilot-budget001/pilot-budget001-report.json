@@ -1,0 +1,324 @@
+{
+  "model": "google/gemini-3.8-flash",
+  "skip_llm": false,
+  "dry_run": false,
+  "run_cost_cap": {
+    "cap_usd": 0.15,
+    "spent_usd": 0.281048,
+    "tripped": true,
+    "refused_calls": 0
+  },
+  "documents": [
+    {
+      "document": "budget_001",
+      "schema": "budget_variance",
+      "mode": "single",
+      "latency_ms": 345657,
+      "model_calls": 4,
+      "tokens_in": 12270,
+      "tokens_out": 38479,
+      "cost_usd": 0.153499,
+      "call_log": [
+        {
+          "call": 1,
+          "model": "google/gemini-3.8-flash",
+          "fields": [
+            "property_name",
+            "property_rsf",
+            "budget_year",
+            "gl_code",
+            "line_item",
+            "section",
+            "prior_year_budget",
+            "prior_year_reforecast",
+            "budget",
+            "reforecast_vs_prior_budget_variance",
+            "reforecast_vs_prior_budget_pct",
+            "budget_vs_reforecast_variance",
+            "budget_vs_reforecast_pct",
+            "explanation_of_variance"
+          ],
+          "context_chars": 5329,
+          "duration_ms": 81948,
+          "status": "success",
+          "tokens_in": 3605,
+          "tokens_out": 17971,
+          "cost_usd": 0.070095,
+          "cumulative_cost_usd": 0.070095,
+          "note": ""
+        },
+        {
+          "call": 2,
+          "model": "google/gemini-3.8-flash",
+          "fields": [
+            "explanation_of_variance"
+          ],
+          "context_chars": 10899,
+          "duration_ms": 76979,
+          "status": "success",
+          "tokens_in": 6021,
+          "tokens_out": 15598,
+          "cost_usd": 0.063008,
+          "cumulative_cost_usd": 0.133103,
+          "note": ""
+        },
+        {
+          "call": 3,
+          "model": "google/gemini-3.8-flash",
+          "fields": [
+            "explanation_of_variance"
+          ],
+          "context_chars": 10899,
+          "duration_ms": 150003,
+          "status": "timeout",
+          "tokens_in": 0,
+          "tokens_out": 0,
+          "cost_usd": 0.0,
+          "cumulative_cost_usd": 0.133103,
+          "note": "LLM call timed out after 150s for google/gemini-3.8-flash (provider kept the connection alive without responding)"
+        },
+        {
+          "call": 4,
+          "model": "google/gemini-3.8-flash",
+          "fields": [
+            "explanation_of_variance"
+          ],
+          "context_chars": 3602,
+          "duration_ms": 36714,
+          "status": "success",
+          "tokens_in": 2644,
+          "tokens_out": 4910,
+          "cost_usd": 0.020396,
+          "cumulative_cost_usd": 0.153499,
+          "note": ""
+        }
+      ],
+      "conflicts": [],
+      "contract_valid": true,
+      "contract_errors": [],
+      "warnings": [
+        "no table header matched the schema strongly enough",
+        "context trimmed to 5291 of 14381 characters",
+        "llm: returned 17 entries; merged the first",
+        "context trimmed to 10820 of 14381 characters",
+        "llm fallback failed (timeout): LLM call timed out after 150s for google/gemini-3.8-flash (provider kept the connection alive without responding)"
+      ],
+      "field_provenance": {
+        "deterministic": [],
+        "llm": [
+          "property_name",
+          "property_rsf",
+          "budget_year",
+          "gl_code",
+          "line_item",
+          "section",
+          "prior_year_budget",
+          "prior_year_reforecast",
+          "budget",
+          "reforecast_vs_prior_budget_variance",
+          "reforecast_vs_prior_budget_pct",
+          "budget_vs_reforecast_variance",
+          "budget_vs_reforecast_pct"
+        ],
+        "unresolved": [
+          "explanation_of_variance"
+        ]
+      },
+      "entries": 1,
+      "validator_score": 0.0182,
+      "field_accuracy": {
+        "property_name": 0.018,
+        "property_rsf": 0.018,
+        "budget_year": 0.018,
+        "gl_code": 0.018,
+        "line_item": 0.018,
+        "section": 0.018,
+        "prior_year_budget": 0.018,
+        "prior_year_reforecast": 0.018,
+        "budget": 0.018,
+        "reforecast_vs_prior_budget_variance": 0.018,
+        "reforecast_vs_prior_budget_pct": 0.018,
+        "budget_vs_reforecast_variance": 0.018,
+        "budget_vs_reforecast_pct": 0.018,
+        "explanation_of_variance": 0.018
+      },
+      "field_accuracy_mean": 0.0182,
+      "incorrect_cells": 14,
+      "total_cells": 14,
+      "hallucinated_cells": 0,
+      "missed_cells": 0,
+      "hallucinated_fields": [],
+      "missed_fields": [],
+      "extra_rows": [],
+      "missing_rows": [
+        "6102-0000",
+        "6105-0000",
+        "6108-0000",
+        "6109-0000",
+        "6110-0000",
+        "6116-0000",
+        "6117-0000",
+        "6120-0000",
+        "6130-0000",
+        "6131-0000",
+        "6132-0000",
+        "7020-0000",
+        "7040-0000",
+        "7042-0000",
+        "7060-0000",
+        "7230-0000",
+        "7232-0000",
+        "7236-0000",
+        "7240-0000",
+        "7440-0000",
+        "7450-0000",
+        "7455-0000",
+        "7530-0000",
+        "7531-0000",
+        "7610-0000",
+        "7620-0000",
+        "7625-0000",
+        "7640-0000",
+        "7641-0000",
+        "7644-0000",
+        "7645-0000",
+        "7646-0000",
+        "7647-0000",
+        "7648-0000",
+        "7650-0000",
+        "7651-0000",
+        "7652-0000",
+        "7660-0000",
+        "7670-0000",
+        "7810-0000",
+        "7850-0000",
+        "7855-0000",
+        "7860-0000",
+        "7864-0000",
+        "7876-0000",
+        "7879-0000",
+        "8080-0000",
+        "7866-0000",
+        "7877-0000",
+        "8085-0000",
+        "8089-0000",
+        "8090-0000",
+        "9097-0000",
+        "8103-0000"
+      ],
+      "rows": {
+        "predicted": 1,
+        "truth": 55
+      },
+      "row_accuracy": 0.0182,
+      "output_file": "/home/shreeram/Desktop/Outcome Labs/Outcome_Take_Home_Assignment_IITB/outputs/budget_001.json"
+    }
+  ],
+  "overall": {
+    "documents": 1,
+    "contract_valid": 1,
+    "mean_validator_score": 0.0182,
+    "row_accuracy_mean": 0.0182,
+    "model_calls": 4,
+    "tokens_in": 12270,
+    "tokens_out": 38479,
+    "cost_usd": 0.153499,
+    "latency_ms_total": 345657,
+    "hallucinated_cells": 0,
+    "missed_cells": 0,
+    "incorrect_cells": 14,
+    "extra_rows": 0,
+    "missing_rows": 54,
+    "provenance": {
+      "deterministic": null,
+      "llm": 0.017999999999999995,
+      "unresolved": 0.018
+    },
+    "worst_fields": [
+      {
+        "document": "budget_001",
+        "field": "property_name",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "property_rsf",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget_year",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "gl_code",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "line_item",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "section",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "prior_year_budget",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "prior_year_reforecast",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "reforecast_vs_prior_budget_variance",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "reforecast_vs_prior_budget_pct",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget_vs_reforecast_variance",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget_vs_reforecast_pct",
+        "accuracy": 0.018,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "explanation_of_variance",
+        "accuracy": 0.018,
+        "provenance": "unresolved"
+      }
+    ]
+  }
+}

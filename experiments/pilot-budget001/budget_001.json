@@ -1,0 +1,168 @@
+{
+  "schema": "budget_variance",
+  "entries": [
+    {
+      "property_name": {
+        "value": "Lakeview Tower",
+        "citation": "[Page 1] Lakeview Tower",
+        "confidence": 1.0
+      },
+      "property_rsf": {
+        "value": 339050,
+        "citation": "[Page 1] Property RSF: \n339,050",
+        "confidence": 1.0
+      },
+      "budget_year": {
+        "value": 2021,
+        "citation": "[Page 1] 2021 Budget",
+        "confidence": 1.0
+      },
+      "gl_code": {
+        "value": "6101-0000",
+        "citation": "[Page 1] 6101-0000",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Minimum Base Rent",
+        "citation": "[Page 1] Minimum Base Rent",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": "Rent Revenue",
+        "citation": "[Page 1] Rent Revenue",
+        "confidence": 1.0
+      },
+      "prior_year_budget": {
+        "value": 7481754,
+        "citation": "[Page 1] 7,481,754",
+        "confidence": 1.0
+      },
+      "prior_year_reforecast": {
+        "value": 7488382,
+        "citation": "[Page 1] 7,488,382",
+        "confidence": 1.0
+      },
+      "budget": {
+        "value": 7165444,
+        "citation": "[Page 1] 7,165,444",
+        "confidence": 1.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": 6628,
+        "citation": "[Page 1] 6,628",
+        "confidence": 1.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": 0.09,
+        "citation": "[Page 1] 0.09%",
+        "confidence": 1.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": -322938,
+        "citation": "[Page 1] -322,938",
+        "confidence": 1.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": -4.31,
+        "citation": "[Page 1] -4.31%",
+        "confidence": 1.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "model_calls": 4,
+    "tokens_in": 12270,
+    "tokens_out": 38479,
+    "cost_usd": 0.153499,
+    "latency_ms": 345657,
+    "calls": [
+      {
+        "call": 1,
+        "model": "google/gemini-3.8-flash",
+        "fields": [
+          "property_name",
+          "property_rsf",
+          "budget_year",
+          "gl_code",
+          "line_item",
+          "section",
+          "prior_year_budget",
+          "prior_year_reforecast",
+          "budget",
+          "reforecast_vs_prior_budget_variance",
+          "reforecast_vs_prior_budget_pct",
+          "budget_vs_reforecast_variance",
+          "budget_vs_reforecast_pct",
+          "explanation_of_variance"
+        ],
+        "context_chars": 5329,
+        "duration_ms": 81948,
+        "status": "success",
+        "tokens_in": 3605,
+        "tokens_out": 17971,
+        "cost_usd": 0.070095,
+        "cumulative_cost_usd": 0.070095,
+        "note": ""
+      },
+      {
+        "call": 2,
+        "model": "google/gemini-3.8-flash",
+        "fields": [
+          "explanation_of_variance"
+        ],
+        "context_chars": 10899,
+        "duration_ms": 76979,
+        "status": "success",
+        "tokens_in": 6021,
+        "tokens_out": 15598,
+        "cost_usd": 0.063008,
+        "cumulative_cost_usd": 0.133103,
+        "note": ""
+      },
+      {
+        "call": 3,
+        "model": "google/gemini-3.8-flash",
+        "fields": [
+          "explanation_of_variance"
+        ],
+        "context_chars": 10899,
+        "duration_ms": 150003,
+        "status": "timeout",
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0,
+        "cumulative_cost_usd": 0.133103,
+        "note": "LLM call timed out after 150s for google/gemini-3.8-flash (provider kept the connection alive without responding)"
+      },
+      {
+        "call": 4,
+        "model": "google/gemini-3.8-flash",
+        "fields": [
+          "explanation_of_variance"
+        ],
+        "context_chars": 3602,
+        "duration_ms": 36714,
+        "status": "success",
+        "tokens_in": 2644,
+        "tokens_out": 4910,
+        "cost_usd": 0.020396,
+        "cumulative_cost_usd": 0.153499,
+        "note": ""
+      }
+    ],
+    "models": {
+      "google/gemini-3.8-flash": {
+        "calls": 3,
+        "tokens_in": 12270,
+        "tokens_out": 38479,
+        "cost_usd": 0.153499
+      }
+    }
+  },
+  "document": "budget_001"
+}
