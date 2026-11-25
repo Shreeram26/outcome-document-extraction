@@ -41,7 +41,7 @@ from .schema import ExtractionSchema
 from .values import parse_scalar
 
 _LABEL_VALUE_RE = re.compile(r"^\s*(?P<label>.+?)\s*[:=]\s*(?P<value>.+?)\s*$")
-_QUOTE_RE = re.compile(r"'([^']{2,80})'|\"([^\"]{2,80})\"")
+_QUOTE_RE = re.compile(r"(?<!\w)'([^']{2,80})'(?!\w)|(?<!\w)\"([^\"]{2,80})\"(?!\w)")
 _EG_SPLIT_RE = re.compile(r"\be\.?g\.?\b|\bfor example\b|\bfor instance\b", re.IGNORECASE)
 _DATE_TOKEN_RE = re.compile(r"\b\d{1,4}[-/.]\d{1,2}[-/.]\d{1,4}\b")
 _SUMMARY_PRIMARY_WORDS = {
@@ -60,7 +60,8 @@ def norm_label(value: Any) -> str:
 
 def quoted_labels(description: str) -> list[str]:
     """Normalized quoted phrases from a field description, ignoring examples
-    (text from the first 'e.g.' / 'for example' onward)."""
+    (text from the first 'e.g.' / 'for example' onward). Possessive
+    apostrophes ("record's") do not open or close quoted phrases."""
     if not description:
         return []
     head = _EG_SPLIT_RE.split(description)[0]
@@ -595,14 +596,32 @@ def _table_extract(schema, document, exact, phrases, warnings):
 
 def _build_entries(schema, sheet, header_idx: int, colmap: dict):
     """One entry per data row below the header. Skips blank rows, summary rows
-    (exact word match on the primary value), rows with an empty primary,
-    label-only rows, duplicate primary identifiers (first wins), and — in
-    numeric-heavy tables — rows carrying no numeric data at all (summary and
-    narrative blocks)."""
+    (exact word match on the primary value), label-only rows, duplicate
+    primary identifiers (first wins), and — in numeric-heavy tables — rows
+    carrying no numeric data at all (summary and narrative blocks).
+
+    Block-structured tables: a row with an empty primary cell that follows a
+    valid record row is a CONTINUATION row. Its values are attached to that
+    record via (a) header-mapped columns (fill nulls only) and (b) category
+    matching against quoted phrases in field descriptions; fields whose
+    description requests a sum ("sum of ...") aggregate the unclaimed
+    continuation rows. Continuation mapping is conservative: ambiguous cells
+    are dropped, summary rows terminate blocks, and rows never attach across
+    sheet/table boundaries."""
     pcol, _pq = colmap[schema.primary_key]
     value_cols = [col for key, (col, _q) in colmap.items() if key != schema.primary_key]
+    category_labels: dict[str, set[str]] = {}
+    aggregate_fields: set[str] = set()
+    for key, f in schema.fields.items():
+        labels = quoted_labels(f.description)
+        if labels:
+            category_labels[key] = set(labels)
+        if re.search(r"\b(?:sum|total|combined)\s+of\b", f.description or "", re.IGNORECASE):
+            aggregate_fields.add(key)
     seen_primary: set[str] = set()
     staged: list[tuple[Any, str]] = []
+    blocks: list[tuple[dict[str, FieldResult], list]] = []
+    current: tuple[dict[str, FieldResult], list] | None = None
     rows_after = 0
     duplicates = 0
     for row in sheet.rows[header_idx + 1 :]:
@@ -611,22 +630,205 @@ def _build_entries(schema, sheet, header_idx: int, colmap: dict):
             continue
         primary_cell = row[pcol] if pcol < len(row) else None
         pnorm = norm_label(primary_cell.value) if primary_cell and primary_cell.value is not None else ""
-        if not pnorm or pnorm in _SUMMARY_PRIMARY_WORDS:
+        if not pnorm:
+            if current is not None:
+                current[1].append(row)
             continue
-        if value_cols:
-            non_empty = sum(
-                1 for col in value_cols if col < len(row) and row[col].value not in (None, "")
-            )
-            if non_empty < 1:
-                continue
+        if pnorm in _SUMMARY_PRIMARY_WORDS:
+            current = None
+            continue
         if pnorm in seen_primary:
             duplicates += 1
+            current = None
             continue
         seen_primary.add(pnorm)
+        record = _row_entry(schema, sheet, row, colmap)
         staged.append((row, pnorm))
+        current = (record, [])
+        blocks.append(current)
+    for record, cont_rows in blocks:
+        _apply_block_continuations(
+            schema, sheet, record, cont_rows, colmap, category_labels, aggregate_fields
+        )
     kept, non_records = _drop_non_records(staged, colmap, schema.primary_key)
-    entries = [_row_entry(schema, sheet, row, colmap) for row, _pnorm in kept]
+    kept_ids = {id(row) for row, _pnorm in kept}
+    entries = [
+        blocks[i][0] for i in range(len(staged)) if id(staged[i][0]) in kept_ids
+    ]
     return entries, rows_after, duplicates, non_records
+
+
+def _category_matches(nval: str, labels: set[str]) -> bool:
+    if nval in labels:
+        return True
+    nval_tokens = set(nval.split())
+    return any(set(lab.split()) <= nval_tokens for lab in labels)
+
+
+def _row_value_cell(row, after_col: int, numeric_only: bool) -> int | None:
+    """Value cell for a continuation row: prefer the first numeric cell after
+    the category cell; fall back to a single non-empty cell when exactly one
+    remains (unambiguous)."""
+    numeric: list[int] = []
+    nonempty: list[int] = []
+    for c in range(after_col + 1, len(row)):
+        cell = row[c]
+        if cell.value in (None, ""):
+            continue
+        nonempty.append(c)
+        parsed = parse_scalar(cell.value)
+        if parsed is not None and parsed[1] == "number":
+            numeric.append(c)
+    if numeric:
+        return numeric[0] if len(numeric) == 1 else numeric[0]
+    if numeric_only:
+        return None
+    return nonempty[0] if len(nonempty) == 1 else None
+
+
+def _apply_block_continuations(
+    schema,
+    sheet,
+    record: dict[str, FieldResult],
+    cont_rows: list,
+    colmap: dict,
+    category_labels: dict[str, set[str]],
+    aggregate_fields: set[str],
+):
+    """Attach continuation rows to their block record.
+
+    Per continuation row:
+    1. Column-mapped fill: a value under a header-mapped column fills that
+       field's null on the record (unless the cell is a category label).
+    2. Category matching: a cell whose text matches a quoted phrase from a
+       field's description claims the row for that field; the value is the
+       next scalar cell in the row (or an inline 'label: value'). A cell
+       claimed by multiple fields, or a field matching multiple cells, is
+       ambiguous and dropped rather than guessed.
+    3. Aggregation: fields whose description requests a sum ("sum of ...")
+       aggregate the numeric values of rows with no category claim, excluding
+       summary rows and rows claimed by other fields."""
+    per_row: list[tuple[dict[int, set[str]], set[int]]] = []
+    for row in cont_rows:
+        cell_fields: dict[int, set[str]] = {}
+        for c, cell in enumerate(row):
+            if cell.value in (None, ""):
+                continue
+            nval = norm_label(cell.value)
+            if not nval:
+                continue
+            for key, labels in category_labels.items():
+                if key in aggregate_fields:
+                    continue
+                if _category_matches(nval, labels):
+                    cell_fields.setdefault(c, set()).add(key)
+        contested = {c for c, keys in cell_fields.items() if len(keys) > 1}
+        per_row.append((cell_fields, contested))
+
+    claims: dict[str, tuple[int, Any]] = {}
+    for row_i, (row, (cell_fields, contested)) in enumerate(zip(cont_rows, per_row)):
+        for c, keys in sorted(cell_fields.items()):
+            if c in contested:
+                continue
+            key = next(iter(keys))
+            if key in claims:
+                continue
+            claims[key] = (c, row_i)
+
+    claimed_rows = set()
+    for key, (c, row_i) in claims.items():
+        claimed_rows.add(row_i)
+
+    # column-mapped fill per row (skip category cells and summary rows)
+    for row_i, row in enumerate(cont_rows):
+        cell_fields, contested = per_row[row_i]
+        if contested:
+            continue
+        category_cols = set(claims[key][0] for key in claims if claims[key][1] == row_i)
+        for key, (col, _q) in colmap.items():
+            if key == schema.primary_key or col in category_cols:
+                continue
+            cell = row[col] if col < len(row) else None
+            if cell is None or cell.value in (None, ""):
+                continue
+            if record[key].value is not None:
+                continue
+            parsed = parse_scalar(cell.value)
+            if parsed is None or parsed[0] is None:
+                continue
+            record[key] = FieldResult(
+                value=parsed[0],
+                citation=f"[Sheet: {sheet.name}, Cell: {cell.ref}] {_snippet(cell.value)}",
+                confidence=0.8,
+                source_locations=[f"{sheet.name}!{cell.ref}"],
+            )
+
+    # direct category-claimed values
+    for key, (c, row_i) in claims.items():
+        if record[key].value is not None:
+            continue
+        row = cont_rows[row_i]
+        cell = row[c]
+        inline = _LABEL_VALUE_RE.match(str(cell.value))
+        value = None
+        value_cell = None
+        if inline and inline.group("value").strip():
+            value_cell = cell
+            parsed = parse_scalar(inline.group("value"))
+            value = parsed[0] if parsed else None
+        else:
+            vc = _row_value_cell(row, c, numeric_only=False)
+            if vc is not None:
+                value_cell = row[vc]
+                parsed = parse_scalar(value_cell.value)
+                value = parsed[0] if parsed else None
+        if value_cell is None or value is None:
+            continue
+        record[key] = FieldResult(
+            value=value,
+            citation=f"[Sheet: {sheet.name}, Cell: {value_cell.ref}] {_snippet(value_cell.value)}",
+            confidence=0.85,
+            source_locations=[f"{sheet.name}!{value_cell.ref}"],
+        )
+
+    # aggregation over unclaimed, non-summary rows
+    for key in aggregate_fields:
+        if record[key].value is not None:
+            continue
+        own_labels = category_labels.get(key, set())
+        values: list[tuple[Any, Any]] = []
+        for row_i, row in enumerate(cont_rows):
+            if row_i in claimed_rows:
+                continue
+            numeric = []
+            for c, cell in enumerate(row):
+                if cell.value in (None, ""):
+                    continue
+                nval = norm_label(cell.value)
+                if nval in _SUMMARY_PRIMARY_WORDS:
+                    continue
+                if own_labels and _category_matches(nval, own_labels):
+                    continue
+                p = parse_scalar(cell.value)
+                if p is not None and p[1] == "number":
+                    numeric.append((c, cell, p[0]))
+            if len(numeric) != 1:
+                continue
+            _c, cell, v = numeric[0]
+            values.append((v, cell.ref))
+        if not values:
+            continue
+        total = sum(v for v, _ref in values if isinstance(v, (int, float)))
+        refs = [ref for _v, ref in values]
+        record[key] = FieldResult(
+            value=total,
+            citation=(
+                f"[Sheet: {sheet.name}, Cells: {', '.join(refs[:3])}"
+                f"{'…' if len(refs) > 3 else ''}] sum of {len(values)} matching lines"
+            ),
+            confidence=0.8,
+            source_locations=[f"{sheet.name}!{ref}" for ref in refs],
+        )
 
 
 def _drop_non_records(staged, colmap, primary_key):
