@@ -91,6 +91,7 @@ class ExtractionEngine:
         self._doc_settled = 0.0
         self._cost_exhausted = False
         self._consecutive_failures = 0
+        self._last_attempt_failed = False
 
     def extract(self, schema: ExtractionSchema, document: ParsedDocument) -> ExtractionResult:
         self._call_log = []
@@ -98,9 +99,22 @@ class ExtractionEngine:
         self._doc_settled = 0.0
         self._cost_exhausted = False
         self._consecutive_failures = 0
+        self._last_attempt_failed = False
         det = deterministic_extract(schema, document)
         warnings = list(det.warnings)
         conflicts: list[str] = []
+        result = self._dispatch_extraction(schema, document, det, warnings, conflicts)
+        self._apply_schema_defaults(schema, result, document)
+        return result
+
+    def _dispatch_extraction(
+        self,
+        schema: ExtractionSchema,
+        document: ParsedDocument,
+        det: DeterministicResult,
+        warnings: list[str],
+        conflicts: list[str],
+    ) -> ExtractionResult:
         if det.mode == "table":
             provenance = {
                 key: "deterministic" if det.entries[0][key].value is not None else "unresolved"
@@ -189,12 +203,14 @@ class ExtractionEngine:
             self._doc_spend -= estimate
             duration = int((time.monotonic() - started) * 1000)
             self._record(fields, len(rendered), duration, "budget_refused", estimate=estimate, note=str(exc)[:150])
+            self._last_attempt_failed = True
             self._cost_exhausted = True
             warnings.append(f"llm fallback failed (budget): {str(exc)[:150]}")
             return None, None
         except LlmTimeoutError as exc:
             duration = int((time.monotonic() - started) * 1000)
             self._record(fields, len(rendered), duration, "timeout", estimate=estimate, note=str(exc)[:150])
+            self._last_attempt_failed = True
             self._consecutive_failures += 1
             warnings.append(f"llm fallback failed (timeout): {str(exc)[:150]}")
             return None, None
@@ -212,6 +228,7 @@ class ExtractionEngine:
             duration = int((time.monotonic() - started) * 1000)
             self._doc_spend -= estimate
             self._record(fields, len(rendered), duration, "error", estimate=estimate, note=str(exc)[:150])
+            self._last_attempt_failed = True
             self._consecutive_failures += 1
             warnings.append(f"llm fallback failed (error): {str(exc)[:150]}")
             return None, None
@@ -244,6 +261,7 @@ class ExtractionEngine:
                 " or reduce chunk size"
             )
         self._record(fields, len(rendered), duration, "success", response=response, estimate=estimate)
+        self._last_attempt_failed = False
         self._consecutive_failures = 0
         return parsed, response
 
@@ -553,6 +571,41 @@ class ExtractionEngine:
                             filled.append(key)
         return filled
 
+    def _apply_schema_defaults(self, schema: ExtractionSchema, result: ExtractionResult, document: ParsedDocument):
+        """Apply schema-description defaults to fields that are genuinely
+        absent (null) in the final entries. Skipped when the document has no
+        extractable text (fields may exist but were unreadable) or when the
+        LLM gateway failed repeatedly (extraction did not complete). Defaults
+        never override extracted non-null values and are skipped when the
+        observed values for the field are type-incompatible."""
+        if not _document_has_text(document):
+            return
+        if self._last_attempt_failed or self._consecutive_failures >= MIN_CONSECUTIVE_FAILURES:
+            return
+        defaults = {k: f for k, f in schema.fields.items() if f.has_default}
+        if not defaults or not result.entries:
+            return
+        applied: list[str] = []
+        for entry in result.entries:
+            for key, f in defaults.items():
+                fr = entry.get(key)
+                if fr is not None and fr.value is not None:
+                    continue
+                samples = [
+                    e[key].value for e in result.entries
+                    if e is not entry and key in e and e[key].value is not None
+                ]
+                if not _default_compatible(f.default_value, samples):
+                    continue
+                entry[key] = FieldResult(value=f.default_value, citation="", confidence=0.9)
+                if key not in applied:
+                    applied.append(key)
+        for key in applied:
+            if result.provenance.get(key) in (None, "unresolved"):
+                result.provenance[key] = "default"
+        if applied:
+            result.warnings.append(f"schema defaults applied for: {', '.join(applied)}")
+
     # ---------- shared helpers ----------
 
     def _finish_single(
@@ -729,3 +782,18 @@ def _document_has_text(document: ParsedDocument) -> bool:
         for row in sheet.rows
         for cell in row
     )
+
+
+def _default_compatible(default, sample_values) -> bool:
+    """A default is compatible when observed values for the field share its
+    type. No observed values -> compatible (nothing to contradict it)."""
+    for value in sample_values:
+        if isinstance(default, list):
+            return isinstance(value, list)
+        if isinstance(default, bool):
+            return isinstance(value, bool)
+        if isinstance(default, (int, float)):
+            return isinstance(value, (int, float)) and not isinstance(value, bool)
+        if isinstance(default, str):
+            return isinstance(value, str)
+    return True

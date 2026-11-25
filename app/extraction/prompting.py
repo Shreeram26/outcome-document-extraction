@@ -4,6 +4,8 @@ Nothing here knows about any specific document domain; everything field-specific
 comes from the ExtractionSchema."""
 from __future__ import annotations
 
+import json
+
 from ..parsing.models import ParsedDocument, TableBlock
 from .schema import ExtractionSchema
 
@@ -32,6 +34,8 @@ def build_messages(schema: ExtractionSchema, document: ParsedDocument) -> list[d
         line = f'- "{f.key}" ({f.name}): {f.description or "(no description)"}'
         if f.primary:
             line += " [primary: its value identifies one row]"
+        if f.has_default:
+            line += f" [when absent from the document, use the default: {json.dumps(f.default_value)}]"
         field_lines.append(line)
     header = f"DOCUMENT ({document.filename or 'unnamed'}):\n\n"
     user = (

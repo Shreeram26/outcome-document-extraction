@@ -120,3 +120,17 @@ def test_primary_schema_prompt_adds_record_completeness_rule():
     plain = normalize_schema({"fields": {"alpha": {"name": "Alpha", "description": ""}}})
     system_plain = build_messages(plain, _pdf_doc())[0]["content"]
     assert "RECORD COMPLETENESS" not in system_plain
+
+
+def test_default_hint_appended_to_field_line():
+    schema = normalize_schema({"fields": {
+        "loc": {"name": "LOC", "description": "true if required, false otherwise."},
+    }})
+    user = build_messages(schema, _pdf_doc())[1]["content"]
+    assert "[when absent from the document, use the default: false]" in user
+
+
+def test_no_default_hint_without_schema_default():
+    schema = normalize_schema({"fields": {"a": {"name": "A", "description": ""}}})
+    user = build_messages(schema, _pdf_doc())[1]["content"]
+    assert "use the default" not in user

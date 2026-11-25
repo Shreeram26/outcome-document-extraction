@@ -277,3 +277,91 @@ def test_grid_fallback_uses_row_bounded_chunks():
     assert len(result.entries) == 120
     assert result.entries[0]["code"].value == "K-2"
     assert result.entries[-1]["code"].value == "K-121"
+
+
+DEFAULTS_SCHEMA = normalize_schema(
+    {
+        "name": "lease-ish",
+        "fields": {
+            "item_id": {"name": "Item Id", "description": "The 'Item Id' column.", "primary": True},
+            "flag": {"name": "Flag", "description": "true if required, false otherwise."},
+            "count": {"name": "Count", "description": "How many, as a number. 0 if none."},
+            "tags": {"name": "Tags", "description": "List of tags. Empty list if none."},
+            "note": {"name": "Note", "description": "Free note. null if not stated."},
+        },
+    }
+)
+
+
+def test_defaults_applied_when_llm_returns_null():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps({"entries": [{"item_id": "T-1", "flag": None, "count": None, "tags": None, "note": None}]})
+    transport, stub = make_transport([fake_response(content)] * 5)
+    gateway = LlmGateway(transport=transport)
+    engine = ExtractionEngine(gateway, model="google/gemini-3.8-flash")
+    result = engine.extract(DEFAULTS_SCHEMA, doc)
+    entry = result.entries[0]
+    assert entry["flag"].value is False
+    assert entry["count"].value == 0
+    assert entry["tags"].value == []
+    assert entry["note"].value is None
+    assert entry["flag"].citation == ""
+    assert result.provenance["flag"] == "default"
+    assert any("schema defaults applied" in w for w in result.warnings)
+
+
+def test_defaults_do_not_override_extracted_values():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps({"entries": [
+        {"item_id": "T-1", "flag": True, "count": 5, "tags": ["a"], "note": "hello"},
+    ]})
+    transport, _ = make_transport([fake_response(content)] * 5)
+    gateway = LlmGateway(transport=transport)
+    engine = ExtractionEngine(gateway, model="google/gemini-3.8-flash")
+    result = engine.extract(DEFAULTS_SCHEMA, doc)
+    entry = result.entries[0]
+    assert entry["flag"].value is True
+    assert entry["count"].value == 5
+    assert entry["tags"].value == ["a"]
+    assert entry["note"].value == "hello"
+    assert "default" not in result.provenance.values()
+
+
+def test_defaults_skipped_for_type_incompatible_field():
+    doc = _pdf_doc(["nothing useful"])
+    content = json.dumps({"entries": [
+        {"item_id": "T-1", "count": "five"},
+        {"item_id": "T-2"},
+    ]})
+    transport, _ = make_transport([fake_response(content)] * 5)
+    gateway = LlmGateway(transport=transport)
+    engine = ExtractionEngine(gateway, model="google/gemini-3.8-flash")
+    result = engine.extract(DEFAULTS_SCHEMA, doc)
+    by_id = {e["item_id"].value: e for e in result.entries}
+    assert by_id["T-1"]["count"].value == "five"
+    assert by_id["T-2"]["count"].value is None
+    assert "count" not in [k for k, v in result.provenance.items() if v == "default"]
+
+
+def test_defaults_skipped_when_gateway_broken():
+    class FailingTransport:
+        def create(self, **kwargs):
+            raise RuntimeError("connection refused")
+
+    transport = SimpleNamespace(chat=SimpleNamespace(completions=FailingTransport()))
+    gateway = LlmGateway(transport=transport)
+    engine = ExtractionEngine(gateway, model="google/gemini-3.8-flash")
+    result = engine.extract(DEFAULTS_SCHEMA, _pdf_doc(["nothing useful"]))
+    assert result.entries[0]["flag"].value is None
+    assert all(v != "default" for v in result.provenance.values())
+
+
+def test_defaults_skipped_for_textless_document():
+    doc = ParsedDocument(kind="pdf", filename="scan.pdf", pages=[Page(1, "")])
+    transport, stub = make_transport([fake_response('{"entries": []}')] * 3)
+    gateway = LlmGateway(transport=transport)
+    engine = ExtractionEngine(gateway, model="google/gemini-3.8-flash")
+    result = engine.extract(DEFAULTS_SCHEMA, doc)
+    assert stub.calls == []
+    assert result.entries[0]["flag"].value is None
+    assert all(v != "default" for v in result.provenance.values())
