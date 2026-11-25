@@ -1628,7 +1628,7 @@
     "tokens_out": 0,
     "cost_usd": 0.0,
     "cost_settled_usd": 0.0,
-    "latency_ms": 80,
+    "latency_ms": 144,
     "calls": []
   },
   "document": "boxscore_001"

@@ -3,14 +3,14 @@
   "entries": [
     {
       "tenant_name": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "KRESTMOOR INCORPORATED",
+        "citation": "[Page 3] KRESTMOOR INCORPORATED, an Illinois corporation",
+        "confidence": 0.97
       },
       "landlord_legal_name": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "250 S. HARBOR LLC",
+        "citation": "[Page 3] 250 S. HARBOR LLC, an Illinois limited liability",
+        "confidence": 0.97
       },
       "property_name": {
         "value": null,
@@ -18,119 +18,167 @@
         "confidence": 0.0
       },
       "building_address": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "250 South Harbor Street, Chicago, Illinois 60606",
+        "citation": "[Page 3] known as 250 South Harbor Street, Chicago, Illinois",
+        "confidence": 0.95
       },
       "premises": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "Suite 500",
+        "citation": "[Page 3] known as Suite 500 in the building",
+        "confidence": 0.96
       },
       "rentable_square_footage": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 6840,
+        "citation": "[Page 3] comprised of a total of approximately 6,840 rentable",
+        "confidence": 0.96
       },
       "pro_rata_share": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 12.855,
+        "citation": "[Page 4] Share for purposes of Additional Rent is 12.855%.",
+        "confidence": 0.95
       },
       "permitted_use": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "operation of law office or other general office purpose",
+        "citation": "[Page 4] for the operation of law office or other general",
+        "confidence": 0.95
       },
       "lease_execution_date": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "2010-03-04",
+        "citation": "[Page 3] THIS LEASE is made as of the 4th day of March",
+        "confidence": 0.95
       },
       "lease_commencement_date": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "2010-08-01",
+        "citation": "[Page 3] commencing on the 1st day of August, 2010",
+        "confidence": 0.97
       },
       "rent_commencement_date": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "2010-08-01",
+        "citation": "[Page 3] August 1, 2010 through July 31, 2011 $11,934.00",
+        "confidence": 0.8
       },
       "lease_expiration_date": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "2021-02-28",
+        "citation": "[Page 3] terminating on the 28th day of February, 2021",
+        "confidence": 0.97
       },
       "lease_term_months": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 127,
+        "citation": "[Page 3] for the term of Ten (10) years Seven (7) months",
+        "confidence": 0.95
       },
       "rent_schedule_start_dates": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": [
+          "2010-08-01",
+          "2011-08-01",
+          "2012-08-01",
+          "2013-08-01",
+          "2014-08-01",
+          "2015-08-01",
+          "2016-08-01",
+          "2017-08-01",
+          "2018-08-01",
+          "2019-08-01",
+          "2020-08-01"
+        ],
+        "citation": "[Page 3] August 1, 2010 through July 31, 2011",
+        "confidence": 0.95
       },
       "rent_schedule_end_dates": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": [
+          "2011-07-31",
+          "2012-07-31",
+          "2013-07-31",
+          "2014-07-31",
+          "2015-07-31",
+          "2016-07-31",
+          "2017-07-31",
+          "2018-07-31",
+          "2019-07-31",
+          "2020-07-31",
+          "2021-02-28"
+        ],
+        "citation": "[Page 3] August 1, 2020 through February 28, 2021",
+        "confidence": 0.95
       },
       "rent_schedule_monthly_rent": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": [
+          11934,
+          12196,
+          12458,
+          12720,
+          12982,
+          13244,
+          13506,
+          13768,
+          14030,
+          14292,
+          14554
+        ],
+        "citation": "[Page 3] MONTHLY BASE RENT $11,934.00 ... $14,554.00",
+        "confidence": 0.97
       },
       "rent_schedule_annual_rent_per_rsf": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": [
+          20.94,
+          21.4,
+          21.86,
+          22.32,
+          22.78,
+          23.24,
+          23.69,
+          24.15,
+          24.61,
+          25.07,
+          25.53
+        ],
+        "citation": "[Page 3] Computed: monthly rent x 12 / 6,840 RSF",
+        "confidence": 0.85
       },
       "total_base_rent": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 1675438,
+        "citation": "[Page 3] Computed from base rent schedule",
+        "confidence": 0.85
       },
       "base_rent_escalation": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "fixed steps per schedule",
+        "citation": "[Page 3] MONTHLY BASE RENT schedule increases each year",
+        "confidence": 0.85
       },
       "free_rent_months": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 0,
+        "citation": "[Page 3] No free rent period shown in base rent schedule",
+        "confidence": 0.6
       },
       "security_deposit_amount": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 310000.0,
+        "citation": "[Page 13] sum of Three Hundred Ten Thousand and 00/100",
+        "confidence": 0.95
       },
       "letter_of_credit_required": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": false,
+        "citation": "[Page 13] Tenant has deposited with 250 S. HARBOR",
+        "confidence": 0.6
       },
       "expense_structure": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "base year 2011",
+        "citation": "[Page 4] Operating Expenses incurred in the Base Year of 2011",
+        "confidence": 0.9
       },
       "base_year_expenses": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 2011,
+        "citation": "[Page 4] Operating Expenses incurred in the Base Year of 2011",
+        "confidence": 0.97
       },
       "base_year_taxes": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 2011,
+        "citation": "[Page 3] Taxes paid in the Base Year of 2011",
+        "confidence": 0.97
       },
       "electricity_provision": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "monthly usage fee based on actual usage, billed as additional rent",
+        "citation": "[Page 4] monthly Electricity Usage Fee based on Tenant's actual usage",
+        "confidence": 0.8
       },
       "parking_spaces": {
         "value": null,
@@ -143,24 +191,26 @@
         "confidence": 0.0
       },
       "ti_allowance_total": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 389500,
+        "citation": "[Workletter p.1] up to Three Hundred Eighty-Nine Thousand Five Hundred",
+        "confidence": 0.85
       },
       "renewal_option_exists": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": true,
+        "citation": "[Page 14] Tenant shall have the option to renew the term",
+        "confidence": 0.95
       },
       "renewal_options_count": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": 1,
+        "citation": "[Page 14] for one additional period of Five (5) years",
+        "confidence": 0.9
       },
       "renewal_term_months": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": [
+          60
+        ],
+        "citation": "[Page 14] one additional period of Five (5) years",
+        "confidence": 0.9
       },
       "renewal_notice_months": {
         "value": null,
@@ -168,19 +218,19 @@
         "confidence": 0.0
       },
       "early_termination_right": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": true,
+        "citation": "[Page 15] Tenant shall have the right to terminate this Lease",
+        "confidence": 0.95
       },
       "termination_fee_description": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "Unamortized brokers commissions, abated rent and build-out costs at 9% interest, plus five months of monthly Base Rent",
+        "citation": "[Page 15] consisting of (i) the unamortized amount of all brokers",
+        "confidence": 0.85
       },
       "right_to_sublet": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "with landlord consent, not unreasonably withheld",
+        "citation": "[Page 9] Tenant shall not, without the prior written consent",
+        "confidence": 0.85
       },
       "guarantor_name": {
         "value": null,
@@ -188,30 +238,322 @@
         "confidence": 0.0
       },
       "broker_names": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": [
+          "PINNACLE REALTY"
+        ],
+        "citation": "[Page 14] The Tenant has dealt only with PINNACLE REALTY",
+        "confidence": 0.95
       },
       "late_fee": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "$300.00 late charge plus interest at 2% over Corporate base rate",
+        "citation": "[Page 12] Three Hundred and 00/100 Dollars ($300.00) late",
+        "confidence": 0.85
       },
       "holdover_rent": {
-        "value": null,
-        "citation": "",
-        "confidence": 0.0
+        "value": "175% of the Base Rent",
+        "citation": "[Page 10] one hundred seventy-five percent (175%) of the Base",
+        "confidence": 0.95
       }
     }
   ],
   "metadata": {
-    "model_calls": 0,
-    "tokens_in": 0,
-    "tokens_out": 0,
+    "model_calls": 5,
+    "tokens_in": 112909,
+    "tokens_out": 15716,
     "cost_usd": 0.0,
-    "cost_settled_usd": 0.0,
-    "latency_ms": 0,
-    "calls": []
+    "cost_settled_usd": 0.019149,
+    "latency_ms": 142612,
+    "calls": [
+      {
+        "call": 1,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "tenant_name",
+          "landlord_legal_name",
+          "property_name",
+          "building_address",
+          "premises",
+          "rentable_square_footage",
+          "pro_rata_share",
+          "permitted_use",
+          "lease_execution_date",
+          "lease_commencement_date",
+          "rent_commencement_date",
+          "lease_expiration_date",
+          "lease_term_months",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "free_rent_months",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "electricity_provision",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "broker_names",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 0,
+        "duration_ms": 27512,
+        "status": "success",
+        "tokens_in": 26389,
+        "tokens_out": 4636,
+        "reserved_usd": 0,
+        "cost_usd": 0.004957,
+        "cumulative_cost_usd": 0.0,
+        "note": ""
+      },
+      {
+        "call": 2,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "tenant_name",
+          "landlord_legal_name",
+          "property_name",
+          "building_address",
+          "premises",
+          "rentable_square_footage",
+          "pro_rata_share",
+          "permitted_use",
+          "lease_execution_date",
+          "lease_commencement_date",
+          "rent_commencement_date",
+          "lease_expiration_date",
+          "lease_term_months",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "free_rent_months",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "electricity_provision",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "broker_names",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 0,
+        "duration_ms": 22376,
+        "status": "success",
+        "tokens_in": 26389,
+        "tokens_out": 2603,
+        "reserved_usd": 0,
+        "cost_usd": 0.00394,
+        "cumulative_cost_usd": 0.0,
+        "note": ""
+      },
+      {
+        "call": 3,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "tenant_name",
+          "landlord_legal_name",
+          "property_name",
+          "building_address",
+          "premises",
+          "rentable_square_footage",
+          "pro_rata_share",
+          "permitted_use",
+          "lease_execution_date",
+          "lease_commencement_date",
+          "rent_commencement_date",
+          "lease_expiration_date",
+          "lease_term_months",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "free_rent_months",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "electricity_provision",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "broker_names",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 0,
+        "duration_ms": 22807,
+        "status": "success",
+        "tokens_in": 26389,
+        "tokens_out": 2615,
+        "reserved_usd": 0,
+        "cost_usd": 0.003946,
+        "cumulative_cost_usd": 0.0,
+        "note": ""
+      },
+      {
+        "call": 4,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "tenant_name",
+          "landlord_legal_name",
+          "property_name",
+          "building_address",
+          "premises",
+          "rentable_square_footage",
+          "pro_rata_share",
+          "permitted_use",
+          "lease_execution_date",
+          "lease_commencement_date",
+          "rent_commencement_date",
+          "lease_expiration_date",
+          "lease_term_months",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "free_rent_months",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "electricity_provision",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "broker_names",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 0,
+        "duration_ms": 26457,
+        "status": "success",
+        "tokens_in": 26389,
+        "tokens_out": 3847,
+        "reserved_usd": 0,
+        "cost_usd": 0.004562,
+        "cumulative_cost_usd": 0.0,
+        "note": ""
+      },
+      {
+        "call": 5,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "tenant_name",
+          "landlord_legal_name",
+          "property_name",
+          "building_address",
+          "premises",
+          "rentable_square_footage",
+          "pro_rata_share",
+          "permitted_use",
+          "lease_execution_date",
+          "lease_commencement_date",
+          "rent_commencement_date",
+          "lease_expiration_date",
+          "lease_term_months",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "free_rent_months",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "electricity_provision",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "broker_names",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 0,
+        "duration_ms": 9308,
+        "status": "success",
+        "tokens_in": 7353,
+        "tokens_out": 2015,
+        "reserved_usd": 0,
+        "cost_usd": 0.001743,
+        "cumulative_cost_usd": 0.0,
+        "note": ""
+      }
+    ],
+    "conflicts": [
+      "electricity_provision: kept 'monthly usage fee based on actual usage, billed as additional rent'; vision also returned 'separately metered, billed by Landlord as Additional Rent (Electricity Usage Fee)'",
+      "landlord_legal_name: kept '250 S. HARBOR LLC'; vision also returned '250 S. HARBOR, LLC'",
+      "building_address: kept '250 South Harbor Street, Chicago, Illinois 60606'; vision also returned '250 South Harbor Street, Chicago, IL 60606'",
+      "letter_of_credit_required: kept False; vision also returned True"
+    ],
+    "models": {
+      "anthropic/claude-haiku-5.5": {
+        "calls": 5,
+        "tokens_in": 112909,
+        "tokens_out": 15716,
+        "settled_cost_usd": 0.019149
+      }
+    }
   },
   "document": "lease_003"
 }

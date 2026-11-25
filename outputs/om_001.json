@@ -33,7 +33,7 @@
         "confidence": 0.0
       },
       "submarket": {
-        "value": "airport submarket",
+        "value": "Airport submarket",
         "citation": "",
         "confidence": 0.0
       },
@@ -160,11 +160,11 @@
   ],
   "metadata": {
     "model_calls": 2,
-    "tokens_in": 7325,
-    "tokens_out": 2653,
-    "cost_usd": 0.002059,
-    "cost_settled_usd": 0.002059,
-    "latency_ms": 11764,
+    "tokens_in": 7339,
+    "tokens_out": 2364,
+    "cost_usd": 0.001916,
+    "cost_settled_usd": 0.001916,
+    "latency_ms": 10694,
     "calls": [
       {
         "call": 1,
@@ -201,13 +201,13 @@
           "noi_proforma"
         ],
         "context_chars": 6056,
-        "duration_ms": 6595,
+        "duration_ms": 6290,
         "status": "success",
-        "tokens_in": 4615,
-        "tokens_out": 1488,
-        "reserved_usd": 0.103322,
-        "cost_usd": 0.001205,
-        "cumulative_cost_usd": 0.001205,
+        "tokens_in": 4629,
+        "tokens_out": 1436,
+        "reserved_usd": 0.103339,
+        "cost_usd": 0.001181,
+        "cumulative_cost_usd": 0.001181,
         "note": ""
       },
       {
@@ -224,22 +224,22 @@
           "noi_proforma"
         ],
         "context_chars": 3623,
-        "duration_ms": 5148,
+        "duration_ms": 4387,
         "status": "success",
         "tokens_in": 2710,
-        "tokens_out": 1165,
+        "tokens_out": 928,
         "reserved_usd": 0.101963,
-        "cost_usd": 0.000853,
-        "cumulative_cost_usd": 0.002059,
+        "cost_usd": 0.000735,
+        "cumulative_cost_usd": 0.001916,
         "note": ""
       }
     ],
     "models": {
       "anthropic/claude-haiku-5.5": {
         "calls": 2,
-        "tokens_in": 7325,
-        "tokens_out": 2653,
-        "settled_cost_usd": 0.002059
+        "tokens_in": 7339,
+        "tokens_out": 2364,
+        "settled_cost_usd": 0.001916
       }
     }
   },

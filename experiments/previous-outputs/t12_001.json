@@ -1,0 +1,7445 @@
+{
+  "schema": "operating_statement_lines",
+  "entries": [
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.8
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "660-500",
+        "citation": "[Report1!A120] 660-500",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Management Fees - Property",
+        "citation": "[Report1!B120] Management Fees - Property",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "MANAGEMENT FEES",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B120] Management Fees - Property",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 261476.49,
+        "citation": "[Report1!O120] 261476.49",
+        "confidence": 0.95
+      },
+      "amount_first_month": {
+        "value": 20321.25,
+        "citation": "[Report1!C120] 20321.25",
+        "confidence": 0.9
+      },
+      "amount_last_month": {
+        "value": 22229.13,
+        "citation": "[Report1!N120] 22229.13",
+        "confidence": 0.9
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C120] 20321.25",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.8
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "669-999",
+        "citation": "[Report1!A121] 669-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL MANAGEMENT FEES",
+        "citation": "[Report1!B121] TOTAL MANAGEMENT FEES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "MANAGEMENT FEES",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.85
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B121] TOTAL MANAGEMENT FEES",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 261476.49,
+        "citation": "[Report1!O121] 261476.49",
+        "confidence": 0.95
+      },
+      "amount_first_month": {
+        "value": 20321.25,
+        "citation": "[Report1!C121] 20321.25",
+        "confidence": 0.9
+      },
+      "amount_last_month": {
+        "value": 22229.13,
+        "citation": "[Report1!N121] 22229.13",
+        "confidence": 0.9
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C121] 20321.25",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.8
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-500",
+        "citation": "[Report1!A131] 830-500",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Property Damage - Hurricane and Fire Losses",
+        "citation": "[Report1!B131] Property Damage - Hurricane and Fire",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B131] Property Damage - Hurricane and Fire",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 9282,
+        "citation": "[Report1!O131] 9282",
+        "confidence": 0.95
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C131] 0",
+        "confidence": 0.9
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N131] 0",
+        "confidence": 0.9
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!M131] 9282",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.8
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-999",
+        "citation": "[Report1!A132] 830-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B132] TOTAL OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.85
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B132] TOTAL OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 9282,
+        "citation": "[Report1!O132] 9282",
+        "confidence": 0.95
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C132] 0",
+        "confidence": 0.9
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N132] 0",
+        "confidence": 0.9
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!M132] 9282",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "510-500",
+        "citation": "[Report1!A13] 510-500",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Gross Potential Rent",
+        "citation": "[Report1!B13] Gross Potential Rent",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.7
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B13] Gross Potential Rent",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 8481771.2,
+        "citation": "[Report1!O13] 8481771.2",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 703733.07,
+        "citation": "[Report1!C13] 703733.07",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 707564.91,
+        "citation": "[Report1!N13] 707564.91",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C13:N13] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "510-520",
+        "citation": "[Report1!A14] 510-520",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Rental Income - Pet",
+        "citation": "[Report1!B14] Rental Income - Pet",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.7
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B14] Rental Income - Pet",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 2042.64,
+        "citation": "[Report1!O14] 2042.64",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 118.76,
+        "citation": "[Report1!C14] 118.76",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 177.19,
+        "citation": "[Report1!N14] 177.19",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C14:N14] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "510-800",
+        "citation": "[Report1!A15] 510-800",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Loss To Lease",
+        "citation": "[Report1!B15] Loss To Lease",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.7
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B15] Loss To Lease",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": -63585,
+        "citation": "[Report1!O15] -63585",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": -6390,
+        "citation": "[Report1!C15] -6390",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 14641,
+        "citation": "[Report1!N15] 14641",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C15:N15] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "511-500",
+        "citation": "[Report1!A16] 511-500",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Rental Income - Retail",
+        "citation": "[Report1!B16] Rental Income - Retail",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.7
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B16] Rental Income - Retail",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 61767,
+        "citation": "[Report1!O16] 61767",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 64,
+        "citation": "[Report1!C16] 64",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 5921,
+        "citation": "[Report1!N16] 5921",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C16:N16] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "517-500",
+        "citation": "[Report1!A17] 517-500",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Concessions",
+        "citation": "[Report1!B17] Concessions",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.7
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B17] Concessions",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": -79554,
+        "citation": "[Report1!O17] -79554",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": -28683,
+        "citation": "[Report1!C17] -28683",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": -8833,
+        "citation": "[Report1!N17] -8833",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 9,
+        "citation": "[Report1!C17:N17] monthly values",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "521-000",
+        "citation": "[Report1!A18] 521-000",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Renters Insurance Income",
+        "citation": "[Report1!B18] Renters Insurance Income",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.7
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B18] Renters Insurance Income",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 1847.16,
+        "citation": "[Report1!O18] 1847.16",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 48.29,
+        "citation": "[Report1!C18] 48.29",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 81.82,
+        "citation": "[Report1!N18] 81.82",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C18:N18] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "529-999",
+        "citation": "[Report1!A19] 529-999",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "TOTAL GROSS POTENTIAL RENT",
+        "citation": "[Report1!B19] TOTAL GROSS POTENTIAL RENT",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "Rental Income",
+        "citation": "[Report1!B12] Rental Income",
+        "confidence": 0.6
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B19] TOTAL GROSS POTENTIAL RENT",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 8404289,
+        "citation": "[Report1!O19] 8404289",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 668891.12,
+        "citation": "[Report1!C19] 668891.12",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 719552.92,
+        "citation": "[Report1!N19] 719552.92",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C19:N19] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "530-500",
+        "citation": "[Report1!A21] 530-500",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Vacancy",
+        "citation": "[Report1!B21] Vacancy",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "REIMBURSEMENTS AND CONCESSIONS",
+        "citation": "[Report1!B20] REIMBURSEMENTS AND CONCESSIONS",
+        "confidence": 0.95
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B21] Vacancy",
+        "confidence": 0.75
+      },
+      "amount_total": {
+        "value": -256016.27,
+        "citation": "[Report1!O21] -256016.27",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": -10628.65,
+        "citation": "[Report1!C21] -10628.65",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": -17946.45,
+        "citation": "[Report1!N21] -17946.45",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C21:N21] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "531-500",
+        "citation": "[Report1!A22] 531-500",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Rent Concessions / Allowances",
+        "citation": "[Report1!B22] Rent Concessions / Allowances",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "REIMBURSEMENTS AND CONCESSIONS",
+        "citation": "[Report1!B20] REIMBURSEMENTS AND CONCESSIONS",
+        "confidence": 0.95
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B22] Rent Concessions / Allowances",
+        "confidence": 0.75
+      },
+      "amount_total": {
+        "value": -161.1,
+        "citation": "[Report1!O22] -161.1",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C22] 0",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N22] 0",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 2,
+        "citation": "[Report1!C22:N22] monthly values",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "532-000",
+        "citation": "[Report1!A23] 532-000",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Bad Debt / Write-Off (Rent Only)",
+        "citation": "[Report1!B23] Bad Debt / Write-Off (Rent Only)",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "REIMBURSEMENTS AND CONCESSIONS",
+        "citation": "[Report1!B20] REIMBURSEMENTS AND CONCESSIONS",
+        "confidence": 0.95
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B23] Bad Debt / Write-Off (Rent Only)",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": -43820.17,
+        "citation": "[Report1!O23] -43820.17",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C23] 0",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N23] 0",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 6,
+        "citation": "[Report1!C23:N23] monthly values",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.95
+      },
+      "period_start": {
+        "value": "2024-11-01",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "period_end": {
+        "value": "2025-10-31",
+        "citation": "[Report1!A3] Period = Nov 2024-Oct 2025",
+        "confidence": 0.9
+      },
+      "gl_code": {
+        "value": "532-500",
+        "citation": "[Report1!A24] 532-500",
+        "confidence": 0.98
+      },
+      "line_item": {
+        "value": "Bad Debt / Rent Recovery",
+        "citation": "[Report1!B24] Bad Debt / Rent Recovery",
+        "confidence": 0.98
+      },
+      "section": {
+        "value": "REIMBURSEMENTS AND CONCESSIONS",
+        "citation": "[Report1!B20] REIMBURSEMENTS AND CONCESSIONS",
+        "confidence": 0.95
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B24] Bad Debt / Rent Recovery",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 22599.53,
+        "citation": "[Report1!O24] 22599.53",
+        "confidence": 0.98
+      },
+      "amount_first_month": {
+        "value": 6486.94,
+        "citation": "[Report1!C24] 6486.94",
+        "confidence": 0.98
+      },
+      "amount_last_month": {
+        "value": 1483.2,
+        "citation": "[Report1!N24] 1483.2",
+        "confidence": 0.98
+      },
+      "months_with_activity": {
+        "value": 10,
+        "citation": "[Report1!C24:N24] monthly values",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "533-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Loss to Employee Units",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": -23820,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": -1985,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": -1985,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "533-500",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Loss to Model Units",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": -23083,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": -1974,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": -1881,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "534-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL REIMBURSEMENTS AND CONCESSIONS",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": -324301.01,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": -8100.71,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": -20329.25,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "539-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "NET RENTAL Income",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 8079987.99,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 660790.41,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 699223.67,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "540-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "540-200",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Cleaning Fees",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 6912.74,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 211.35,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 195.18,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "540-400",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Utility Service Fee",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 5.28,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 4,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "540-800",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Electricity Billbacks",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 325946.88,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 27549.85,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 27734.68,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "541-200",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Lease termination fees Income",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 23811.13,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 6,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "541-400",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Keys/Locks Income",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 454,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 6,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "543-400",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Miscellaneous Income - Tenant",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 66764.28,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 675.89,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 3376.6,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "544-200",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Fees - Admin",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 44816.88,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 1435.77,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": -2383.93,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "544-400",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Fees - Non-refundable Pet Fee",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 1235,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 206,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 4,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "544-600",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Fees - Transfer",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 469,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "544-800",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Fees - Late Payment",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 8738.39,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 565.99,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 304.4,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "545-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Fees - NSF",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER RENTAL REVENUE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 616,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 87,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 10,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "545-200",
+        "citation": "[Report1!A41] 545-200",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Fees - Application",
+        "citation": "[Report1!B41] Fees - Application",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B41] Fees - Application",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 19737,
+        "citation": "[Report1!O41] 19737",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 993,
+        "citation": "[Report1!C41] 993",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 1164,
+        "citation": "[Report1!N41] 1164",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C41:N41] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "545-400",
+        "citation": "[Report1!A42] 545-400",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Fees - Month to Month",
+        "citation": "[Report1!B42] Fees - Month to Month",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B42] Fees - Month to Month",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 7452.28,
+        "citation": "[Report1!O42] 7452.28",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 1756.77,
+        "citation": "[Report1!C42] 1756.77",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N42] 0",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 11,
+        "citation": "[Report1!C42:N42] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "546-000",
+        "citation": "[Report1!A43] 546-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Fees - Damages",
+        "citation": "[Report1!B43] Fees - Damages",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B43] Fees - Damages",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 17184.82,
+        "citation": "[Report1!O43] 17184.82",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 112.88,
+        "citation": "[Report1!C43] 112.88",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 185.39,
+        "citation": "[Report1!N43] 185.39",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C43:N43] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "546-400",
+        "citation": "[Report1!A44] 546-400",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Income - Storage",
+        "citation": "[Report1!B44] Income - Storage",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B44] Income - Storage",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 5626.28,
+        "citation": "[Report1!O44] 5626.28",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 272.92,
+        "citation": "[Report1!C44] 272.92",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 418.61,
+        "citation": "[Report1!N44] 418.61",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C44:N44] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "546-600",
+        "citation": "[Report1!A45] 546-600",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Income - Other",
+        "citation": "[Report1!B45] Income - Other",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B45] Income - Other",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 66.78,
+        "citation": "[Report1!O45] 66.78",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C45] 0",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N45] 0",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!J45] 66.78",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "549-999",
+        "citation": "[Report1!A46] 549-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL OTHER RENTAL REVENUE",
+        "citation": "[Report1!B46] TOTAL OTHER RENTAL REVENUE",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B46] TOTAL OTHER RENTAL REVENUE",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 529836.74,
+        "citation": "[Report1!O46] 529836.74",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 33661.42,
+        "citation": "[Report1!C46] 33661.42",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 31200.93,
+        "citation": "[Report1!N46] 31200.93",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C46:N46] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "550-500",
+        "citation": "[Report1!A48] 550-500",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Interest Income",
+        "citation": "[Report1!B48] Interest Income",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "INTEREST Income",
+        "citation": "[Report1!A47] 550-000 INTEREST Income",
+        "confidence": 0.85
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B48] Interest Income",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 39745.22,
+        "citation": "[Report1!O48] 39745.22",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 153.54,
+        "citation": "[Report1!C48] 153.54",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 4148.28,
+        "citation": "[Report1!N48] 4148.28",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C48:N48] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "559-999",
+        "citation": "[Report1!A49] 559-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL INTEREST Income",
+        "citation": "[Report1!B49] TOTAL INTEREST Income",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "INTEREST Income",
+        "citation": "[Report1!A47] 550-000 INTEREST Income",
+        "confidence": 0.85
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B49] TOTAL INTEREST Income",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 39745.22,
+        "citation": "[Report1!O49] 39745.22",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 153.54,
+        "citation": "[Report1!C49] 153.54",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 4148.28,
+        "citation": "[Report1!N49] 4148.28",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C49:N49] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "599-999",
+        "citation": "[Report1!A50] 599-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL REVENUE",
+        "citation": "[Report1!B50] TOTAL REVENUE",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "INTEREST Income",
+        "citation": "[Report1!A47] 550-000 INTEREST Income",
+        "confidence": 0.5
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "[Report1!B50] TOTAL REVENUE",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 8649569.95,
+        "citation": "[Report1!O50] 8649569.95",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 694605.37,
+        "citation": "[Report1!C50] 694605.37",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 734572.88,
+        "citation": "[Report1!N50] 734572.88",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C50:N50] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "610-100",
+        "citation": "[Report1!A53] 610-100",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Salaries Admin",
+        "citation": "[Report1!B53] Salaries Admin",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "PAYROLL AND EMPLOYEE BENEFITS",
+        "citation": "[Report1!A52] 610-000 PAYROLL AND EMPLOYEE BENEFITS",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B53] Salaries Admin",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 238089.21,
+        "citation": "[Report1!O53] 238089.21",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 21173.82,
+        "citation": "[Report1!C53] 21173.82",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 20384.44,
+        "citation": "[Report1!N53] 20384.44",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C53:N53] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "610-102",
+        "citation": "[Report1!A54] 610-102",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Employee Bonuses",
+        "citation": "[Report1!B54] Employee Bonuses",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "PAYROLL AND EMPLOYEE BENEFITS",
+        "citation": "[Report1!A52] 610-000 PAYROLL AND EMPLOYEE BENEFITS",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B54] Employee Bonuses",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 112067.7,
+        "citation": "[Report1!O54] 112067.7",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 6368.73,
+        "citation": "[Report1!C54] 6368.73",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 1018.28,
+        "citation": "[Report1!N54] 1018.28",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C54:N54] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "610-103",
+        "citation": "[Report1!A55] 610-103",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Other Payroll Expense",
+        "citation": "[Report1!B55] Other Payroll Expense",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "PAYROLL AND EMPLOYEE BENEFITS",
+        "citation": "[Report1!A52] 610-000 PAYROLL AND EMPLOYEE BENEFITS",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B55] Other Payroll Expense",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 59030.58,
+        "citation": "[Report1!O55] 59030.58",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 5243.95,
+        "citation": "[Report1!C55] 5243.95",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 5410.2,
+        "citation": "[Report1!N55] 5410.2",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C55:N55] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "619-999",
+        "citation": "[Report1!A56] 619-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL PAYROLL AND EMPLOYEE BENEFITS",
+        "citation": "[Report1!B56] TOTAL PAYROLL AND EMPLOYEE BENEFITS",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "PAYROLL AND EMPLOYEE BENEFITS",
+        "citation": "[Report1!A52] 610-000 PAYROLL AND EMPLOYEE BENEFITS",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B56] TOTAL PAYROLL AND EMPLOYEE BENEFITS",
+        "confidence": 0.9
+      },
+      "amount_total": {
+        "value": 409187.49,
+        "citation": "[Report1!O56] 409187.49",
+        "confidence": 0.6
+      },
+      "amount_first_month": {
+        "value": 32786.5,
+        "citation": "[Report1!C56] 32786.5",
+        "confidence": 0.6
+      },
+      "amount_last_month": {
+        "value": 26812.92,
+        "citation": "[Report1!N56] 26812.92",
+        "confidence": 0.6
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C56:N56] non-zero values",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "621-000",
+        "citation": "[Report1!A58] 621-000",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Elevator - Repairs and Maintenance",
+        "citation": "[Report1!A58] Elevator - Repairs and Maintenance",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B58] Elevator - Repairs and Maintenance",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 6123.17,
+        "citation": "[Report1!O58] 6123.17",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 1836.1,
+        "citation": "[Report1!C58] 1836.1",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 360.35,
+        "citation": "[Report1!N58] 360.35",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 4,
+        "citation": "[Report1!C58:N58] 1836.1 ... 360.35",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "621-001",
+        "citation": "[Report1!A59] 621-001",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Elevator - Contract",
+        "citation": "[Report1!A59] Elevator - Contract",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B59] Elevator - Contract",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 54461.32,
+        "citation": "[Report1!O59] 54461.32",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 3536.28,
+        "citation": "[Report1!C59] 3536.28",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 3481.02,
+        "citation": "[Report1!N59] 3481.02",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C59:N59] 3536.28 ... 3481.02",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "621-002",
+        "citation": "[Report1!A60] 621-002",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Elevator - Inspections",
+        "citation": "[Report1!A60] Elevator - Inspections",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B60] Elevator - Inspections",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 610,
+        "citation": "[Report1!O60] 610",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 500,
+        "citation": "[Report1!C60] 500",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N60] 0",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 5,
+        "citation": "[Report1!C60:N60] 500 ... 0",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-000",
+        "citation": "[Report1!A61] 622-000",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Repairs - General",
+        "citation": "[Report1!A61] Repairs - General",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B61] Repairs - General",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 24522.68,
+        "citation": "[Report1!O61] 24522.68",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C61] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 3745.4,
+        "citation": "[Report1!N61] 3745.4",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 7,
+        "citation": "[Report1!C61:N61] 0 ... 3745.4",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-002",
+        "citation": "[Report1!A62] 622-002",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Equipment Supplies",
+        "citation": "[Report1!A62] Equipment Supplies",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B62] Equipment Supplies",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 1617.8,
+        "citation": "[Report1!O62] 1617.8",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C62] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N62] 0",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 4,
+        "citation": "[Report1!C62:N62] 0 ... 0",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-003",
+        "citation": "[Report1!A63] 622-003",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Glass / Screen Supplies",
+        "citation": "[Report1!A63] Glass / Screen Supplies",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B63] Glass / Screen Supplies",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 6189.64,
+        "citation": "[Report1!O63] 6189.64",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": -521.27,
+        "citation": "[Report1!C63] -521.27",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 2990.82,
+        "citation": "[Report1!N63] 2990.82",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 5,
+        "citation": "[Report1!C63:N63] -521.27 ... 2990.82",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-004",
+        "citation": "[Report1!A64] 622-004",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Hardware Supplies",
+        "citation": "[Report1!A64] Hardware Supplies",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B64] Hardware Supplies",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 21193.03,
+        "citation": "[Report1!O64] 21193.03",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 1011.46,
+        "citation": "[Report1!C64] 1011.46",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 2864.55,
+        "citation": "[Report1!N64] 2864.55",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C64:N64] 1011.46 ... 2864.55",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-005",
+        "citation": "[Report1!A65] 622-005",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Maintenance Supplies",
+        "citation": "[Report1!A65] Maintenance Supplies",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B65] Maintenance Supplies",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 655.55,
+        "citation": "[Report1!O65] 655.55",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C65] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N65] 0",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!F65] 655.55",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-006",
+        "citation": "[Report1!A66] 622-006",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Fire and Life Safety",
+        "citation": "[Report1!A66] Fire and Life Safety",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B66] Fire and Life Safety",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 33380.95,
+        "citation": "[Report1!O66] 33380.95",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 1612.52,
+        "citation": "[Report1!C66] 1612.52",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 1867.47,
+        "citation": "[Report1!N66] 1867.47",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 11,
+        "citation": "[Report1!C66:N66] 1612.52 ... 1867.47",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-007",
+        "citation": "[Report1!A67] 622-007",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Paint Supplies",
+        "citation": "[Report1!A67] Paint Supplies",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B67] Paint Supplies",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 7283.03,
+        "citation": "[Report1!O67] 7283.03",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C67] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 2652.74,
+        "citation": "[Report1!N67] 2652.74",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 7,
+        "citation": "[Report1!C67:N67] 0 ... 2652.74",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-010",
+        "citation": "[Report1!A68] 622-010",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Key / Lock Services",
+        "citation": "[Report1!A68] Key / Lock Services",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B68] Key / Lock Services",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 7427.44,
+        "citation": "[Report1!O68] 7427.44",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C68] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N68] 0",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 6,
+        "citation": "[Report1!D68] 3133.39",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-011",
+        "citation": "[Report1!A69] 622-011",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Pest Control Services",
+        "citation": "[Report1!A69] Pest Control Services",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B69] Pest Control Services",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 3906.48,
+        "citation": "[Report1!O69] 3906.48",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 133.57,
+        "citation": "[Report1!C69] 133.57",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 292.55,
+        "citation": "[Report1!N69] 292.55",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C69:N69] 133.57 ... 292.55",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-019",
+        "citation": "[Report1!A70] 622-019",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Maintenance Contract",
+        "citation": "[Report1!A70] Maintenance Contract",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B70] Maintenance Contract",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 509994.01,
+        "citation": "[Report1!O70] 509994.01",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 53179.81,
+        "citation": "[Report1!C70] 53179.81",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 54459.95,
+        "citation": "[Report1!N70] 54459.95",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C70:N70] 53179.81 ... 54459.95",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "622-022",
+        "citation": "[Report1!A71] 622-022",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Uniforms",
+        "citation": "[Report1!A71] Uniforms",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B71] Uniforms",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 8010.36,
+        "citation": "[Report1!O71] 8010.36",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 931.37,
+        "citation": "[Report1!C71] 931.37",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 163.05,
+        "citation": "[Report1!N71] 163.05",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C71:N71] 931.37 ... 163.05",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "623-000",
+        "citation": "[Report1!A72] 623-000",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Repairs - Electrical/HVAC",
+        "citation": "[Report1!A72] Repairs - Electrical/HVAC",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B72] Repairs - Electrical/HVAC",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 16019.26,
+        "citation": "[Report1!O72] 16019.26",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 1447.64,
+        "citation": "[Report1!C72] 1447.64",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 929.49,
+        "citation": "[Report1!N72] 929.49",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 10,
+        "citation": "[Report1!C72:N72] 1447.64 ... 929.49",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "623-001",
+        "citation": "[Report1!A73] 623-001",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Electrical Supplies",
+        "citation": "[Report1!B73] Electrical Supplies",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B73] Electrical Supplies",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 8701.19,
+        "citation": "[Report1!O73] 8701.19",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 728.08,
+        "citation": "[Report1!C73] 728.08",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 652.82,
+        "citation": "[Report1!N73] 652.82",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C73:N73] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "623-002",
+        "citation": "[Report1!A74] 623-002",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "HVAC Supplies",
+        "citation": "[Report1!B74] HVAC Supplies",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B74] HVAC Supplies",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 15129.02,
+        "citation": "[Report1!O74] 15129.02",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 363.38,
+        "citation": "[Report1!C74] 363.38",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 2896.85,
+        "citation": "[Report1!N74] 2896.85",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 11,
+        "citation": "[Report1!K74] 0 in one month",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "624-000",
+        "citation": "[Report1!A75] 624-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Repairs - Plumbing",
+        "citation": "[Report1!B75] Repairs - Plumbing",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B75] Repairs - Plumbing",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 18178.05,
+        "citation": "[Report1!O75] 18178.05",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 7460.84,
+        "citation": "[Report1!C75] 7460.84",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N75] 0",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 8,
+        "citation": "[Report1!C75:N75] nonzero in 8 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "624-001",
+        "citation": "[Report1!A76] 624-001",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Plumbing Supplies",
+        "citation": "[Report1!B76] Plumbing Supplies",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B76] Plumbing Supplies",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 624.54,
+        "citation": "[Report1!O76] 624.54",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C76] 0",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N76] 0",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 5,
+        "citation": "[Report1!C76:N76] nonzero in 5 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "626-000",
+        "citation": "[Report1!A77] 626-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Landscaping",
+        "citation": "[Report1!B77] Landscaping",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B77] Landscaping",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 18212.34,
+        "citation": "[Report1!O77] 18212.34",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 8163.02,
+        "citation": "[Report1!C77] 8163.02",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 1080.13,
+        "citation": "[Report1!N77] 1080.13",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 6,
+        "citation": "[Report1!C77:N77] nonzero in 6 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "627-000",
+        "citation": "[Report1!A78] 627-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Cleaning-Contract",
+        "citation": "[Report1!B78] Cleaning-Contract",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B78] Cleaning-Contract",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 70939.36,
+        "citation": "[Report1!O78] 70939.36",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 2671.38,
+        "citation": "[Report1!C78] 2671.38",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 2011.55,
+        "citation": "[Report1!N78] 2011.55",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C78:N78] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "627-001",
+        "citation": "[Report1!A79] 627-001",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Cleaning-Supplies",
+        "citation": "[Report1!B79] Cleaning-Supplies",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B79] Cleaning-Supplies",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 9269.27,
+        "citation": "[Report1!O79] 9269.27",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": -179.94,
+        "citation": "[Report1!C79] -179.94",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 804.68,
+        "citation": "[Report1!N79] 804.68",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C79:N79] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "628-000",
+        "citation": "[Report1!A80] 628-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Snow Removal",
+        "citation": "[Report1!B80] Snow Removal",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B80] Snow Removal",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 0,
+        "citation": "[Report1!O80] 0",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C80] 0",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N80] 0",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 0,
+        "citation": "[Report1!C80:N80] all zero",
+        "confidence": 0.95
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "629-999",
+        "citation": "[Report1!A81] 629-999",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "TOTAL REPAIRS AND MAINTENANCE",
+        "citation": "[Report1!B81] TOTAL REPAIRS AND MAINTENANCE",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B81] TOTAL REPAIRS AND MAINTENANCE",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 842448.49,
+        "citation": "[Report1!O81] 842448.49",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 82874.24,
+        "citation": "[Report1!C81] 82874.24",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 81253.42,
+        "citation": "[Report1!N81] 81253.42",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C81:N81] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "631-000",
+        "citation": "[Report1!A83] 631-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Gas Common Area",
+        "citation": "[Report1!B83] Gas Common Area",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": "UTILITIES",
+        "citation": "[Report1!B82] UTILITIES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B83] Gas Common Area",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 95248.63,
+        "citation": "[Report1!O83] 95248.63",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 9904.36,
+        "citation": "[Report1!C83] 9904.36",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 6799.35,
+        "citation": "[Report1!N83] 6799.35",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C83:N83] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "633-000",
+        "citation": "[Report1!A84] 633-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Electric Vacant",
+        "citation": "[Report1!B84] Electric Vacant",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": "UTILITIES",
+        "citation": "[Report1!B82] UTILITIES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B84] Electric Vacant",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 6529.55,
+        "citation": "[Report1!O84] 6529.55",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 1123.35,
+        "citation": "[Report1!C84] 1123.35",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 810.8,
+        "citation": "[Report1!N84] 810.8",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C84:N84] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "633-001",
+        "citation": "[Report1!A85] 633-001",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Electricity - Common Area",
+        "citation": "[Report1!B85] Electricity - Common Area",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": "UTILITIES",
+        "citation": "[Report1!B82] UTILITIES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B85] Electricity - Common Area",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 149859.62,
+        "citation": "[Report1!O85] 149859.62",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 15974.27,
+        "citation": "[Report1!C85] 15974.27",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 18022.93,
+        "citation": "[Report1!N85] 18022.93",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C85:N85] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "633-002",
+        "citation": "[Report1!A86] 633-002",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Electricity - Model Units",
+        "citation": "[Report1!B86] Electricity - Model Units",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": "UTILITIES",
+        "citation": "[Report1!B82] UTILITIES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B86] Electricity - Model Units",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 443.3,
+        "citation": "[Report1!O86] 443.3",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 372.03,
+        "citation": "[Report1!C86] 372.03",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 28.26,
+        "citation": "[Report1!N86] 28.26",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 8,
+        "citation": "[Report1!C86:N86] nonzero in 8 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "633-500",
+        "citation": "[Report1!A87] 633-500",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Water and Sewer",
+        "citation": "[Report1!B87] Water and Sewer",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": "UTILITIES",
+        "citation": "[Report1!B82] UTILITIES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B87] Water and Sewer",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 37157.21,
+        "citation": "[Report1!O87] 37157.21",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 20272.48,
+        "citation": "[Report1!C87] 20272.48",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 8993.74,
+        "citation": "[Report1!N87] 8993.74",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C87:N87] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "635-000",
+        "citation": "[Report1!A88] 635-000",
+        "confidence": 0.97
+      },
+      "line_item": {
+        "value": "Waste Removal",
+        "citation": "[Report1!B88] Waste Removal",
+        "confidence": 0.97
+      },
+      "section": {
+        "value": "UTILITIES",
+        "citation": "[Report1!B82] UTILITIES",
+        "confidence": 0.9
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B88] Waste Removal",
+        "confidence": 0.85
+      },
+      "amount_total": {
+        "value": 25236.36,
+        "citation": "[Report1!O88] 25236.36",
+        "confidence": 0.97
+      },
+      "amount_first_month": {
+        "value": 1871.06,
+        "citation": "[Report1!C88] 1871.06",
+        "confidence": 0.97
+      },
+      "amount_last_month": {
+        "value": 2284.49,
+        "citation": "[Report1!N88] 2284.49",
+        "confidence": 0.97
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C88:N88] nonzero in all 12 months",
+        "confidence": 0.9
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "636-000",
+        "citation": "[Report1!A89] 636-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Other Utilities",
+        "citation": "[Report1!B89] Other Utilities",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B89] Other Utilities",
+        "confidence": 0.6
+      },
+      "amount_total": {
+        "value": 654,
+        "citation": "[Report1!O89] 654",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C89] 0",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N89] 0",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!L89] 654",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "639-999",
+        "citation": "[Report1!A90] 639-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL UTILITIES",
+        "citation": "[Report1!B90] TOTAL UTILITIES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B90] TOTAL UTILITIES",
+        "confidence": 0.6
+      },
+      "amount_total": {
+        "value": 315128.67,
+        "citation": "[Report1!O90] 315128.67",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 49517.55,
+        "citation": "[Report1!C90] 49517.55",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 36939.57,
+        "citation": "[Report1!N90] 36939.57",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C90] 49517.55",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "641-000",
+        "citation": "[Report1!A92] 641-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Security Services",
+        "citation": "[Report1!B92] Security Services",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B92] Security Services",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 395188.57,
+        "citation": "[Report1!O92] 395188.57",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 30426.07,
+        "citation": "[Report1!C92] 30426.07",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 35314.07,
+        "citation": "[Report1!N92] 35314.07",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C92] 30426.07",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-000",
+        "citation": "[Report1!A93] 644-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Administrative Expenses",
+        "citation": "[Report1!B93] Administrative Expenses",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B93] Administrative Expenses",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 10106.31,
+        "citation": "[Report1!O93] 10106.31",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 1274.89,
+        "citation": "[Report1!C93] 1274.89",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 1587.52,
+        "citation": "[Report1!N93] 1587.52",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C93] 1274.89",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-001",
+        "citation": "[Report1!A94] 644-001",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Office Expense/Supplies",
+        "citation": "[Report1!B94] Office Expense/Supplies",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B94] Office Expense/Supplies",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 9679.99,
+        "citation": "[Report1!O94] 9679.99",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 1477.85,
+        "citation": "[Report1!C94] 1477.85",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 1777.8,
+        "citation": "[Report1!N94] 1777.8",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 11,
+        "citation": "[Report1!G94] 0",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-002",
+        "citation": "[Report1!A95] 644-002",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Software",
+        "citation": "[Report1!B95] Software",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B95] Software",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 108588.72,
+        "citation": "[Report1!O95] 108588.72",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 24689.29,
+        "citation": "[Report1!C95] 24689.29",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 5475.3,
+        "citation": "[Report1!N95] 5475.3",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C95] 24689.29",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-003",
+        "citation": "[Report1!A96] 644-003",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Postage and Delivery",
+        "citation": "[Report1!B96] Postage and Delivery",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B96] Postage and Delivery",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 276.97,
+        "citation": "[Report1!O96] 276.97",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 99.5,
+        "citation": "[Report1!C96] 99.5",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 3.91,
+        "citation": "[Report1!N96] 3.91",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 11,
+        "citation": "[Report1!M96] 0",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-004",
+        "citation": "[Report1!A97] 644-004",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Telephone Landline",
+        "citation": "[Report1!B97] Telephone Landline",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B97] Telephone Landline",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 21624.54,
+        "citation": "[Report1!O97] 21624.54",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 2887.49,
+        "citation": "[Report1!C97] 2887.49",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 1771.89,
+        "citation": "[Report1!N97] 1771.89",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C97] 2887.49",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-005",
+        "citation": "[Report1!A98] 644-005",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Telephone Cell and Mobile",
+        "citation": "[Report1!B98] Telephone Cell and Mobile",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B98] Telephone Cell and Mobile",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 2280.17,
+        "citation": "[Report1!O98] 2280.17",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 235.88,
+        "citation": "[Report1!C98] 235.88",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 432.38,
+        "citation": "[Report1!N98] 432.38",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C98] 235.88",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-007",
+        "citation": "[Report1!A99] 644-007",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Bank Service Charges",
+        "citation": "[Report1!B99] Bank Service Charges",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B99] Bank Service Charges",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 6503.65,
+        "citation": "[Report1!O99] 6503.65",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 454.76,
+        "citation": "[Report1!C99] 454.76",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 605.19,
+        "citation": "[Report1!N99] 605.19",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C99] 454.76",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-011",
+        "citation": "[Report1!A100] 644-011",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Licenses and Permits",
+        "citation": "[Report1!B100] Licenses and Permits",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B100] Licenses and Permits",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 30777.5,
+        "citation": "[Report1!O100] 30777.5",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 28.13,
+        "citation": "[Report1!C100] 28.13",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 29140.78,
+        "citation": "[Report1!N100] 29140.78",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 4,
+        "citation": "[Report1!N100] 29140.78",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-012",
+        "citation": "[Report1!A101] 644-012",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "IT Services",
+        "citation": "[Report1!B101] IT Services",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B101] IT Services",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 19098.54,
+        "citation": "[Report1!O101] 19098.54",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 1046.57,
+        "citation": "[Report1!C101] 1046.57",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 3315.01,
+        "citation": "[Report1!N101] 3315.01",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C101] 1046.57",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-014",
+        "citation": "[Report1!A102] 644-014",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Seminars and Conferences",
+        "citation": "[Report1!B102] Seminars and Conferences",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B102] Seminars and Conferences",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 11308.25,
+        "citation": "[Report1!O102] 11308.25",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 827.73,
+        "citation": "[Report1!C102] 827.73",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 2515.56,
+        "citation": "[Report1!N102] 2515.56",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C102] 827.73",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-017",
+        "citation": "[Report1!A103] 644-017",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Meals and Entertainment",
+        "citation": "[Report1!B103] Meals and Entertainment",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER EXPENSES",
+        "citation": "[Report1!B91] OTHER EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B103] Meals and Entertainment",
+        "confidence": 0.8
+      },
+      "amount_total": {
+        "value": 2530.79,
+        "citation": "[Report1!O103] 2530.79",
+        "confidence": 0.8
+      },
+      "amount_first_month": {
+        "value": 326.62,
+        "citation": "[Report1!C103] 326.62",
+        "confidence": 0.7
+      },
+      "amount_last_month": {
+        "value": 427.25,
+        "citation": "[Report1!N103] 427.25",
+        "confidence": 0.7
+      },
+      "months_with_activity": {
+        "value": 9,
+        "citation": "[Report1!E103] 0",
+        "confidence": 0.7
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-020",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Hotel and Travel Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 1960.35,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 13.03,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 735.97,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 10,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "644-021",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Cable Television",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 3001.35,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 234.07,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 245.08,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "645-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Advertising / Marketing Expenses",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 11923.53,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 338.84,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 707.34,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "645-001",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Marketing - Internet/Print Ad/Material",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 128028.82,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 9430.87,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 11186.44,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "645-002",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Marketing - Promotions/Events",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 35438.38,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 3096.94,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 5960.46,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "645-003",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Marketing - Model Unit Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 2804.03,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 361.57,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 8,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "645-004",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Marketing - Referrals",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 82252.99,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 7890.05,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": -2727.16,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "646-500",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Insurance Expenses",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 113228.3,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 10096.44,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 10315.81,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "647-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Turnover Expenses",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 96699.38,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 920.46,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 6253.84,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "649-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL OTHER EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 1093301.13,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 95795.48,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 115406.01,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "650-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "PROFESSIONAL FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Other",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "651-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Accounting Fees",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "PROFESSIONAL FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 45048,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 3754,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 3754,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "652-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Consulting Fees",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "PROFESSIONAL FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 13322.6,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 858.89,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 662.24,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 10,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "653-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Legal General",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "PROFESSIONAL FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 3763.05,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": -615.97,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 386.39,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "659-999",
+        "citation": "[Report1!A118] 659-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL PROFESSIONAL FEES",
+        "citation": "[Report1!B118] TOTAL PROFESSIONAL FEES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B118] TOTAL PROFESSIONAL FEES",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 62133.65,
+        "citation": "[Report1!O118] 62133.65",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 3996.92,
+        "citation": "[Report1!C118] 3996.92",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 4802.63,
+        "citation": "[Report1!N118] 4802.63",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C118] 3996.92",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "660-000",
+        "citation": "[Report1!A119] 660-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "MANAGEMENT FEES",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Other",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.5
+      },
+      "amount_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 0,
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.5
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "799-000",
+        "citation": "[Report1!A122] 799-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL OPERATING EXPENSES",
+        "citation": "[Report1!B122] TOTAL OPERATING EXPENSES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B122] TOTAL OPERATING EXPENSES",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 2983675.92,
+        "citation": "[Report1!O122] 2983675.92",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 285291.94,
+        "citation": "[Report1!C122] 285291.94",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 287443.68,
+        "citation": "[Report1!N122] 287443.68",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C122] 285291.94",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "799-900",
+        "citation": "[Report1!A123] 799-900",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL EXPENSES",
+        "citation": "[Report1!B123] TOTAL EXPENSES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B123] TOTAL EXPENSES",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 2983675.92,
+        "citation": "[Report1!O123] 2983675.92",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 285291.94,
+        "citation": "[Report1!C123] 285291.94",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 287443.68,
+        "citation": "[Report1!N123] 287443.68",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C123] 285291.94",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "799-999",
+        "citation": "[Report1!A124] 799-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL OPERATING Income BEFORE FIXED CHARGES",
+        "citation": "[Report1!B124] TOTAL OPERATING Income BEFORE FIXED CHARGES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Other",
+        "citation": "[Report1!B124] TOTAL OPERATING Income BEFORE FIXED",
+        "confidence": 0.5
+      },
+      "amount_total": {
+        "value": 5665894.03,
+        "citation": "[Report1!O124] 5665894.03",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 409313.43,
+        "citation": "[Report1!C124] 409313.43",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 447129.2,
+        "citation": "[Report1!N124] 447129.2",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C124] 409313.43",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "800-000",
+        "citation": "[Report1!A125] 800-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "NON-OPERATING EXPENSES",
+        "citation": "[Report1!B125] NON-OPERATING EXPENSES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Other",
+        "citation": "[Report1!B125] NON-OPERATING EXPENSES",
+        "confidence": 0.5
+      },
+      "amount_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 0,
+        "citation": "[Report1!B125] NON-OPERATING EXPENSES",
+        "confidence": 0.5
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "820-000",
+        "citation": "[Report1!A126] 820-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "REAL ESTATE TAXES",
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "NON-OPERATING EXPENSES",
+        "citation": "[Report1!B125] NON-OPERATING EXPENSES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Other",
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.5
+      },
+      "amount_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 0,
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.5
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "821-000",
+        "citation": "[Report1!A127] 821-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Real Estate Tax",
+        "citation": "[Report1!B127] Real Estate Tax",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "REAL ESTATE TAXES",
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B127] Real Estate Tax",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 939567.72,
+        "citation": "[Report1!O127] 939567.72",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 89061.64,
+        "citation": "[Report1!C127] 89061.64",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 90168.64,
+        "citation": "[Report1!N127] 90168.64",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!D127] -46330.43",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "821-500",
+        "citation": "[Report1!A128] 821-500",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "Real Estate Tax Consulting",
+        "citation": "[Report1!B128] Real Estate Tax Consulting",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "REAL ESTATE TAXES",
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B128] Real Estate Tax Consulting",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 21915.17,
+        "citation": "[Report1!O128] 21915.17",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C128] 0",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N128] 0",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 4,
+        "citation": "[Report1!D128] 4319.25",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "829-999",
+        "citation": "[Report1!A129] 829-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL REAL ESTATE TAXES",
+        "citation": "[Report1!B129] TOTAL REAL ESTATE TAXES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "REAL ESTATE TAXES",
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.8
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B129] TOTAL REAL ESTATE TAXES",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 961482.89,
+        "citation": "[Report1!O129] 961482.89",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 89061.64,
+        "citation": "[Report1!C129] 89061.64",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 90168.64,
+        "citation": "[Report1!N129] 90168.64",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!D129] -42011.18",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-000",
+        "citation": "[Report1!A130] 830-000",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "REAL ESTATE TAXES",
+        "citation": "[Report1!B126] REAL ESTATE TAXES",
+        "confidence": 0.5
+      },
+      "category": {
+        "value": "Other",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.5
+      },
+      "amount_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 0,
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.5
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "835-999",
+        "citation": "[Report1!A133] 835-999",
+        "confidence": 0.95
+      },
+      "line_item": {
+        "value": "TOTAL NON-OPERATING EXPENSES",
+        "citation": "[Report1!B133] TOTAL NON-OPERATING EXPENSES",
+        "confidence": 0.95
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 0.5
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B133] TOTAL NON-OPERATING EXPENSES",
+        "confidence": 0.7
+      },
+      "amount_total": {
+        "value": 970764.89,
+        "citation": "[Report1!O133] 970764.89",
+        "confidence": 0.7
+      },
+      "amount_first_month": {
+        "value": 89061.64,
+        "citation": "[Report1!C133] 89061.64",
+        "confidence": 0.8
+      },
+      "amount_last_month": {
+        "value": 90168.64,
+        "citation": "[Report1!N133] 90168.64",
+        "confidence": 0.8
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C133] 89061.64",
+        "confidence": 0.8
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "837-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "NET OPERATING Income",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 4695129.14,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 320251.79,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 356960.56,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "841-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Interest on 1st Mortgage",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "INTEREST EXPENSE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 2662161.41,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 235607.48,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 213951.02,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "849-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL INTEREST EXPENSE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "INTEREST EXPENSE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 2662161.41,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 235607.48,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 213951.02,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "859-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "NET Income BEFORE DEPR AND AMORT",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "INTEREST EXPENSE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 2032967.73,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 84644.31,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 143009.54,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "864-000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Amortization - Deferred Financing Costs",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "DEPRECIATION AND AMORTIZATION",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 88082.28,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 7340.19,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 7340.19,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "869-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL DEPRECIATION AND AMORTIZATION",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "DEPRECIATION AND AMORTIZATION",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 88082.28,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 7340.19,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 7340.19,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "870-300",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Professional Services - Legal / Accounting",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER MISCELLANEOUS Income AND EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 59425,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 36019.42,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 3,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "871-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL OTHER MISCELLANEOUS Income AND EXPENSE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER MISCELLANEOUS Income AND EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 59425,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 36019.42,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 3,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "999-900",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "NET Income (LOSS)",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER MISCELLANEOUS Income AND EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 1885460.45,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 41284.7,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 135669.35,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "152-300",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Building Improvements",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "Capital Expenditure",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Other",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 227388.86,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 23536.23,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 28112.8,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "199-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL ASSETS",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "Capital Expenditure",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Other",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 227388.86,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 23536.23,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 28112.8,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "model_calls": 11,
+    "tokens_in": 33662,
+    "tokens_out": 67825,
+    "cost_usd": 0.037279,
+    "cost_settled_usd": 0.037279,
+    "latency_ms": 229933,
+    "calls": [
+      {
+        "call": 1,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 1187,
+        "duration_ms": 11402,
+        "status": "success",
+        "tokens_in": 1879,
+        "tokens_out": 3148,
+        "reserved_usd": 0.101426,
+        "cost_usd": 0.001762,
+        "cumulative_cost_usd": 0.001762,
+        "note": ""
+      },
+      {
+        "call": 2,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 1187,
+        "duration_ms": 8173,
+        "status": "success",
+        "tokens_in": 1879,
+        "tokens_out": 1969,
+        "reserved_usd": 0.101426,
+        "cost_usd": 0.001172,
+        "cumulative_cost_usd": 0.002934,
+        "note": ""
+      },
+      {
+        "call": 3,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3475,
+        "duration_ms": 25926,
+        "status": "success",
+        "tokens_in": 3350,
+        "tokens_out": 7872,
+        "reserved_usd": 0.102141,
+        "cost_usd": 0.004271,
+        "cumulative_cost_usd": 0.007205,
+        "note": ""
+      },
+      {
+        "call": 4,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3576,
+        "duration_ms": 19310,
+        "status": "success",
+        "tokens_in": 3447,
+        "tokens_out": 5127,
+        "reserved_usd": 0.102174,
+        "cost_usd": 0.002908,
+        "cumulative_cost_usd": 0.010113,
+        "note": ""
+      },
+      {
+        "call": 5,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3448,
+        "duration_ms": 25625,
+        "status": "success",
+        "tokens_in": 3327,
+        "tokens_out": 7819,
+        "reserved_usd": 0.102134,
+        "cost_usd": 0.004242,
+        "cumulative_cost_usd": 0.014356,
+        "note": ""
+      },
+      {
+        "call": 6,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3474,
+        "duration_ms": 28506,
+        "status": "success",
+        "tokens_in": 3385,
+        "tokens_out": 8766,
+        "reserved_usd": 0.102141,
+        "cost_usd": 0.004722,
+        "cumulative_cost_usd": 0.019077,
+        "note": ""
+      },
+      {
+        "call": 7,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3654,
+        "duration_ms": 25892,
+        "status": "success",
+        "tokens_in": 3482,
+        "tokens_out": 8265,
+        "reserved_usd": 0.102197,
+        "cost_usd": 0.004481,
+        "cumulative_cost_usd": 0.023558,
+        "note": ""
+      },
+      {
+        "call": 8,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3534,
+        "duration_ms": 23074,
+        "status": "success",
+        "tokens_in": 3330,
+        "tokens_out": 7352,
+        "reserved_usd": 0.10216,
+        "cost_usd": 0.004009,
+        "cumulative_cost_usd": 0.027567,
+        "note": ""
+      },
+      {
+        "call": 9,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3577,
+        "duration_ms": 13418,
+        "status": "success",
+        "tokens_in": 3233,
+        "tokens_out": 3706,
+        "reserved_usd": 0.102174,
+        "cost_usd": 0.002176,
+        "cumulative_cost_usd": 0.029743,
+        "note": ""
+      },
+      {
+        "call": 10,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3582,
+        "duration_ms": 33431,
+        "status": "success",
+        "tokens_in": 3253,
+        "tokens_out": 10008,
+        "reserved_usd": 0.102175,
+        "cost_usd": 0.005329,
+        "cumulative_cost_usd": 0.035072,
+        "note": ""
+      },
+      {
+        "call": 11,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "period_start",
+          "period_end",
+          "gl_code",
+          "line_item",
+          "section",
+          "category",
+          "amount_total",
+          "amount_first_month",
+          "amount_last_month",
+          "months_with_activity"
+        ],
+        "context_chars": 3386,
+        "duration_ms": 14953,
+        "status": "success",
+        "tokens_in": 3097,
+        "tokens_out": 3793,
+        "reserved_usd": 0.102114,
+        "cost_usd": 0.002206,
+        "cumulative_cost_usd": 0.037279,
+        "note": ""
+      }
+    ],
+    "conflicts": [
+      "row '660-500': duplicate across calls; kept the first",
+      "row '669-999': duplicate across calls; kept the first",
+      "row '830-500': duplicate across calls; kept the first",
+      "row '830-999': duplicate across calls; kept the first",
+      "row '660-500': duplicate across calls; kept the first",
+      "row '669-999': duplicate across calls; kept the first",
+      "row '830-500': duplicate across calls; kept the first",
+      "row '830-999': duplicate across calls; kept the first"
+    ],
+    "models": {
+      "anthropic/claude-haiku-5.5": {
+        "calls": 11,
+        "tokens_in": 33662,
+        "tokens_out": 67825,
+        "settled_cost_usd": 0.037279
+      }
+    }
+  },
+  "document": "t12_001"
+}

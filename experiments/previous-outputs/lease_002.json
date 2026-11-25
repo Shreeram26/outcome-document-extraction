@@ -1,0 +1,321 @@
+{
+  "schema": "lease_abstraction",
+  "entries": [
+    {
+      "tenant_name": {
+        "value": "KESTREL ANALYTICS USA LLC",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "landlord_legal_name": {
+        "value": "850 N. HARLOW AVENUE LLC",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_name": {
+        "value": "ONE HARLOW PLACE",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "building_address": {
+        "value": "850 N. HARLOW AVENUE, Naperville, Illinois 60540",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "premises": {
+        "value": "Suite 310",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rentable_square_footage": {
+        "value": 1842,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "pro_rata_share": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "permitted_use": {
+        "value": "general office purposes and no other purpose",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "lease_execution_date": {
+        "value": "2025-08-21",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "lease_commencement_date": {
+        "value": "2025-10-01",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rent_commencement_date": {
+        "value": "2025-10-01",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "lease_expiration_date": {
+        "value": "2027-04-30",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "lease_term_months": {
+        "value": 19,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rent_schedule_start_dates": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rent_schedule_end_dates": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rent_schedule_monthly_rent": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rent_schedule_annual_rent_per_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "total_base_rent": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "base_rent_escalation": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "free_rent_months": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "security_deposit_amount": {
+        "value": 2850,
+        "citation": "[SECURITY DEPOSIT] Dollars ($2,850.00)",
+        "confidence": 0.95
+      },
+      "letter_of_credit_required": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "expense_structure": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "base_year_expenses": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "base_year_taxes": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "electricity_provision": {
+        "value": "separately metered and billed directly to Tenant by ComEd",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "parking_spaces": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "parking_monthly_charge": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "ti_allowance_total": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "renewal_option_exists": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "renewal_options_count": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "renewal_term_months": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "renewal_notice_months": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "early_termination_right": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "termination_fee_description": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "right_to_sublet": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "guarantor_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "broker_names": {
+        "value": [],
+        "citation": "",
+        "confidence": 0.0
+      },
+      "late_fee": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "holdover_rent": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "model_calls": 2,
+    "tokens_in": 6970,
+    "tokens_out": 3768,
+    "cost_usd": 0.002581,
+    "cost_settled_usd": 0.002581,
+    "latency_ms": 15561,
+    "calls": [
+      {
+        "call": 1,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "tenant_name",
+          "landlord_legal_name",
+          "property_name",
+          "building_address",
+          "premises",
+          "rentable_square_footage",
+          "pro_rata_share",
+          "permitted_use",
+          "lease_execution_date",
+          "lease_commencement_date",
+          "rent_commencement_date",
+          "lease_expiration_date",
+          "lease_term_months",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "free_rent_months",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "electricity_provision",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "broker_names",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 5984,
+        "duration_ms": 9031,
+        "status": "success",
+        "tokens_in": 4776,
+        "tokens_out": 2173,
+        "reserved_usd": 0.10431,
+        "cost_usd": 0.001564,
+        "cumulative_cost_usd": 0.001564,
+        "note": ""
+      },
+      {
+        "call": 2,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "pro_rata_share",
+          "rent_schedule_start_dates",
+          "rent_schedule_end_dates",
+          "rent_schedule_monthly_rent",
+          "rent_schedule_annual_rent_per_rsf",
+          "total_base_rent",
+          "base_rent_escalation",
+          "security_deposit_amount",
+          "letter_of_credit_required",
+          "expense_structure",
+          "base_year_expenses",
+          "base_year_taxes",
+          "parking_spaces",
+          "parking_monthly_charge",
+          "ti_allowance_total",
+          "renewal_option_exists",
+          "renewal_options_count",
+          "renewal_term_months",
+          "renewal_notice_months",
+          "early_termination_right",
+          "termination_fee_description",
+          "right_to_sublet",
+          "guarantor_name",
+          "late_fee",
+          "holdover_rent"
+        ],
+        "context_chars": 326,
+        "duration_ms": 6473,
+        "status": "success",
+        "tokens_in": 2194,
+        "tokens_out": 1595,
+        "reserved_usd": 0.101866,
+        "cost_usd": 0.001017,
+        "cumulative_cost_usd": 0.002581,
+        "note": ""
+      }
+    ],
+    "models": {
+      "anthropic/claude-haiku-5.5": {
+        "calls": 2,
+        "tokens_in": 6970,
+        "tokens_out": 3768,
+        "settled_cost_usd": 0.002581
+      }
+    }
+  },
+  "document": "lease_002"
+}
