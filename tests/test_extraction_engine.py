@@ -265,7 +265,11 @@ def test_multi_entry_llm_response_preserved_for_primary_schema():
 
 
 def test_multi_record_merge_across_calls_fills_nulls_only():
-    doc = _pdf_doc(["nothing useful"])
+    doc = ParsedDocument(kind="pdf", filename="d.pdf", pages=[
+        Page(number=1, text="Row Id: R-1 Alpha: 1 " + "padding " * 250),
+        Page(number=2, text="Row Id: R-2 Alpha: 2 " + "padding " * 250),
+        Page(number=3, text="Row Id: R-1 Beta: 10 Row Id: R-2 Beta: 20 " + "padding " * 250),
+    ])
     transport, stub = make_transport([
         fake_response(json.dumps({"entries": [
             {"row_id": "R-1", "alpha": 1},
@@ -275,14 +279,47 @@ def test_multi_record_merge_across_calls_fills_nulls_only():
             {"row_id": "R-1", "beta": 10},
             {"row_id": "R-2", "beta": 20},
         ]})),
-    ] * 3)
-    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    ] * 6)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash", chunk_chars=4000)
     result = engine.extract(_primary_schema(), doc)
-    assert len(stub.calls) == 2
+    assert len(stub.calls) == 5
     assert len(result.entries) == 2
     assert [e["alpha"].value for e in result.entries] == [1, 2]
     assert [e["beta"].value for e in result.entries] == [10, 20]
     assert result.conflicts == []
+
+
+def test_coverage_driven_expansion_extracts_rows_from_unsent_content():
+    """Regression for the budget_001 diagnosis: field coverage was complete
+    while 15 records were never sent. Multi-record mode must continue to the
+    full stage whenever the previous context was trimmed."""
+    doc = ParsedDocument(kind="pdf", filename="d.pdf", pages=[
+        Page(number=1, text="Row Id: R-1 Alpha: 1 " + "padding " * 250),
+        Page(number=2, text="Row Id: R-2 Alpha: 2 " + "padding " * 250),
+        Page(number=3, text="Row Id: R-3 Alpha: 3 " + "padding " * 250),
+    ])
+    transport, stub = make_transport([
+        fake_response(json.dumps({"entries": [{"row_id": "R-1", "alpha": 1}]})),
+        fake_response(json.dumps({"entries": [{"row_id": "R-2", "alpha": 2}]})),
+        fake_response(json.dumps({"entries": [{"row_id": "R-3", "alpha": 3}]})),
+    ] * 6)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash", chunk_chars=4000)
+    result = engine.extract(_primary_schema(), doc)
+    assert len(stub.calls) == 5
+    assert [e["row_id"].value for e in result.entries] == ["R-1", "R-2", "R-3"]
+
+
+def test_multi_record_single_call_when_context_not_trimmed():
+    doc = ParsedDocument(kind="pdf", filename="d.pdf", pages=[
+        Page(number=1, text="Row Id: R-1 Alpha: 1 Beta: x"),
+    ])
+    entries = json.dumps({"entries": [{"row_id": "R-1", "alpha": 1, "beta": "x"}]})
+    transport, stub = make_transport([fake_response(entries)] * 3)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(_primary_schema(), doc)
+    assert len(stub.calls) == 1
+    assert len(result.entries) == 1
+    assert result.entries[0]["beta"].value == "x"
 
 
 def test_duplicate_primary_conflicting_values_keep_first_and_record_conflict():

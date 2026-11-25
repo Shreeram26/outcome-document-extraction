@@ -102,3 +102,21 @@ def test_render_multiline_cell_values_flattened():
     text = render_document(ParsedDocument(kind="csv", sheets=[sheet]))
     assert "line1 line2" in text
     assert "\nline2" not in text
+
+
+def test_primary_schema_prompt_adds_record_completeness_rule():
+    schema = normalize_schema(
+        {
+            "name": "rows",
+            "fields": {
+                "row_id": {"name": "Row Id", "description": "Identifier.", "primary": True},
+                "alpha": {"name": "Alpha", "description": "Value."},
+            },
+        }
+    )
+    system = build_messages(schema, _pdf_doc())[0]["content"]
+    assert "RECORD COMPLETENESS" in system
+    assert "EVERY record" in system
+    plain = normalize_schema({"fields": {"alpha": {"name": "Alpha", "description": ""}}})
+    system_plain = build_messages(plain, _pdf_doc())[0]["content"]
+    assert "RECORD COMPLETENESS" not in system_plain

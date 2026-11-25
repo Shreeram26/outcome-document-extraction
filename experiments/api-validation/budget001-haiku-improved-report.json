@@ -1,0 +1,362 @@
+{
+  "model": "anthropic/claude-haiku-5.5",
+  "skip_llm": false,
+  "dry_run": false,
+  "run_cost_cap": {
+    "cap_usd": 1.4,
+    "settled_usd": 0.033056,
+    "outstanding_usd": 0.0,
+    "exposure_usd": 0.033056,
+    "tripped": false,
+    "refused_calls": 0
+  },
+  "documents": [
+    {
+      "document": "budget_001",
+      "schema": "budget_variance",
+      "mode": "single",
+      "latency_ms": 189057,
+      "model_calls": 4,
+      "tokens_in": 3333,
+      "tokens_out": 13900,
+      "cost_usd": 0.033056,
+      "cost_settled_usd": 0.033056,
+      "call_log": [
+        {
+          "call": 1,
+          "model": "anthropic/claude-haiku-5.5",
+          "fields": [
+            "property_name",
+            "property_rsf",
+            "budget_year",
+            "gl_code",
+            "line_item",
+            "section",
+            "prior_year_budget",
+            "prior_year_reforecast",
+            "budget",
+            "reforecast_vs_prior_budget_variance",
+            "reforecast_vs_prior_budget_pct",
+            "budget_vs_reforecast_variance",
+            "budget_vs_reforecast_pct",
+            "explanation_of_variance"
+          ],
+          "context_chars": 5329,
+          "duration_ms": 49400,
+          "status": "parse_error",
+          "tokens_in": 4030,
+          "tokens_out": 16000,
+          "reserved_usd": 0.102855,
+          "cost_usd": 0.008403,
+          "cumulative_cost_usd": 0.008403,
+          "note": "model response contained no valid JSON; raw: '{\"entries\": [{\"property_name\": {\"value\": \"Lakeview Tower\", \"citation\": \"[Page 1] Lakeview Tower\", \"c'; response truncated at max_tokens"
+        },
+        {
+          "call": 2,
+          "model": "anthropic/claude-haiku-5.5",
+          "fields": [
+            "property_name",
+            "property_rsf",
+            "budget_year",
+            "gl_code",
+            "line_item",
+            "section",
+            "prior_year_budget",
+            "prior_year_reforecast",
+            "budget",
+            "reforecast_vs_prior_budget_variance",
+            "reforecast_vs_prior_budget_pct",
+            "budget_vs_reforecast_variance",
+            "budget_vs_reforecast_pct",
+            "explanation_of_variance"
+          ],
+          "context_chars": 10899,
+          "duration_ms": 49339,
+          "status": "parse_error",
+          "tokens_in": 6849,
+          "tokens_out": 16000,
+          "reserved_usd": 0.104596,
+          "cost_usd": 0.008685,
+          "cumulative_cost_usd": 0.017088,
+          "note": "model response contained no valid JSON; raw: '{\"entries\":[{\"property_name\":{\"value\":\"Lakeview Tower\",\"citation\":\"[Page 1] Lakeview Tower\",\"confide'; response truncated at max_tokens"
+        },
+        {
+          "call": 3,
+          "model": "anthropic/claude-haiku-5.5",
+          "fields": [
+            "property_name",
+            "property_rsf",
+            "budget_year",
+            "gl_code",
+            "line_item",
+            "section",
+            "prior_year_budget",
+            "prior_year_reforecast",
+            "budget",
+            "reforecast_vs_prior_budget_variance",
+            "reforecast_vs_prior_budget_pct",
+            "budget_vs_reforecast_variance",
+            "budget_vs_reforecast_pct",
+            "explanation_of_variance"
+          ],
+          "context_chars": 10899,
+          "duration_ms": 47980,
+          "status": "parse_error",
+          "tokens_in": 6849,
+          "tokens_out": 16000,
+          "reserved_usd": 0.104596,
+          "cost_usd": 0.008685,
+          "cumulative_cost_usd": 0.025773,
+          "note": "model response contained no valid JSON; raw: '{\"entries\":[{\"property_name\":{\"value\":\"Lakeview Tower\",\"citation\":\"[Page 1] Lakeview Tower\",\"confide'; response truncated at max_tokens"
+        },
+        {
+          "call": 4,
+          "model": "anthropic/claude-haiku-5.5",
+          "fields": [
+            "property_name",
+            "property_rsf",
+            "budget_year",
+            "gl_code",
+            "line_item",
+            "section",
+            "prior_year_budget",
+            "prior_year_reforecast",
+            "budget",
+            "reforecast_vs_prior_budget_variance",
+            "reforecast_vs_prior_budget_pct",
+            "budget_vs_reforecast_variance",
+            "budget_vs_reforecast_pct",
+            "explanation_of_variance"
+          ],
+          "context_chars": 3602,
+          "duration_ms": 42322,
+          "status": "success",
+          "tokens_in": 3333,
+          "tokens_out": 13900,
+          "reserved_usd": 0.102315,
+          "cost_usd": 0.007283,
+          "cumulative_cost_usd": 0.033056,
+          "note": ""
+        }
+      ],
+      "conflicts": [],
+      "contract_valid": true,
+      "contract_errors": [],
+      "warnings": [
+        "no table header matched the schema strongly enough",
+        "context trimmed to 5291 of 14381 characters",
+        "llm fallback failed (parse): model response contained no valid JSON; raw: '{\"entries\": [{\"property_name\": {\"value\": \"Lakeview Tower\", \"citation\": \"[Page 1] Lakeview Tower\", \"c'",
+        "response hit the max_tokens limit; increase --max-tokens or reduce chunk size",
+        "context trimmed to 10820 of 14381 characters",
+        "llm fallback failed (parse): model response contained no valid JSON; raw: '{\"entries\":[{\"property_name\":{\"value\":\"Lakeview Tower\",\"citation\":\"[Page 1] Lakeview Tower\",\"confide'",
+        "response hit the max_tokens limit; increase --max-tokens or reduce chunk size",
+        "llm fallback failed (parse): model response contained no valid JSON; raw: '{\"entries\":[{\"property_name\":{\"value\":\"Lakeview Tower\",\"citation\":\"[Page 1] Lakeview Tower\",\"confide'",
+        "response hit the max_tokens limit; increase --max-tokens or reduce chunk size"
+      ],
+      "field_provenance": {
+        "deterministic": [],
+        "llm": [
+          "property_name",
+          "property_rsf",
+          "budget_year",
+          "gl_code",
+          "line_item",
+          "section",
+          "prior_year_budget",
+          "prior_year_reforecast",
+          "budget",
+          "reforecast_vs_prior_budget_variance",
+          "reforecast_vs_prior_budget_pct",
+          "budget_vs_reforecast_variance",
+          "budget_vs_reforecast_pct"
+        ],
+        "unresolved": [
+          "explanation_of_variance"
+        ]
+      },
+      "entries": 15,
+      "validator_score": 0.2688,
+      "field_accuracy": {
+        "property_name": 0.273,
+        "property_rsf": 0.273,
+        "budget_year": 0.273,
+        "gl_code": 0.273,
+        "line_item": 0.273,
+        "section": 0.255,
+        "prior_year_budget": 0.273,
+        "prior_year_reforecast": 0.273,
+        "budget": 0.273,
+        "reforecast_vs_prior_budget_variance": 0.273,
+        "reforecast_vs_prior_budget_pct": 0.273,
+        "budget_vs_reforecast_variance": 0.273,
+        "budget_vs_reforecast_pct": 0.273,
+        "explanation_of_variance": 0.236
+      },
+      "field_accuracy_mean": 0.2688,
+      "incorrect_cells": 154,
+      "total_cells": 210,
+      "hallucinated_cells": 1,
+      "missed_cells": 0,
+      "hallucinated_fields": [
+        "explanation_of_variance[8085-0000]"
+      ],
+      "missed_fields": [],
+      "extra_rows": [],
+      "missing_rows": [
+        "6101-0000",
+        "6102-0000",
+        "6105-0000",
+        "6108-0000",
+        "6109-0000",
+        "6110-0000",
+        "6116-0000",
+        "6117-0000",
+        "6120-0000",
+        "6130-0000",
+        "6131-0000",
+        "6132-0000",
+        "7020-0000",
+        "7040-0000",
+        "7042-0000",
+        "7060-0000",
+        "7230-0000",
+        "7232-0000",
+        "7236-0000",
+        "7240-0000",
+        "7440-0000",
+        "7450-0000",
+        "7455-0000",
+        "7530-0000",
+        "7531-0000",
+        "7610-0000",
+        "7620-0000",
+        "7625-0000",
+        "7640-0000",
+        "7641-0000",
+        "7644-0000",
+        "7645-0000",
+        "7646-0000",
+        "7647-0000",
+        "7648-0000",
+        "7650-0000",
+        "7651-0000",
+        "7652-0000",
+        "7660-0000",
+        "7670-0000"
+      ],
+      "rows": {
+        "predicted": 15,
+        "truth": 55
+      },
+      "row_accuracy": 0.2727,
+      "output_file": "experiments/api-validation/budget_001.json"
+    }
+  ],
+  "overall": {
+    "documents": 1,
+    "contract_valid": 1,
+    "mean_validator_score": 0.2688,
+    "row_accuracy_mean": 0.2727,
+    "model_calls": 4,
+    "tokens_in": 3333,
+    "tokens_out": 13900,
+    "cost_usd": 0.033056,
+    "latency_ms_total": 189057,
+    "hallucinated_cells": 1,
+    "missed_cells": 0,
+    "incorrect_cells": 154,
+    "extra_rows": 0,
+    "missing_rows": 40,
+    "provenance": {
+      "deterministic": null,
+      "llm": 0.2716153846153847,
+      "unresolved": 0.236
+    },
+    "worst_fields": [
+      {
+        "document": "budget_001",
+        "field": "explanation_of_variance",
+        "accuracy": 0.236,
+        "provenance": "unresolved"
+      },
+      {
+        "document": "budget_001",
+        "field": "section",
+        "accuracy": 0.255,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "property_name",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "property_rsf",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget_year",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "gl_code",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "line_item",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "prior_year_budget",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "prior_year_reforecast",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "reforecast_vs_prior_budget_variance",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "reforecast_vs_prior_budget_pct",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget_vs_reforecast_variance",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      },
+      {
+        "document": "budget_001",
+        "field": "budget_vs_reforecast_pct",
+        "accuracy": 0.273,
+        "provenance": "llm"
+      }
+    ]
+  }
+}

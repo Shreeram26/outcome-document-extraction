@@ -18,7 +18,7 @@ Rules:
 4. Dates are strings in YYYY-MM-DD format.
 5. Percentages exactly as the document prints them (e.g. 91.67, never 0.9167) as JSON numbers.
 6. Booleans are true/false.
-7. "citation" is a short verbatim snippet from the document prefixed with its location, e.g. "[Page 3] Base Rent: $4,250.00 per month" or "[Sheet1!F4] 4250". Never fabricate snippets; copy them from the document.
+7. "citation" is a short verbatim snippet from the document prefixed with its location, e.g. "[Page 3] Base Rent: $4,250.00" or "[Sheet1!F4] 4250". At most 60 characters. Never fabricate snippets; copy them from the document.
 8. "confidence" is a number in [0.0, 1.0]: your own estimate that the value is correct.
 9. If the document contains a table with one row per record — the schema marks one field as primary; its value identifies each row — return one entry per row. Otherwise return exactly one entry for the whole document.
 10. Every entry must carry every listed field; fields that apply to the whole document repeat the same value in every entry.
@@ -40,8 +40,19 @@ def build_messages(schema: ExtractionSchema, document: ParsedDocument) -> list[d
         + "\n\nFIELDS TO EXTRACT:\n"
         + "\n".join(field_lines)
     )
+    system = SYSTEM_PROMPT
+    if schema.primary_key:
+        system += (
+            "\n12. RECORD COMPLETENESS: The context may contain many records"
+            " (table rows, ledger lines, list items). Extract EVERY record"
+            " present in the supplied context — do not stop early and do not"
+            " skip any. Each entry must contain EVERY field listed below;"
+            " set a field to null only when it is genuinely absent for that"
+            " record in the supplied context. Copy identifiers (codes, ids,"
+            " numbers) exactly. Keep citations at most 60 characters."
+        )
     return [
-        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "system", "content": system},
         {"role": "user", "content": user},
     ]
 

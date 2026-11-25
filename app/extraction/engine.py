@@ -49,6 +49,7 @@ from .responses import ExtractionParseError, FieldResult, ParsedExtraction, pars
 from .schema import ExtractionField, ExtractionSchema, sub_schema
 
 DEFAULT_CHUNK_CHARS = 12_000
+DEFAULT_FULL_CHUNK_CHARS = 4_000
 DEFAULT_MAX_CALLS = 8
 DEFAULT_MAX_COST_USD = 0.50
 TARGETED_CHARS = 6_000
@@ -75,12 +76,14 @@ class ExtractionEngine:
         gateway: LlmGateway,
         model: str,
         chunk_chars: int = DEFAULT_CHUNK_CHARS,
+        full_chunk_chars: int = DEFAULT_FULL_CHUNK_CHARS,
         max_calls: int = DEFAULT_MAX_CALLS,
         max_cost_usd: float = DEFAULT_MAX_COST_USD,
     ):
         self.gateway = gateway
         self.model = model
         self.chunk_chars = chunk_chars
+        self.full_chunk_chars = full_chunk_chars
         self.max_calls = max_calls
         self.max_cost_usd = max_cost_usd
         self._call_log: list[dict] = []
@@ -285,8 +288,17 @@ class ExtractionEngine:
             ("expanded", self.chunk_chars),
             ("full", None),
         )
+        # Multi-record mode is COVERAGE-driven: a stage runs when the previous
+        # context was trimmed (unsent content exists), regardless of field
+        # coverage — rows still unseen would otherwise be lost. Each call uses
+        # the FULL schema so every new record carries every field. Single-entry
+        # mode stays field-driven (stops when all fields are resolved).
+        context_trimmed = False
         for stage, budget in stages:
-            if not unresolved():
+            if not multi:
+                if not unresolved():
+                    break
+            elif stage != "targeted" and not context_trimmed:
                 break
             if not self._calls_left():
                 warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
@@ -296,7 +308,9 @@ class ExtractionEngine:
             if self._gateway_broken(warnings):
                 break
             if stage == "full":
-                plan = [(chunk, None) for chunk in self._chunks(document)]
+                chunk_size = self.full_chunk_chars if multi else self.chunk_chars
+                plan = [(chunk, None) for chunk in self._chunks(document, max_chars=chunk_size)]
+                context_trimmed = False
             else:
                 still = unresolved()
                 context_doc, note = select_context(
@@ -304,10 +318,11 @@ class ExtractionEngine:
                 )
                 if note:
                     warnings.append(note)
+                context_trimmed = note is not None
                 plan = [(context_doc, stage)]
             for context_doc, _tag in plan:
                 still = unresolved()
-                if not still:
+                if not multi and not still:
                     break
                 if not self._calls_left():
                     warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
@@ -318,13 +333,13 @@ class ExtractionEngine:
                     break
                 relevant = (
                     self._relevant_fields(schema, still, context_doc)
-                    if stage == "full"
+                    if stage == "full" and not multi
+                    else list(schema.fields)
+                    if multi
                     else still
                 )
                 if not relevant:
                     continue
-                if multi and schema.primary_key not in relevant:
-                    relevant = relevant + [schema.primary_key]
                 sub = sub_schema(schema, relevant)
                 parsed, response = self._attempt(sub, context_doc, stage, warnings)
                 if parsed is None:
@@ -376,7 +391,7 @@ class ExtractionEngine:
                 record: dict[str, FieldResult] = {}
                 for key in schema.fields:
                     fr = llm_entry.get(key)
-                    if fr is None and det_single[key].value is not None:
+                    if (fr is None or fr.value is None) and det_single[key].value is not None:
                         fr = det_single[key]
                     record[key] = fr or FieldResult(value=None)
                 by_primary[pnorm] = record
@@ -434,13 +449,13 @@ class ExtractionEngine:
         for stage, budget in stages:
             if not self._calls_left():
                 warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
-            if self._cost_exhausted:
                 break
+            if self._cost_exhausted:
                 break
             if self._gateway_broken(warnings):
                 break
             if stage == "full":
-                plan = self._chunks(document)
+                plan = self._chunks(document, max_chars=self.full_chunk_chars)
             else:
                 context_doc, note = select_context(
                     document, list(schema.fields.values()), max_chars=budget
@@ -451,8 +466,8 @@ class ExtractionEngine:
             for context_doc in plan:
                 if not self._calls_left():
                     warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
-                if self._cost_exhausted:
                     break
+                if self._cost_exhausted:
                     break
                 if self._gateway_broken(warnings):
                     break
@@ -564,7 +579,7 @@ class ExtractionEngine:
                 relevant.append(key)
         return relevant
 
-    def _chunks(self, document: ParsedDocument) -> list[ParsedDocument]:
+    def _chunks(self, document: ParsedDocument, max_chars: int | None = None) -> list[ParsedDocument]:
         """Split a document into LLM-sized chunks at structural boundaries
         (pages / paragraphs / rows). Cell references and page markers survive
         chunking, so citations stay truthful."""
@@ -578,6 +593,7 @@ class ExtractionEngine:
                 for sheet in document.sheets
                 for row in sheet.rows
             ]
+        limit = max_chars if max_chars is not None else self.chunk_chars
         chunks: list[ParsedDocument] = []
         current_pages: list = []
         current_sections: list = []
@@ -593,7 +609,7 @@ class ExtractionEngine:
         for kind, unit in units:
             unit_doc = _unit_document(document, kind, unit)
             unit_size = len(render_document(unit_doc))
-            if size + unit_size > self.chunk_chars and size:
+            if size + unit_size > limit and size:
                 flush()
             if kind == "pdf":
                 current_pages.append(unit)

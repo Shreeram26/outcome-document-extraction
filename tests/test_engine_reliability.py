@@ -241,3 +241,39 @@ def test_metadata_includes_call_log_and_conflicts():
     contract = result_to_contract(result, "widgets", latency_ms=5)
     assert contract["metadata"]["model_calls"] == len(result.call_log)
     assert contract["metadata"]["calls"] == result.call_log
+
+
+def test_grid_fallback_uses_row_bounded_chunks():
+    """Regression: the grid fallback previously chunked at chunk_chars (12k),
+    producing ~60-row batches that truncated at the completion budget. Grid
+    chunks must respect full_chunk_chars so every batch parses."""
+    rows = [(Cell("misc", "A1"), Cell("data", "B1"))]
+    for i in range(2, 122):
+        rows.append((Cell(f"K-{i}", f"A{i}"), Cell(i, f"B{i}")))
+    doc = ParsedDocument(
+        kind="xlsx", filename="g.xlsx",
+        sheets=[Sheet(name="S", rows=tuple(rows), n_rows=len(rows), n_cols=2)],
+    )
+    schema = normalize_schema(
+        {
+            "name": "keys",
+            "fields": {
+                "code": {"name": "Code", "description": "Identifier.", "primary": True},
+                "amount": {"name": "Amount", "description": "Amount."},
+            },
+        }
+    )
+    all_rows = json.dumps({"entries": [
+        {"code": f"K-{n}", "amount": n} for n in range(2, 122)
+    ]})
+    transport, stub = make_transport([fake_response(all_rows)] * 60)
+    engine = ExtractionEngine(
+        LlmGateway(transport=transport), model="google/gemini-3.8-flash",
+        full_chunk_chars=200, max_calls=40,
+    )
+    result = engine.extract(schema, doc)
+    assert len(stub.calls) >= 2
+    assert all(len(c["messages"][1]["content"]) <= 260 for c in stub.calls)
+    assert len(result.entries) == 120
+    assert result.entries[0]["code"].value == "K-2"
+    assert result.entries[-1]["code"].value == "K-121"
