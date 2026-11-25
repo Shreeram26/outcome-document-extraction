@@ -93,23 +93,58 @@ class _Candidate:
     sheet: str | None = None
 
 
+@dataclass
+class FieldSources:
+    """Pre-computed label→field mappings used by all deterministic matching.
+
+    `exact` maps each normalized label to every field that claims it (with a
+    match quality: 2 = name/key, 1 = quoted description). `phrases` is a flat
+    list of (norm, field_key) for token-subset matching."""
+    exact: dict[str, list[tuple[str, int]]]
+    phrases: list[tuple[str, str]]
+
+    def match_quality(self, label: str) -> dict[str, int]:
+        """field_key -> strongest match quality for this label: 2 = exact
+        name/key match, 1 = exact quoted-description match, 0 = token-subset
+        match."""
+        out: dict[str, int] = {}
+
+        def add(key: str, q: int):
+            if key not in out or q > out[key]:
+                out[key] = q
+
+        for key, q in self.exact.get(label, ()):
+            add(key, q)
+        label_tokens = set(label.split())
+        if label_tokens:
+            for norm, key in self.phrases:
+                phrase_tokens = set(norm.split())
+                if not phrase_tokens:
+                    continue
+                if (label_tokens <= phrase_tokens or phrase_tokens <= label_tokens) and max(
+                    len(label_tokens), len(phrase_tokens)
+                ) >= 2:
+                    add(key, 0)
+        return out
+
+
 def deterministic_extract(schema: ExtractionSchema, document: ParsedDocument) -> DeterministicResult:
     """Attempt full deterministic extraction. Returns one entry (single mode)
     or one entry per table row (table mode); unresolved fields are null."""
     warnings: list[str] = []
-    exact, phrases = _field_sources(schema)
+    sources = _field_sources(schema)
     table = None
     entries: list[dict[str, FieldResult]] | None = None
     mapped: set[str] | None = None
     table_sheets: set[str] = set()
     header_rows: dict[str, int] = {}
     if schema.primary_key:
-        table = _table_extract(schema, document, exact, phrases, warnings)
+        table = _table_extract(schema, document, sources, warnings)
         if table is not None:
             entries, mapped, table_sheets, header_rows = table
-    eligible, admissible = _sheet_pools(document, exact, table_sheets)
+    eligible, admissible = _sheet_pools(document, sources, table_sheets)
     doc_level, contested = _labelled_values(
-        schema, document, exact, phrases, eligible, admissible, header_rows
+        schema, document, sources, eligible, admissible, header_rows
     )
     if contested:
         warnings.append(
@@ -135,10 +170,11 @@ def deterministic_extract(schema: ExtractionSchema, document: ParsedDocument) ->
     return DeterministicResult(entries=[entry], doc_level=doc_level, mode="single", warnings=warnings)
 
 
-def _field_sources(schema: ExtractionSchema):
-    """exact: normalized label -> [(field_key, quality)], keeping EVERY field that
-    claims the label (quality 2 = name/key, 1 = quoted description) so equal-strength
-    competition can be detected; phrases: all norms for token-subset matching."""
+def _field_sources(schema: ExtractionSchema) -> FieldSources:
+    """Pre-computed label→field mappings. `exact` keeps EVERY field that claims
+    a label (quality 2 = name/key, 1 = quoted description) so equal-strength
+    competition can be detected; `phrases` is the flat list for token-subset
+    matching."""
     exact: dict[str, list[tuple[str, int]]] = {}
     phrases: list[tuple[str, str]] = []
     for f in schema.fields.values():
@@ -151,33 +187,7 @@ def _field_sources(schema: ExtractionSchema):
             seen.add(norm)
             exact.setdefault(norm, []).append((f.key, q))
             phrases.append((norm, f.key))
-    return exact, phrases
-
-
-def _match_quality(
-    label: str, exact: dict[str, list[tuple[str, int]]], phrases: list[tuple[str, str]]
-) -> dict[str, int]:
-    """field_key -> strongest match quality for this label: 2 = exact name/key
-    match, 1 = exact quoted-description match, 0 = token-subset match."""
-    out: dict[str, int] = {}
-
-    def add(key: str, q: int):
-        if key not in out or q > out[key]:
-            out[key] = q
-
-    for key, q in exact.get(label, ()):
-        add(key, q)
-    label_tokens = set(label.split())
-    if label_tokens:
-        for norm, key in phrases:
-            phrase_tokens = set(norm.split())
-            if not phrase_tokens:
-                continue
-            if (label_tokens <= phrase_tokens or phrase_tokens <= label_tokens) and max(
-                len(label_tokens), len(phrase_tokens)
-            ) >= 2:
-                add(key, 0)
-    return out
+    return FieldSources(exact=exact, phrases=phrases)
 
 
 def _sheet_label_count(sheet, exact: dict[str, list[tuple[str, int]]]) -> int:
@@ -194,7 +204,7 @@ def _sheet_label_count(sheet, exact: dict[str, list[tuple[str, int]]]) -> int:
 
 
 def _sheet_pools(
-    document: ParsedDocument, exact: dict[str, list[tuple[str, int]]], table_sheets: set[str]
+    document: ParsedDocument, sources: FieldSources, table_sheets: set[str]
 ) -> tuple[set[str], set[str]]:
     """(eligible, admissible) sheet names for document-level labelled values.
 
@@ -204,7 +214,7 @@ def _sheet_pools(
     eligible sheet resolved."""
     if not document.sheets:
         return set(), set()
-    counts = {sheet.name: _sheet_label_count(sheet, exact) for sheet in document.sheets}
+    counts = {sheet.name: _sheet_label_count(sheet, sources.exact) for sheet in document.sheets}
     if table_sheets:
         eligible = set(table_sheets)
     else:
@@ -217,21 +227,29 @@ def _sheet_pools(
 def _labelled_values(
     schema: ExtractionSchema,
     document: ParsedDocument,
-    exact: dict[str, list[tuple[str, int]]],
-    phrases: list[tuple[str, str]],
+    sources: FieldSources,
     eligible: set[str],
     admissible: set[str],
     header_rows: dict[str, int] | None = None,
 ) -> tuple[dict[str, FieldResult], int]:
-    """Resolve document-level labelled values. A candidate whose label is claimed
-    by several fields at equal strength is contested: it is assigned to no field,
-    regardless of schema order. On a table sheet, only rows above the header are
-    candidate sources. Returns (resolved fields, contested count)."""
-    candidates = _collect_candidates(document, exact, eligible, admissible, header_rows or {})
+    """Resolve document-level labelled values. Returns (resolved fields, contested count)."""
+    candidates = _collect_candidates(document, sources.exact, eligible, admissible, header_rows or {})
+    per_field, contested = _match_candidates_to_fields(candidates, sources, schema)
+    resolved = _resolve_field_candidates(per_field, schema, eligible, admissible)
+    return resolved, contested
+
+
+def _match_candidates_to_fields(
+    candidates: list[_Candidate],
+    sources: FieldSources,
+    schema: ExtractionSchema,
+) -> tuple[dict[str, list[_Candidate]], int]:
+    """Phase 1: assign each candidate to at most one field. Contested labels
+    (claimed by multiple fields at equal strength) are counted and dropped."""
     per_field: dict[str, list[_Candidate]] = {}
     contested = 0
     for cand in candidates:
-        hits = _match_quality(cand.label, exact, phrases)
+        hits = sources.match_quality(cand.label)
         if not hits:
             continue
         best_q = max(hits.values())
@@ -241,6 +259,17 @@ def _labelled_values(
             continue
         cand.quality = best_q
         per_field.setdefault(top[0], []).append(cand)
+    return per_field, contested
+
+
+def _resolve_field_candidates(
+    per_field: dict[str, list[_Candidate]],
+    schema: ExtractionSchema,
+    eligible: set[str],
+    admissible: set[str],
+) -> dict[str, FieldResult]:
+    """Phase 2: for each field, pick the best candidate from its pool
+    (eligible sheets first, then admissible), and apply the typed-value gate."""
     resolved: dict[str, FieldResult] = {}
     for key, cands in per_field.items():
         pool = [c for c in cands if c.sheet is None or c.sheet in eligible]
@@ -256,7 +285,7 @@ def _labelled_values(
         fr = _typed_doc_value(best[0])
         if fr is not None:
             resolved[key] = fr
-    return resolved, contested
+    return resolved
 
 
 def _typed_doc_value(cand: _Candidate) -> FieldResult | None:
@@ -465,7 +494,7 @@ def _header_like(rows, candidate) -> bool:
     return rows[i + 1][j].value not in (None, "")
 
 
-def _match_header_row(sheet, schema: ExtractionSchema, exact, phrases):
+def _match_header_row(sheet, schema: ExtractionSchema, sources: FieldSources):
     """Find the row that best matches the schema labels; return (row_index, colmap,
     matched_field_count) where colmap maps field key -> (column_index, quality).
 
@@ -482,7 +511,7 @@ def _match_header_row(sheet, schema: ExtractionSchema, exact, phrases):
             label = norm_label(cell.value)
             if not label:
                 continue
-            for key, quality in _match_quality(label, exact, phrases).items():
+            for key, quality in sources.match_quality(label).items():
                 fmap = col_hits.setdefault(c, {})
                 if key not in fmap or quality > fmap[key]:
                     fmap[key] = quality
@@ -546,13 +575,13 @@ class _TableCandidate:
         )
 
 
-def _table_extract(schema, document, exact, phrases, warnings):
+def _table_extract(schema, document, sources, warnings):
     """Returns (entries, mapped_keys, table_sheet_names) or None when no sheet
     header matches the schema with its primary field, when the best candidate
     has no data rows, or when the top candidates tie (ambiguous)."""
     candidates: list[_TableCandidate] = []
     for sheet in document.sheets:
-        found = _match_header_row(sheet, schema, exact, phrases)
+        found = _match_header_row(sheet, schema, sources)
         if found is None:
             continue
         header_idx, colmap, matched = found
@@ -595,10 +624,8 @@ def _table_extract(schema, document, exact, phrases, warnings):
 
 
 def _build_entries(schema, sheet, header_idx: int, colmap: dict):
-    """One entry per data row below the header. Skips blank rows, summary rows
-    (exact word match on the primary value), label-only rows, duplicate
-    primary identifiers (first wins), and — in numeric-heavy tables — rows
-    carrying no numeric data at all (summary and narrative blocks).
+    """One entry per data row below the header. Skips blank rows, summary rows,
+    label-only rows, duplicate primary identifiers, and non-record rows.
 
     Block-structured tables: a row with an empty primary cell that follows a
     valid record row is a CONTINUATION row. Its values are attached to that
@@ -610,6 +637,24 @@ def _build_entries(schema, sheet, header_idx: int, colmap: dict):
     sheet/table boundaries."""
     pcol, _pq = colmap[schema.primary_key]
     value_cols = [col for key, (col, _q) in colmap.items() if key != schema.primary_key]
+    category_labels, aggregate_fields = _build_category_map(schema)
+    staged, blocks, rows_after, duplicates = _classify_data_rows(
+        schema, sheet, header_idx, colmap, pcol, value_cols
+    )
+    for record, cont_rows in blocks:
+        _apply_block_continuations(
+            schema, sheet, record, cont_rows, colmap, category_labels, aggregate_fields
+        )
+    kept, non_records = _drop_non_records(staged, colmap, schema.primary_key)
+    kept_ids = {id(row) for row, _pnorm in kept}
+    entries = [
+        blocks[i][0] for i in range(len(staged)) if id(staged[i][0]) in kept_ids
+    ]
+    return entries, rows_after, duplicates, non_records
+
+
+def _build_category_map(schema):
+    """Extract category labels and aggregate-field hints from schema descriptions."""
     category_labels: dict[str, set[str]] = {}
     aggregate_fields: set[str] = set()
     for key, f in schema.fields.items():
@@ -618,6 +663,12 @@ def _build_entries(schema, sheet, header_idx: int, colmap: dict):
             category_labels[key] = set(labels)
         if re.search(r"\b(?:sum|total|combined)\s+of\b", f.description or "", re.IGNORECASE):
             aggregate_fields.add(key)
+    return category_labels, aggregate_fields
+
+
+def _classify_data_rows(schema, sheet, header_idx, colmap, pcol, value_cols):
+    """Classify data rows into primary records and continuation blocks.
+    Returns (staged, blocks, rows_after, duplicates)."""
     seen_primary: set[str] = set()
     staged: list[tuple[Any, str]] = []
     blocks: list[tuple[dict[str, FieldResult], list]] = []
@@ -646,16 +697,7 @@ def _build_entries(schema, sheet, header_idx: int, colmap: dict):
         staged.append((row, pnorm))
         current = (record, [])
         blocks.append(current)
-    for record, cont_rows in blocks:
-        _apply_block_continuations(
-            schema, sheet, record, cont_rows, colmap, category_labels, aggregate_fields
-        )
-    kept, non_records = _drop_non_records(staged, colmap, schema.primary_key)
-    kept_ids = {id(row) for row, _pnorm in kept}
-    entries = [
-        blocks[i][0] for i in range(len(staged)) if id(staged[i][0]) in kept_ids
-    ]
-    return entries, rows_after, duplicates, non_records
+    return staged, blocks, rows_after, duplicates
 
 
 def _category_matches(nval: str, labels: set[str]) -> bool:

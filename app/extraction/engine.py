@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass, field
+from typing import Callable
 
 from ..parsing.models import ParsedDocument, Sheet
 from .context import select_context
@@ -349,20 +350,12 @@ class ExtractionEngine:
                 break
             if self._gateway_broken(warnings):
                 break
-            if stage == "full":
-                chunk_size = self.full_chunk_chars if multi else self.chunk_chars
-                plan = [(chunk, None) for chunk in self._chunks(document, max_chars=chunk_size)]
-                context_trimmed = False
-            else:
-                still = unresolved()
-                context_doc, note = select_context(
-                    document, [schema.fields[k] for k in still], max_chars=budget
-                )
-                if note:
-                    warnings.append(note)
-                context_trimmed = note is not None
-                plan = [(context_doc, stage)]
-            for context_doc, _tag in plan:
+            plan, context_trimmed = self._build_stage_plan(
+                stage, budget, schema, document, multi, unresolved
+            )
+            for note in [note for _, note in plan if note]:
+                warnings.append(note)
+            for context_doc, _note in plan:
                 still = unresolved()
                 if not multi and not still:
                     break
@@ -557,6 +550,28 @@ class ExtractionEngine:
                 break
 
         return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
+
+    def _build_stage_plan(
+        self,
+        stage: str,
+        budget: int,
+        schema: ExtractionSchema,
+        document: ParsedDocument,
+        multi: bool,
+        unresolved: Callable[[], list[str]],
+    ) -> tuple[list[tuple[ParsedDocument, str | None]], bool]:
+        """Build the extraction plan for one stage: a list of (context, note)
+        pairs plus a flag indicating whether the context was trimmed (meaning
+        unsent content exists)."""
+        if stage == "full":
+            chunk_size = self.full_chunk_chars if multi else self.chunk_chars
+            plan = [(chunk, None) for chunk in self._chunks(document, max_chars=chunk_size)]
+            return plan, False
+        still = unresolved()
+        context_doc, note = select_context(
+            document, [schema.fields[k] for k in still], max_chars=budget
+        )
+        return [(context_doc, note)], note is not None
 
     def _merge_single(self, entry: dict[str, FieldResult], llm_entry: dict[str, FieldResult], conflicts: list[str]):
         for key, fr in llm_entry.items():
