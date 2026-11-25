@@ -1,0 +1,247 @@
+{
+  "schema": "offering_memorandum",
+  "entries": [
+    {
+      "property_name": {
+        "value": "Marlowe Park Modern Apartments",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "address": {
+        "value": "7420 E 52nd Ave.",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "city": {
+        "value": "Fairhaven",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "state": {
+        "value": "CO",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "zip_code": {
+        "value": "80271",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "county": {
+        "value": "Harlan",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "submarket": {
+        "value": "airport submarket",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "broker_name": {
+        "value": "Ridgeline Capital Advisors",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "units": {
+        "value": 188,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "year_built": {
+        "value": 2022,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "year_renovated": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "building_type": {
+        "value": "Garden",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "number_of_buildings": {
+        "value": 13,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "stories": {
+        "value": "2 & 3",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "rentable_sf": {
+        "value": 190142,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "average_unit_sf": {
+        "value": 1011,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "site_acres": {
+        "value": 9.52,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "parking_spaces": {
+        "value": 266,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "parking_ratio": {
+        "value": 1.41,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "asking_price": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "price_per_unit": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "asking_cap_rate": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "occupancy_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "average_in_place_rent": {
+        "value": 2260,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "market_rent": {
+        "value": 2260,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "market_rent_psf": {
+        "value": 2.23,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "unit_types": {
+        "value": [
+          "Aspen",
+          "Birch",
+          "Cedar w/ Attached Garage",
+          "Dogwood w/ Attached Garage (2)",
+          "Elm",
+          "Fir w/ Attached Garage",
+          "Hazel w/ Attached Garage",
+          "Ironwood"
+        ],
+        "citation": "",
+        "confidence": 0.0
+      },
+      "noi_t12": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "noi_proforma": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "model_calls": 2,
+    "tokens_in": 7325,
+    "tokens_out": 2653,
+    "cost_usd": 0.002059,
+    "cost_settled_usd": 0.002059,
+    "latency_ms": 11764,
+    "calls": [
+      {
+        "call": 1,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "address",
+          "city",
+          "state",
+          "zip_code",
+          "county",
+          "submarket",
+          "broker_name",
+          "units",
+          "year_built",
+          "year_renovated",
+          "building_type",
+          "number_of_buildings",
+          "stories",
+          "rentable_sf",
+          "average_unit_sf",
+          "site_acres",
+          "parking_spaces",
+          "parking_ratio",
+          "asking_price",
+          "price_per_unit",
+          "asking_cap_rate",
+          "occupancy_pct",
+          "average_in_place_rent",
+          "market_rent",
+          "market_rent_psf",
+          "unit_types",
+          "noi_t12",
+          "noi_proforma"
+        ],
+        "context_chars": 6056,
+        "duration_ms": 6595,
+        "status": "success",
+        "tokens_in": 4615,
+        "tokens_out": 1488,
+        "reserved_usd": 0.103322,
+        "cost_usd": 0.001205,
+        "cumulative_cost_usd": 0.001205,
+        "note": ""
+      },
+      {
+        "call": 2,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "year_renovated",
+          "asking_price",
+          "price_per_unit",
+          "asking_cap_rate",
+          "occupancy_pct",
+          "average_in_place_rent",
+          "noi_t12",
+          "noi_proforma"
+        ],
+        "context_chars": 3623,
+        "duration_ms": 5148,
+        "status": "success",
+        "tokens_in": 2710,
+        "tokens_out": 1165,
+        "reserved_usd": 0.101963,
+        "cost_usd": 0.000853,
+        "cumulative_cost_usd": 0.002059,
+        "note": ""
+      }
+    ],
+    "models": {
+      "anthropic/claude-haiku-5.5": {
+        "calls": 2,
+        "tokens_in": 7325,
+        "tokens_out": 2653,
+        "settled_cost_usd": 0.002059
+      }
+    }
+  },
+  "document": "om_001"
+}
