@@ -122,13 +122,27 @@ class LlmGateway:
         self.safety_factor = safety_factor
 
     def estimate_cost_usd(
-        self, messages: list[dict[str, str]], model: str, max_tokens: int | None = None
+        self, messages: list[dict[str, Any]], model: str, max_tokens: int | None = None
     ) -> float:
-        """Conservative pre-call cost estimate: input tokens from message sizes,
+        """Conservative pre-call cost estimate: input tokens from message sizes
+        (including multimodal image blocks, estimated at 3000 tokens each),
         output tokens bounded by the enforced max_tokens, priced per model and
         multiplied by the safety factor."""
         effective = max_tokens if max_tokens is not None else self.default_max_tokens
-        in_tokens = sum(math.ceil(len(m.get("content", "")) / 4) for m in messages) + 32
+        in_tokens = 32
+        image_count = 0
+        for m in messages:
+            content = m.get("content", "")
+            if isinstance(content, str):
+                in_tokens += math.ceil(len(content) / 4)
+            elif isinstance(content, list):
+                for block in content:
+                    if isinstance(block, dict):
+                        if block.get("type") == "text":
+                            in_tokens += math.ceil(len(block.get("text", "")) / 4)
+                        elif block.get("type") == "image_url":
+                            image_count += 1
+        in_tokens += image_count * 3000
         out_tokens = effective or 0
         price = self._pricing.get(model, self._pricing.get("default", {"input": 3.0, "output": 15.0}))
         estimate = (in_tokens * price["input"] + out_tokens * price["output"]) / 1_000_000

@@ -1,0 +1,8 @@
+{
+  "cap_usd": 0.15,
+  "settled_usd": 0.027769,
+  "outstanding_usd": 0.0,
+  "exposure_usd": 0.027769,
+  "tripped": false,
+  "refused_calls": 0
+}
