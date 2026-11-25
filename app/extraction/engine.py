@@ -106,10 +106,20 @@ class ExtractionEngine:
                 key: "deterministic" if det.entries[0][key].value is not None else "unresolved"
                 for key in schema.fields
             }
+            unresolved_after = [
+                key for key, src in provenance.items() if src == "unresolved"
+            ]
+            if unresolved_after and _document_has_text(document):
+                filled = self._table_llm_fallback(
+                    schema, document, det, unresolved_after, warnings
+                )
+                for key in filled:
+                    provenance[key] = "llm"
             return ExtractionResult(
                 entries=det.entries, warnings=warnings, llm=None, llm_responses=[],
                 mode="table", provenance=provenance, call_log=list(self._call_log),
-                cost_exposure_usd=0.0, cost_settled_usd=0.0,
+                cost_exposure_usd=round(self._doc_spend, 6),
+                cost_settled_usd=round(self._doc_settled, 6),
             )
         if schema.primary_key and document.kind in ("xlsx", "csv"):
             return self._fallback_grid(schema, document, det, warnings, conflicts)
@@ -489,6 +499,59 @@ class ExtractionEngine:
                     by_primary[pnorm] = new_entry
                     entries.append(new_entry)
         return self._finish_grid(schema, entries, warnings, responses, "single", det, conflicts)
+
+    def _table_llm_fallback(
+        self,
+        schema: ExtractionSchema,
+        document: ParsedDocument,
+        det: DeterministicResult,
+        unresolved: list[str],
+        warnings: list[str],
+    ) -> list[str]:
+        """One bounded targeted call to fill fields the deterministic table
+        stage left unresolved (e.g. document-level values living on an
+        auxiliary sheet). A single-entry response is treated as document-level
+        and repeated into every record; multi-entry responses merge by primary
+        (fill nulls only). Returns the keys that were filled."""
+        if not self._calls_left() or self._cost_exhausted or self._gateway_broken(warnings):
+            return []
+        context_doc, note = select_context(
+            document, [schema.fields[k] for k in unresolved],
+            max_chars=min(TARGETED_CHARS, self.chunk_chars),
+        )
+        if note:
+            warnings.append(note)
+        parsed, _response = self._attempt(schema, context_doc, "table_fallback", warnings)
+        if parsed is None or not parsed.entries:
+            return []
+        filled: list[str] = []
+        pkey = schema.primary_key
+        if len(parsed.entries) == 1:
+            for key in unresolved:
+                fr = parsed.entries[0].get(key)
+                if fr is not None and fr.value is not None:
+                    for entry in det.entries:
+                        if entry[key].value is None:
+                            entry[key] = fr
+                    filled.append(key)
+            return filled
+        for llm_entry in parsed.entries:
+            primary_fr = llm_entry.get(pkey)
+            pvalue = primary_fr.value if primary_fr is not None else None
+            pnorm = norm_label(pvalue) if pvalue is not None else ""
+            if not pnorm:
+                continue
+            for entry in det.entries:
+                entry_primary = entry.get(pkey)
+                if entry_primary is None or norm_label(entry_primary.value) != pnorm:
+                    continue
+                for key in unresolved:
+                    fr = llm_entry.get(key)
+                    if fr is not None and fr.value is not None and entry[key].value is None:
+                        entry[key] = fr
+                        if key not in filled:
+                            filled.append(key)
+        return filled
 
     # ---------- shared helpers ----------
 

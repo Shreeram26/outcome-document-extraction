@@ -397,3 +397,61 @@ def test_single_entry_mode_unchanged_without_primary():
     assert len(result.entries) == 1
     assert result.entries[0]["alpha"].value == 1
     assert any("merged the first" in w for w in result.warnings)
+
+
+def test_table_mode_llm_fallback_fills_doc_level_fields():
+    """Regression for the final-outputs run: deterministic table mode leaves
+    document-level fields unresolved when their labels live on an auxiliary
+    sheet; one bounded LLM call must fill them into every record."""
+    doc = ParsedDocument(kind="xlsx", filename="wb.xlsx", sheets=[
+        Sheet(name="Data", rows=(
+            (Cell("Unit", "A1"), Cell("Status", "B1")),
+            (Cell("U-1", "A2"), Cell("Occupied", "B2")),
+            (Cell("U-2", "A3"), Cell("Vacant", "B3")),
+        )),
+        Sheet(name="Params", rows=((Cell("Sheet Version", "A1"), Cell("3.3", "B1")),)),
+    ])
+    schema = normalize_schema(
+        {
+            "name": "units",
+            "fields": {
+                "unit": {"name": "Unit", "description": "The 'Unit' column.", "primary": True},
+                "status": {"name": "Status", "description": "The 'Status' column."},
+                "report_period": {"name": "Report Period", "description": "The month and year, as YYYY-MM."},
+            },
+        }
+    )
+    content = json.dumps({"entries": [{"report_period": {"value": "2023-02", "citation": "[Page 1] Feb 2023", "confidence": 0.9}}]})
+    transport, stub = make_transport([fake_response(content)] * 3)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(schema, doc)
+    assert len(stub.calls) == 1
+    assert len(result.entries) == 2
+    for entry in result.entries:
+        assert entry["report_period"].value == "2023-02"
+        assert entry["report_period"].citation == "[Page 1] Feb 2023"
+    assert result.provenance["report_period"] == "llm"
+    assert result.provenance["unit"] == "deterministic"
+
+
+def test_table_mode_llm_fallback_absent_when_all_resolved():
+    doc = ParsedDocument(kind="xlsx", filename="wb.xlsx", sheets=[
+        Sheet(name="Data", rows=(
+            (Cell("Unit", "A1"), Cell("Status", "B1")),
+            (Cell("U-1", "A2"), Cell("Occupied", "B2")),
+        )),
+    ])
+    schema = normalize_schema(
+        {
+            "name": "units",
+            "fields": {
+                "unit": {"name": "Unit", "description": "The 'Unit' column.", "primary": True},
+                "status": {"name": "Status", "description": "The 'Status' column."},
+            },
+        }
+    )
+    transport, stub = make_transport([fake_response('{"entries": []}')] * 3)
+    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
+    result = engine.extract(schema, doc)
+    assert stub.calls == []
+    assert result.provenance == {"unit": "deterministic", "status": "deterministic"}
