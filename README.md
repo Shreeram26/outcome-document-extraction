@@ -2,6 +2,22 @@
 
 AI-powered document extraction service for the Outcome AI/ML Developer take-home assignment.
 
+## Validation scores (sample set, `tools/validate.py`)
+
+| Document | Score | Rows | Extraction method |
+|---|---|---|---|
+| boxscore_001 | 1.000 | 10/10 | deterministic (no LLM) |
+| budget_001 | 0.974 | 55/55 | coverage-driven LLM |
+| lease_001 | 0.725 | 1/1 | vision (scanned PDF) |
+| lease_002 | 0.650 | 1/1 | text LLM + schema defaults |
+| lease_003 | 0.825 | 1/1 | vision (scanned PDF) |
+| om_001 | 0.862 | 1/1 | text LLM |
+| rentroll_001 | 0.831 | 325/325 | deterministic + table fallback |
+| t12_001 | 0.670 | 127/119 | grid fallback (row-bounded) |
+| **Mean** | **0.817** | | |
+
+Model: `anthropic/claude-haiku-5.5` via OpenRouter. Total API cost for all 8 documents: $0.084.
+
 ## How to run
 
 ### Docker (assignment contract)
@@ -23,6 +39,21 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env            # then put the real key into .env
 uvicorn app.main:app --host 0.0.0.0 --port 8080
+```
+
+### Validation (no API calls needed)
+
+```bash
+python tools/validate.py outputs/ --schema-dir sample/schemas --truth-dir sample/sample-data-output-validated
+```
+
+All 8 outputs print `VALID`.
+
+### Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest
 ```
 
 ## API
@@ -47,7 +78,8 @@ Job statuses: `PENDING → RUNNING → SUCCESS | PARTIAL | FAILED`.
 
 - `app/parsing/` — format parsers (PDF/DOCX/XLSX/CSV) with source locations
 - `app/extraction/` — schema normalization, deterministic-first extraction,
-  progressive LLM fallback with cost reservations (see `DESIGN.md`)
+  progressive LLM fallback with cost reservations, vision for scanned PDFs
+  (see `DESIGN.md`)
 - `app/store.py` / `app/worker.py` / `app/main.py` — job store, background
   worker pool (10 in-flight, 30-minute guard), FastAPI endpoints
 - `tools/validate.py` — assignment-provided validator; the service validates
