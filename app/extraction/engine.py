@@ -36,6 +36,12 @@ from ..parsing.models import ParsedDocument, Sheet
 from .context import select_context
 from .deterministic import DeterministicResult, deterministic_extract, norm_label
 from .ledger import usage_cost
+from .vision import (
+    build_vision_messages,
+    estimate_vision_cost,
+    render_scanned_pages,
+    vision_page_batches,
+)
 from .llm import (
     LlmBadResponseError,
     LlmBudgetError,
@@ -79,6 +85,9 @@ class ExtractionEngine:
         full_chunk_chars: int = DEFAULT_FULL_CHUNK_CHARS,
         max_calls: int = DEFAULT_MAX_CALLS,
         max_cost_usd: float = DEFAULT_MAX_COST_USD,
+        vision_model: str | None = None,
+        vision_dpi: int = 200,
+        vision_batch_size: int = 5,
     ):
         self.gateway = gateway
         self.model = model
@@ -86,6 +95,9 @@ class ExtractionEngine:
         self.full_chunk_chars = full_chunk_chars
         self.max_calls = max_calls
         self.max_cost_usd = max_cost_usd
+        self.vision_model = vision_model or model
+        self.vision_dpi = vision_dpi
+        self.vision_batch_size = vision_batch_size
         self._call_log: list[dict] = []
         self._doc_spend = 0.0
         self._doc_settled = 0.0
@@ -305,8 +317,10 @@ class ExtractionEngine:
             return [k for k in schema.fields if all(rec[k].value is None for rec in records)]
 
         if not _document_has_text(document):
+            if document.scanned_pages:
+                return self._vision_fallback(schema, document, det, warnings, conflicts)
             warnings.append(
-                "no extractable text (scanned or empty document); LLM fallback skipped"
+                "no extractable text and no scanned pages; LLM fallback skipped"
             )
             det_resolved = {k for k, fr in det.entries[0].items() if fr.value is not None}
             return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
@@ -441,6 +455,109 @@ class ExtractionEngine:
                 f"llm: {dropped} entry(ies) dropped for missing primary value"
             )
 
+    def _vision_fallback(
+        self,
+        schema: ExtractionSchema,
+        document: ParsedDocument,
+        det: DeterministicResult,
+        warnings: list[str],
+        conflicts: list[str],
+    ) -> ExtractionResult:
+        """Extract fields from scanned pages using a vision-capable model.
+
+        Pages are rendered to PNG at the configured DPI, batched, and sent
+        sequentially to the gateway. Results from all batches are merged
+        into a single entry (filling nulls). Deterministic values are never
+        overwritten."""
+        entry = dict(det.entries[0])
+        responses: list[LlmResponse] = []
+        det_resolved = {k for k, fr in det.entries[0].items() if fr.value is not None}
+
+        scanned = sorted(document.scanned_pages)
+        if not scanned:
+            warnings.append("no scanned pages detected; vision fallback skipped")
+            return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
+
+        from .vision import render_scanned_pages, vision_page_batches, build_vision_messages
+
+        page_images = render_scanned_pages(document, dpi=self.vision_dpi)
+        if not page_images:
+            warnings.append("no pages could be rendered for vision extraction")
+            return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
+
+        batches = vision_page_batches(scanned, batch_size=self.vision_batch_size)
+        schema_fields_raw = {
+            key: {"name": f.name, "description": f.description}
+            for key, f in schema.fields.items()
+        }
+
+        for batch_pages in batches:
+            if not self._calls_left():
+                warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
+                break
+            if self._cost_exhausted:
+                break
+            if self._gateway_broken(warnings):
+                break
+
+            batch_images = {pn: page_images[pn] for pn in batch_pages if pn in page_images}
+            if not batch_images:
+                continue
+            messages = build_vision_messages(schema_fields_raw, batch_images, batch_pages)
+            num_images = len(batch_images)
+
+            started = time.monotonic()
+            try:
+                response = self.gateway.complete(
+                    self.vision_model, messages, max_tokens=8000,
+                )
+            except LlmBudgetError as exc:
+                self._cost_exhausted = True
+                warnings.append(f"vision fallback failed (budget): {str(exc)[:150]}")
+                break
+            except (LlmTimeoutError, LlmBadResponseError, LlmError) as exc:
+                duration = int((time.monotonic() - started) * 1000)
+                self._record(
+                    list(schema.fields), 0, duration, "error",
+                    estimate=0, note=f"vision: {str(exc)[:120]}",
+                )
+                self._consecutive_failures += 1
+                self._last_attempt_failed = True
+                warnings.append(f"vision fallback failed: {str(exc)[:150]}")
+                continue
+
+            duration = int((time.monotonic() - started) * 1000)
+            actual = usage_cost(response.raw)
+            if actual is not None:
+                self._doc_settled += actual
+            responses.append(response)
+            self._consecutive_failures = 0
+
+            try:
+                parsed = parse_extraction_response(response.content, schema)
+            except ExtractionParseError as exc:
+                warnings.append(f"vision parse error: {str(exc)[:150]}")
+                continue
+
+            self._record(
+                list(schema.fields), 0, duration, "success",
+                response=response, estimate=0,
+            )
+            warnings.extend(f"vision: {w}" for w in parsed.warnings)
+
+            for llm_entry in parsed.entries:
+                for key, fr in llm_entry.items():
+                    if entry[key].value is None and fr.value is not None:
+                        entry[key] = fr
+                    elif entry[key].value is not None and fr.value is not None and fr.value != entry[key].value:
+                        conflicts.append(
+                            f"{key}: kept {entry[key].value!r}; vision also returned {fr.value!r}"
+                        )
+            if all(entry[k].value is not None for k in schema.fields):
+                break
+
+        return self._finish_single(schema, [entry], warnings, responses, det_resolved, conflicts)
+
     def _merge_single(self, entry: dict[str, FieldResult], llm_entry: dict[str, FieldResult], conflicts: list[str]):
         for key, fr in llm_entry.items():
             if entry[key].value is None:
@@ -461,8 +578,10 @@ class ExtractionEngine:
         """Table documents whose header could not be matched: progressive stages,
         entries merged by primary identifier with conflict detection."""
         if not _document_has_text(document):
+            if document.scanned_pages:
+                return self._vision_fallback(schema, document, det, warnings, conflicts)
             warnings.append(
-                "no extractable text (scanned or empty document); LLM fallback skipped"
+                "no extractable text and no scanned pages; LLM fallback skipped"
             )
             return self._finish_grid(schema, det.entries, warnings, [], "single", det)
         entries: list[dict[str, FieldResult]] = []

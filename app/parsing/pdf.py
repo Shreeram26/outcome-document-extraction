@@ -15,7 +15,7 @@ def parse_pdf(path: Path) -> ParsedDocument:
     """Extract text per page. Pages with less than MIN_TEXT_CHARS of text that also
     contain an image are reported in `scanned_pages` (candidates for image-based
     extraction); pages with no text and no image are reported as blank."""
-    parsed = ParsedDocument(kind="pdf", filename=path.name)
+    parsed = ParsedDocument(kind="pdf", filename=path.name, source_path=str(path))
     try:
         with pymupdf.open(path) as doc:
             for number, page in enumerate(doc, start=1):

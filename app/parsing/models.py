@@ -69,6 +69,7 @@ class ParsedDocument:
     sections: list[Section] = field(default_factory=list)
     sheets: list[Sheet] = field(default_factory=list)
     scanned_pages: list[int] = field(default_factory=list)
+    source_path: str | None = None
     warnings: list[str] = field(default_factory=list)
 
 
