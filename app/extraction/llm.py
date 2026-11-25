@@ -170,7 +170,7 @@ class LlmGateway:
         content = getattr(choice.message, "content", None)
         if content is None:
             raise LlmBadResponseError(
-                f"model {model} returned no content",
+                self._describe_empty_response(model, choice, response),
                 actual_cost_usd=usage_cost(response),
             )
         usage = getattr(response, "usage", None)
@@ -228,6 +228,27 @@ class LlmGateway:
                 " reservation retained until the request settles)"
             )
         raise LlmError(f"LLM worker for {model} finished without a result")
+
+    def _describe_empty_response(self, model: str, choice: Any, response: Any) -> str:
+        """Diagnostic detail for responses with no content: finish reason,
+        non-standard message fields (e.g. provider-specific reasoning), and
+        whether usage/cost were reported."""
+        finish = getattr(choice, "finish_reason", None)
+        message = getattr(choice, "message", None)
+        extra_keys: list[str] = []
+        extra = getattr(message, "model_extra", None)
+        if isinstance(extra, dict):
+            extra_keys = sorted(extra)
+        else:
+            extra_keys = sorted(
+                k for k in dir(message) if not k.startswith("_") and getattr(message, k, None) is not None
+            )[:8]
+        usage = getattr(response, "usage", None)
+        has_cost = getattr(usage, "cost", None) is not None
+        return (
+            f"model {model} returned no content (finish_reason={finish!r},"
+            f" message_fields={extra_keys}, usage_cost={has_cost})"
+        )
 
     def _get_client(self) -> Any:
         if self._transport is not None:

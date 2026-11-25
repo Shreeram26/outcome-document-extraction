@@ -199,3 +199,40 @@ class TestSamples:
         text = "\n".join(s.text for s in doc.sections if s.kind == "paragraph")
         assert "KESTREL" in text
         assert not any(s.kind == "table" for s in doc.sections)
+
+
+def test_rentroll_params_sheet_padding_rows_do_not_hide_content(samples_dir):
+    """The Report Parameters sheet declares 1000 rows but holds ~20 non-empty
+    ones; parsing must keep the real content and skip padding rows."""
+    doc = parse_file(samples_dir / "rentroll_001.xlsx")
+    params = doc.sheets[1]
+    assert params.name == "Report Parameters"
+    non_empty = [row for row in params.rows if any(c.value not in (None, "") for c in row)]
+    assert len(non_empty) == 20
+    flat = {c.value for row in params.rows for c in row}
+    assert "Rent Roll" in flat
+    assert "Prior Post Month" in flat
+
+
+def test_rentroll_data_sheet_preserves_datetime_cells(samples_dir):
+    doc = parse_file(samples_dir / "rentroll_001.xlsx")
+    data = doc.sheets[0]
+    dt_values = [c.value for row in data.rows for c in row if hasattr(c.value, "year")]
+    assert dt_values, "date cells should be preserved as date/datetime values"
+
+
+def test_budget_pdf_tables_stay_in_text_layer_for_the_llm(samples_dir):
+    """PyMuPDF find_tables mangles this document's borderless table headers;
+    the parser must keep plain page text (with the GL header vocabulary)
+    instead of pretending to detect table structure."""
+    import pymupdf
+
+    doc = parse_file(samples_dir / "budget_001.pdf")
+    text = "\n".join(p.text for p in doc.pages)
+    assert "2020 Budget" in text and "2021 Budget" in text
+    assert "Lakeview" in text
+    with pymupdf.open(samples_dir / "budget_001.pdf") as raw:
+        tables = raw[0].find_tables().tables
+        assert len(tables) >= 1
+        extracted = " ".join(str(cell) for row in tables[0].extract() for cell in row)
+        assert "2020Refore" in extracted

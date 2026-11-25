@@ -330,10 +330,11 @@ def main(argv=None) -> int:
         max_calls=args.max_calls,
         max_cost_usd=args.max_cost,
         max_tokens=args.max_tokens,
+        run_cost_cap=args.run_cost_cap,
     )
-    run_cap_status = engine.gateway.ledger.status() if engine.gateway.ledger else None
     outputs_dir = None if args.dry_run else Path(args.outputs_dir)
     report = evaluate_corpus(engine, items, write_outputs_dir=outputs_dir)
+    run_cap_status = engine.gateway.ledger.status() if engine.gateway.ledger else None
     full = {
         "model": None if args.skip_llm or args.dry_run else args.model,
         "skip_llm": args.skip_llm,
