@@ -177,6 +177,8 @@ def usage_cost(response: Any) -> float | None:
     either a raw SDK response or an LlmResponse wrapper (unwraps `.raw`)."""
     target = getattr(response, "raw", response)
     usage = getattr(target, "usage", None)
+    if usage is None:
+        return None
     cost = getattr(usage, "cost", None)
     if isinstance(cost, (int, float)) and cost >= 0:
         return float(cost)
