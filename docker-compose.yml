@@ -1,0 +1,18 @@
+services:
+  extraction:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - LLM_BASE_URL
+      - LLM_API_KEY
+      - LLM_MODEL
+      - MAX_COST_PER_DOC_USD
+      - COST_CAP_USD
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health', timeout=4)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
