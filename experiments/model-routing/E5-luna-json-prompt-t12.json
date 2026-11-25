@@ -1,0 +1,269 @@
+{
+  "experiment": "E5-luna-json-prompt-t12",
+  "model": "openai/gpt-6-luna",
+  "category": "cheap",
+  "method": "json_prompt",
+  "document": "t12_001.xlsx",
+  "calls": 1,
+  "tokens_in": 1255,
+  "tokens_out": 1947,
+  "cost_usd": 0.0011303,
+  "reserved_usd": 0.0,
+  "latency_ms": 13612,
+  "status": "scored",
+  "contract_valid": true,
+  "contract_errors": [],
+  "validator_score": 0.0275,
+  "row_accuracy": 0.0336,
+  "field_accuracy_mean": 0.0275,
+  "records": 4,
+  "expected_records": 119,
+  "field_completeness": 0.8182,
+  "missing_field_cells": 8,
+  "hallucinated_cells": 0,
+  "citation_coverage": 1.0,
+  "per_field": {
+    "property_name": 0.034,
+    "period_start": 0.0,
+    "period_end": 0.0,
+    "gl_code": 0.034,
+    "line_item": 0.034,
+    "section": 0.034,
+    "category": 0.034,
+    "amount_total": 0.034,
+    "amount_first_month": 0.034,
+    "amount_last_month": 0.034,
+    "months_with_activity": 0.034
+  },
+  "repair_used": false,
+  "entries_snapshot": [
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.99
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "660-500",
+        "citation": "[Report1!A120] 660-500",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Management Fees - Property",
+        "citation": "[Report1!B120] Management Fees - Property",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": "MANAGEMENT FEES",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 1.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.99
+      },
+      "amount_total": {
+        "value": 261476.49,
+        "citation": "[Report1!O120] 261476.49",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 20321.25,
+        "citation": "[Report1!C120] 20321.25",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 22229.13,
+        "citation": "[Report1!N120] 22229.13",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C120] 20321.25; [Report1!D120] 23061.83; [Report1!E120] 21740.33; [Report1!F120] 21292.8; [Report1!G120] 22295.33; [Report1!H120] 21527.08; [Report1!I120] 20979.29; [Report1!J120] 22925.25; [Report1!K120] 22012.69; [Report1!L120] 20719.49; [Report1!M120] 22372.02; [Report1!N120] 22229.13",
+        "confidence": 1.0
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.99
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "669-999",
+        "citation": "[Report1!A121] 669-999",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "TOTAL MANAGEMENT FEES",
+        "citation": "[Report1!B121] TOTAL MANAGEMENT FEES",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": "MANAGEMENT FEES",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 1.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B119] MANAGEMENT FEES",
+        "confidence": 0.99
+      },
+      "amount_total": {
+        "value": 261476.49,
+        "citation": "[Report1!O121] 261476.49",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 20321.25,
+        "citation": "[Report1!C121] 20321.25",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 22229.13,
+        "citation": "[Report1!N121] 22229.13",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "[Report1!C121] 20321.25; [Report1!D121] 23061.83; [Report1!E121] 21740.33; [Report1!F121] 21292.8; [Report1!G121] 22295.33; [Report1!H121] 21527.08; [Report1!I121] 20979.29; [Report1!J121] 22925.25; [Report1!K121] 22012.69; [Report1!L121] 20719.49; [Report1!M121] 22372.02; [Report1!N121] 22229.13",
+        "confidence": 1.0
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.99
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-500",
+        "citation": "[Report1!A131] 830-500",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "Property Damage - Hurricane and Fire Losses",
+        "citation": "[Report1!B131] Property Damage - Hurricane and Fire Losses",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 1.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 1.0
+      },
+      "amount_total": {
+        "value": 9282,
+        "citation": "[Report1!O131] 9282",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C131] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N131] 0",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!M131] 9282",
+        "confidence": 1.0
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "[Report1!A1] Property = 417 .417",
+        "confidence": 0.99
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-999",
+        "citation": "[Report1!A132] 830-999",
+        "confidence": 1.0
+      },
+      "line_item": {
+        "value": "TOTAL OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B132] TOTAL OTHER NON-OPERATING EXPENSES",
+        "confidence": 1.0
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 1.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "[Report1!B130] OTHER NON-OPERATING EXPENSES",
+        "confidence": 1.0
+      },
+      "amount_total": {
+        "value": 9282,
+        "citation": "[Report1!O132] 9282",
+        "confidence": 1.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "[Report1!C132] 0",
+        "confidence": 1.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "[Report1!N132] 0",
+        "confidence": 1.0
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "[Report1!M132] 9282",
+        "confidence": 1.0
+      }
+    }
+  ]
+}

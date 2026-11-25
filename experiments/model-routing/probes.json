@@ -1,0 +1,65 @@
+[
+  {
+    "model": "anthropic/claude-haiku-5.5",
+    "method": "json_prompt",
+    "accepted": true,
+    "content_kind": "content",
+    "latency_ms": 2378
+  },
+  {
+    "model": "anthropic/claude-haiku-5.5",
+    "method": "json_schema",
+    "accepted": true,
+    "content_kind": "content",
+    "latency_ms": 1960
+  },
+  {
+    "model": "anthropic/claude-haiku-5.5",
+    "method": "tools",
+    "accepted": false,
+    "error": "model anthropic/claude-haiku-5.5 returned no content (finish_reason='tool_calls', message_fields=['reasoning'], usage_cost=True)",
+    "latency_ms": 1303
+  },
+  {
+    "model": "openai/gpt-6-luna",
+    "method": "json_prompt",
+    "accepted": true,
+    "content_kind": "content",
+    "latency_ms": 2189
+  },
+  {
+    "model": "openai/gpt-6-luna",
+    "method": "json_schema",
+    "accepted": true,
+    "content_kind": "content",
+    "latency_ms": 4519
+  },
+  {
+    "model": "openai/gpt-6-luna",
+    "method": "tools",
+    "accepted": false,
+    "error": "model openai/gpt-6-luna returned no content (finish_reason='tool_calls', message_fields=['reasoning', 'reasoning_details'], usage_cost=True)",
+    "latency_ms": 3537
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "method": "json_prompt",
+    "accepted": true,
+    "content_kind": "content",
+    "latency_ms": 1425
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "method": "json_schema",
+    "accepted": true,
+    "content_kind": "content",
+    "latency_ms": 4589
+  },
+  {
+    "model": "anthropic/claude-sonnet-5.5",
+    "method": "tools",
+    "accepted": false,
+    "error": "LLM call failed for anthropic/claude-sonnet-5.5: Error code: 400 - Provider returned error",
+    "latency_ms": 4152
+  }
+]

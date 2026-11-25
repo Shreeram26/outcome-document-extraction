@@ -229,3 +229,16 @@ def test_late_completion_after_timeout_reconciles_cost():
     time.sleep(0.6)
     assert gateway.ledger.settled_usd == pytest.approx(2 * 0.127549)
     assert gateway.ledger.outstanding_usd == 0.0
+
+
+def test_extra_params_passthrough_to_transport():
+    transport, stub = make_transport([fake_response('{"entries": []}')] * 2)
+    gateway = LlmGateway(transport=transport)
+    gateway.complete(
+        "google/gemini-3.8-flash",
+        [{"role": "user", "content": "x"}],
+        extra_params={"response_format": {"type": "json_object"}},
+    )
+    assert stub.calls[0]["response_format"] == {"type": "json_object"}
+    gateway.complete("google/gemini-3.8-flash", [{"role": "user", "content": "x"}])
+    assert "response_format" not in stub.calls[1]

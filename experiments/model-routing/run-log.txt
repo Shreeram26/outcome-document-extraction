@@ -1,0 +1,16 @@
+E1-haiku-json-prompt             parse_error    score=- records=-/- cost=$0.0170 calls=2
+E2-luna-json-schema              scored         score=0.3052 records=17/55 cost=$0.0046 calls=1
+E3-sonnet-json-prompt            scored         score=0.3052 records=17/55 cost=$0.1375 calls=1
+E4-haiku-json-prompt-t12         scored         score=0.0275 records=4/119 cost=$0.0012 calls=1
+E5-luna-json-prompt-t12          scored         score=0.0275 records=4/119 cost=$0.0011 calls=1
+Traceback (most recent call last):
+  File "/home/shreeram/Desktop/Outcome Labs/Outcome_Take_Home_Assignment_IITB/experiments/model-routing/routing.py", line 471, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/shreeram/Desktop/Outcome Labs/Outcome_Take_Home_Assignment_IITB/experiments/model-routing/routing.py", line 451, in main
+    metrics = run_escalation(gateway, budget, exp_id, model, STRONG_MODEL,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shreeram/Desktop/Outcome Labs/Outcome_Take_Home_Assignment_IITB/experiments/model-routing/routing.py", line 382, in run_escalation
+    elif strong_entry is not None and strong_entry.get(k, {}).get("value") not in (None, fr["value"]):
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FieldResult' object has no attribute 'get'

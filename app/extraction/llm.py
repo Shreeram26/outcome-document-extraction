@@ -140,6 +140,7 @@ class LlmGateway:
         messages: list[dict[str, str]],
         temperature: float = 0.0,
         max_tokens: int | None = None,
+        extra_params: dict[str, Any] | None = None,
     ) -> LlmResponse:
         if model not in ALLOWED_MODELS:
             raise LlmError(
@@ -155,6 +156,8 @@ class LlmGateway:
             "temperature": temperature,
             "max_tokens": effective_max,
         }
+        if extra_params:
+            kwargs.update(extra_params)
         reservation: Reservation | None = None
         if self.ledger is not None:
             estimate = self.estimate_cost_usd(messages, model, effective_max)

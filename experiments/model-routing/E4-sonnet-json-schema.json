@@ -1,0 +1,15 @@
+{
+  "experiment": "E4-sonnet-json-schema",
+  "model": "anthropic/claude-sonnet-5.5",
+  "category": "strong",
+  "method": "json_schema",
+  "document": "budget_001.pdf",
+  "calls": 0,
+  "tokens_in": 0,
+  "tokens_out": 0,
+  "cost_usd": 0.0,
+  "reserved_usd": 0.0,
+  "latency_ms": 0,
+  "status": "error",
+  "failure": "LLM call failed for anthropic/claude-sonnet-5.5: Error code: 400 - Provider returned error"
+}

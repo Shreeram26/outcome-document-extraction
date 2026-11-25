@@ -1,0 +1,15 @@
+{
+  "experiment": "E1-haiku-json-prompt",
+  "model": "anthropic/claude-haiku-5.5",
+  "category": "baseline",
+  "method": "json_prompt",
+  "document": "budget_001.pdf",
+  "calls": 2,
+  "tokens_in": 9749,
+  "tokens_out": 32000,
+  "cost_usd": 0.0169749,
+  "reserved_usd": 0.0,
+  "latency_ms": 96285,
+  "status": "parse_error",
+  "failure": "model response contained no valid JSON"
+}

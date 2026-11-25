@@ -1,0 +1,269 @@
+{
+  "experiment": "E4-haiku-json-prompt-t12",
+  "model": "anthropic/claude-haiku-5.5",
+  "category": "baseline",
+  "method": "json_prompt",
+  "document": "t12_001.xlsx",
+  "calls": 1,
+  "tokens_in": 1733,
+  "tokens_out": 1975,
+  "cost_usd": 0.0011608,
+  "reserved_usd": 0.0,
+  "latency_ms": 7739,
+  "status": "scored",
+  "contract_valid": true,
+  "contract_errors": [],
+  "validator_score": 0.0275,
+  "row_accuracy": 0.0336,
+  "field_accuracy_mean": 0.0275,
+  "records": 4,
+  "expected_records": 119,
+  "field_completeness": 0.8182,
+  "missing_field_cells": 8,
+  "hallucinated_cells": 0,
+  "citation_coverage": 0.0,
+  "per_field": {
+    "property_name": 0.034,
+    "period_start": 0.0,
+    "period_end": 0.0,
+    "gl_code": 0.034,
+    "line_item": 0.034,
+    "section": 0.034,
+    "category": 0.034,
+    "amount_total": 0.034,
+    "amount_first_month": 0.034,
+    "amount_last_month": 0.034,
+    "months_with_activity": 0.034
+  },
+  "repair_used": false,
+  "entries_snapshot": [
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "660-500",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Management Fees - Property",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "MANAGEMENT FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 261476.49,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 20321.25,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 22229.13,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "669-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL MANAGEMENT FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "MANAGEMENT FEES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 261476.49,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 20321.25,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 22229.13,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 12,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-500",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Property Damage - Hurricane and Fire Losses",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 9282,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": "417 .417",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_start": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "period_end": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "830-999",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "TOTAL OTHER NON-OPERATING EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "OTHER NON-OPERATING EXPENSES",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "category": {
+        "value": "Expense",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_total": {
+        "value": 9282,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_first_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "amount_last_month": {
+        "value": 0,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "months_with_activity": {
+        "value": 1,
+        "citation": "",
+        "confidence": 0.0
+      }
+    }
+  ]
+}
