@@ -1,0 +1,2950 @@
+{
+  "schema": "budget_variance",
+  "entries": [
+    {
+      "property_name": {
+        "value": "Lakeview Tower",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": 339050,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": 2021,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6101-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": "Minimum Base Rent",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": "Rent Revenue",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": 7481754,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": 7488382,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": 7165444,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": 6628,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": 0.09,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": -322938,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": -4.31,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6102-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Refurbishment Allowance of $468,950 was coded as an abatement in 2020.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6105-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Starting in April 2020 monthly parking accounts were put on hold due to the pandemic and tenants working from home. The garage operated at less then 20% of normal activity. To mitigate the losses, the garage has only 1 attendant (versus 3 attendants) for the rest of 2020. In 2021 we are assuming only 1 attendant as well. The projections for 2021 are assuming the first quarter is at the 2020 level then it ramps up to about 80% of 2020 budget by the end of 2021.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6108-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6109-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Due to the pandemic and low tenant population in the building, tenant services requests and reimbursements are much less in 2020 compared to budget.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6110-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Lower interest income in 2020. No interest income budgeted in 2021 due to low interest rates.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6116-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6117-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6120-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Supervisory fee income improvement project. This income is not projected to continue in 2021.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6130-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Lower occupancy in 2021. The 2021 budget assumes a $138,000 credit back to tenants for the 2020 reconciliations.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6131-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "The 2021 budget assumes an additonal $204,000 recovered from 2020 reconciliations.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "6132-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Summit Wireless (not previously budgeted in 2020) and Harbor Trade Council charged in 2020 on Brightpath Group's out-of-pocket tenant impact positively both the 2020 reforcast and the 2021 budget.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7020-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "COVID 19 supplies needed in 2021. The 2021 budget assumes a gradual expense increase starting from the 2020 numbers that are much lower since the tenant population was low and then ramping up to normalized tenant population numbers. In 2020 we had one time expenses such as dispensers, signage, safety items.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7040-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Higher vacancy credit in 2020 due to lower building population caused by the pandemic. Higher costs in 2021 since special cleaning protocols are necessary to address Covid-19 and increased tenant population.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7042-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Anchor certification is now an annual expense. Exterior window cleaning is budgeted to take place twice/year starting in 2021.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7060-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Due to the pandemic the scavenger cost decreased significantly in 2020 (approximatelly 15% of building population). Annual costs are expected to gradually rise in 2021 as tenants return to the work place.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7230-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7232-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7236-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Due to the pandemic and about 15% of tenants in the building, the water usage in 2020 was lower. Annual total cost is expected to gradually increase in 2021 as tenants return to the building.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7240-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7440-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "High lift mandatory inspection needed in 2021 ($2500). This expense will be recurring in future years.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7450-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "New contract budgeted to commence on May 1, 2020 results in lower monthly maintenance fees. Contract price is increased by 3% on anniversary date.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7455-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7530-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7531-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7610-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7620-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Plumbing, lights, HVAC supplies needed for frequent replacements due to the age of the existing equipment. Purchase gantry for $5,000 in 2021.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7625-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7640-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7641-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Variance between 2020 budget and 2021 budget is caused by the following expenses: virtual fire drill, Datawatch monthly monitoring, radio and camera replacement. In the 2020 reforcast the numbers are high due to the one-time Datawatch installation that involved converting the video system to a digital platform, electrical work needed for the new system to become operational, installation of a gate in stairwell #2 and Otis cost to integrate the system. Ownership also approved the installation of the no-touch phase 1 system of Datawatch that involved Otis cost (labor and boards) and Datawatch expense.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7644-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7645-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Increased rodent control and roof top spider control.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7646-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7647-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7648-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7650-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "The 2020 refocast number has $75k to replace the lobby pipe, $40k for boiler #4 repair and certification. These are costs that were not budgeted. In 2021 the budget assumes masonery and dampers replacement at $25k each project, Elara master plan $12,500 and $35k for basement clean up from leaks (make safe) in addition to other recurring expenses.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7651-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "The 2020 reforcast is lower since we are not projecting to spend the $25k to replace the 2nd domestic water pump in 2020. The replacement of #2 and #3 pumps is recommended to be done together in 2022 as a capital cost.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7652-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "A roof consultant fee is budgeted in 2021 to assess the condition of the roofs and estimated remaining useful life.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7660-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "Due to the pandemic the 2020 reforcast shows lower tenant services requests. These numbers are expected to rise in 2021 with building population returning to the workplace.",
+        "citation": "",
+        "confidence": 0.0
+      }
+    },
+    {
+      "property_name": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "property_rsf": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_year": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "gl_code": {
+        "value": "7670-0000",
+        "citation": "",
+        "confidence": 0.0
+      },
+      "line_item": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "section": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "prior_year_reforecast": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "reforecast_vs_prior_budget_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_variance": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "budget_vs_reforecast_pct": {
+        "value": null,
+        "citation": "",
+        "confidence": 0.0
+      },
+      "explanation_of_variance": {
+        "value": "$7500 for Wellnest building",
+        "citation": "",
+        "confidence": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "model_calls": 2,
+    "tokens_in": 10020,
+    "tokens_out": 11704,
+    "cost_usd": 0.006854,
+    "cost_settled_usd": 0.006854,
+    "latency_ms": 41432,
+    "calls": [
+      {
+        "call": 1,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "property_name",
+          "property_rsf",
+          "budget_year",
+          "gl_code",
+          "line_item",
+          "section",
+          "prior_year_budget",
+          "prior_year_reforecast",
+          "budget",
+          "reforecast_vs_prior_budget_variance",
+          "reforecast_vs_prior_budget_pct",
+          "budget_vs_reforecast_variance",
+          "budget_vs_reforecast_pct",
+          "explanation_of_variance"
+        ],
+        "context_chars": 5329,
+        "duration_ms": 16215,
+        "status": "success",
+        "tokens_in": 3902,
+        "tokens_out": 3911,
+        "reserved_usd": 0.102734,
+        "cost_usd": 0.002346,
+        "cumulative_cost_usd": 0.002346,
+        "note": ""
+      },
+      {
+        "call": 2,
+        "model": "anthropic/claude-haiku-5.5",
+        "fields": [
+          "explanation_of_variance",
+          "gl_code"
+        ],
+        "context_chars": 10899,
+        "duration_ms": 25201,
+        "status": "success",
+        "tokens_in": 6118,
+        "tokens_out": 7793,
+        "reserved_usd": 0.10397,
+        "cost_usd": 0.004508,
+        "cumulative_cost_usd": 0.006854,
+        "note": ""
+      }
+    ],
+    "models": {
+      "anthropic/claude-haiku-5.5": {
+        "calls": 2,
+        "tokens_in": 10020,
+        "tokens_out": 11704,
+        "settled_cost_usd": 0.006854
+      }
+    }
+  },
+  "document": "budget_001"
+}

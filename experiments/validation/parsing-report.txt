@@ -1,0 +1,17 @@
+t12 row 1 : A1='Property =  417 .417'
+t12 row 2 : A2='12 Month Actual to Budget'
+t12 row 3 : A3='Period = Nov 2024-Oct 2025'
+t12 row 4 : A4='Book = Accrual ; Tree = std_var'
+t12 row 6 : C6='Actual' | D6='Actual' | E6='Actual' | F6='Actual'
+t12 row 7 : C7='Nov 2024' | D7='Dec 2024' | E7='Jan 2025' | F7='Feb 2025'
+t12 row 8 : A8='500-000' | B8='  Income'
+t12 row 9 : A9='500-004' | B9='  OPERATING Income'
+t12 row 10 : A10='500-100' | B10='  REVENUE'
+t12 row 11 : A11='510-000' | B11='  RENTAL Income'
+t12 row 12 : A12='510-100' | B12='  Rental Income'
+t12 row 13 : A13='510-500' | B13='        Gross Potential Rent' | C13=703733.07 | D13=703302.63 | E13=701849.68 | F13=708467.2
+t12 row 14 : A14='510-520' | B14='        Rental Income - Pet' | C14=118.76 | D14=158.03 | E14=153.81 | F14=145.02
+t12 row 15 : A15='510-800' | B15='        Loss To Lease' | C15=-6390 | D15=-8347 | E15=-10026 | F15=-17695
+Traceback (most recent call last):
+  File "<stdin>", line 59, in <module>
+TypeError: check() missing 1 required positional argument: 'detail'

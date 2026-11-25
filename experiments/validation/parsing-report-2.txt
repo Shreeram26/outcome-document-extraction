@@ -1,0 +1,25 @@
+=== CHECKS ===
+PASS rentroll/sheets -- ['Willow Creek Commons', 'Report Parameters']
+PASS rentroll/data-size -- n_rows=3058 n_cols=39
+PASS rentroll/unit-present -- [('A8', '100-101')]
+PASS rentroll/datetime-cells -- 942 datetime cells e.g. [datetime.datetime(2022, 12, 3, 0, 0), datetime.datetime(2022, 12, 3, 0, 0)]
+FAIL rentroll/params -- params rows=1000
+PASS docx/sections -- 392 sections, 208 non-empty
+PASS docx/first -- 
+PASS docx/last -- 
+PASS docx/no-dups -- [('Harlow Office Building 850 North Harlow Avenue Naperville, Illinois 60540', 1), ('THIS LEASE is made as of the 21st day of Augu
+PASS docx/contains-KESTREL -- KESTREL
+PASS docx/contains-Harlow -- Harlow
+PASS docx/contains-Rent -- Rent
+PASS om/pages -- 22
+PASS om/cover-scanned -- [1]
+FAIL om/no-unexpected-thin-pages -- [(5, 62), (7, 63), (8, 83), (21, 71)]
+PASS om/page3-content -- Property Overview | PROPERTY & SITE DESCRIPTION | Property Name | Marlowe Park Modern Apartments
+PASS lease1/scanned -- 25
+PASS lease1/no-text -- 0 chars
+PASS budget/pages -- 8
+PASS budget/text -- 14381 chars
+PASS budget/property-header -- 2020 Budget | 2020 Refore. | 2020 Refore. | 2020 Budget | % Change | 2021 Budget | 2021 Budg
+FAIL budget/table-as-text -- 0 pipe-rows on page 1
+
+19/22 passed
