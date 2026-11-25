@@ -9,7 +9,17 @@
 from .context import DEFAULT_CONTEXT_MAX_CHARS, context_phrases, select_context
 from .deterministic import DeterministicResult, deterministic_extract, norm_label, quoted_labels
 from .engine import ExtractionEngine, ExtractionResult
-from .llm import ALLOWED_MODELS, LlmError, LlmGateway, LlmResponse, LlmTimeoutError
+from .ledger import CostLedger, Reservation
+from .llm import (
+    ALLOWED_MODELS,
+    LlmBadResponseError,
+    LlmBudgetError,
+    LlmError,
+    LlmGateway,
+    LlmResponse,
+    LlmTimeoutError,
+    usage_cost,
+)
 from .prompting import MAX_DOCUMENT_CHARS, SYSTEM_PROMPT, build_messages, render_document
 from .responses import (
     ExtractionParseError,
@@ -29,6 +39,10 @@ from .values import parse_scalar
 
 __all__ = [
     "ALLOWED_MODELS",
+    "CostLedger",
+    "LlmBadResponseError",
+    "LlmBudgetError",
+    "Reservation",
     "DEFAULT_CONTEXT_MAX_CHARS",
     "DeterministicResult",
     "ExtractionEngine",

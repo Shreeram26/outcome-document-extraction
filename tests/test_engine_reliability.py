@@ -134,13 +134,13 @@ def test_call_limit_stops_fallback_gracefully():
 
 
 def test_cost_limit_stops_fallback():
-    doc = _pdf_doc(["nothing useful " * 100])
-    transport, stub = make_transport([fake_response("{}", cost=0.01)] * 20)
+    doc = _pdf_doc(["nothing useful " * 100 + " Alpha and Beta mentioned"])
+    transport, stub = make_transport([fake_response("{}")] * 20)
     engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
-    engine.max_cost_usd = 0.015
+    engine.max_cost_usd = 0.11
     result = engine.extract(SCHEMA, doc)
     assert len(stub.calls) == 2
-    assert result.call_log[-1]["cumulative_cost_usd"] >= 0.01
+    assert result.call_log[-1]["cumulative_cost_usd"] > 0
     assert any("cost budget reached" in w for w in result.warnings)
     assert result.entries[0]["alpha"].value is None
 
@@ -225,11 +225,13 @@ def test_call_log_observability_fields():
     engine, _ = _engine(json.dumps({"entries": [{"alpha": 1}]}), )
     result = engine.extract(SCHEMA, doc)
     record = result.call_log[0]
-    for key in ("call", "model", "fields", "context_chars", "duration_ms", "status", "tokens_in", "tokens_out", "cost_usd", "cumulative_cost_usd"):
+    for key in ("call", "model", "fields", "context_chars", "duration_ms", "status", "tokens_in", "tokens_out", "reserved_usd", "cost_usd", "cumulative_cost_usd"):
         assert key in record
     assert record["status"] == "success"
     assert record["call"] == 1
-    assert record["cumulative_cost_usd"] == 0.0
+    assert record["reserved_usd"] > 0
+    assert record["cost_usd"] == 0.0
+    assert record["cumulative_cost_usd"] > 0
 
 
 def test_metadata_includes_call_log_and_conflicts():

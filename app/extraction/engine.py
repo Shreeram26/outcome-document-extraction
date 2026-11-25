@@ -16,11 +16,17 @@ Flow per document:
    primary identifier with conflict detection; every schema field is present in
    every entry; missing values are null with empty citations.
 
-Budgets (per document): max LLM calls, max context characters per call, max
-cumulative provider-reported cost. When a budget is hit, extraction stops
-gracefully — successful values are kept, the rest stay null with warnings.
-Every call attempt is recorded (fields, context size, duration, status,
-tokens, cost, cumulative cost) in `ExtractionResult.call_log`."""
+Budgets (per document): max LLM calls, max context characters per call, and a
+conservative cost exposure limit. Cost is accounted through reservations: every
+call reserves its estimated maximum cost before launching (input tokens from
+message sizes, output bounded by an enforced max_tokens, per-model pricing and
+a safety factor — see CostLedger via the gateway), the reservation is settled
+with the provider-reported cost on completion and RETAINED on local timeouts
+(the provider may still bill the request), so exposure never under-counts.
+When a budget is hit, extraction stops gracefully — successful values are kept,
+the rest stay null with warnings. Every call attempt is recorded (fields,
+context size, duration, status, reserved cost, settled cost, tokens, cumulative
+exposure) in `ExtractionResult.call_log`."""
 from __future__ import annotations
 
 import time
@@ -28,12 +34,19 @@ from dataclasses import dataclass, field
 
 from ..parsing.models import ParsedDocument, Sheet
 from .context import select_context
-from .deterministic import DeterministicResult, deterministic_extract
-from .llm import LlmError, LlmGateway, LlmResponse, LlmTimeoutError
+from .deterministic import DeterministicResult, deterministic_extract, norm_label
+from .ledger import usage_cost
+from .llm import (
+    LlmBadResponseError,
+    LlmBudgetError,
+    LlmError,
+    LlmGateway,
+    LlmResponse,
+    LlmTimeoutError,
+)
 from .prompting import build_messages, render_document
 from .responses import ExtractionParseError, FieldResult, ParsedExtraction, parse_extraction_response
 from .schema import ExtractionField, ExtractionSchema, sub_schema
-from .deterministic import norm_label
 
 DEFAULT_CHUNK_CHARS = 12_000
 DEFAULT_MAX_CALLS = 8
@@ -52,6 +65,8 @@ class ExtractionResult:
     provenance: dict[str, str] = field(default_factory=dict)
     call_log: list[dict] = field(default_factory=list)
     conflicts: list[str] = field(default_factory=list)
+    cost_exposure_usd: float = 0.0
+    cost_settled_usd: float = 0.0
 
 
 class ExtractionEngine:
@@ -69,12 +84,16 @@ class ExtractionEngine:
         self.max_calls = max_calls
         self.max_cost_usd = max_cost_usd
         self._call_log: list[dict] = []
-        self._cumulative_cost = 0.0
+        self._doc_spend = 0.0
+        self._doc_settled = 0.0
+        self._cost_exhausted = False
         self._consecutive_failures = 0
 
     def extract(self, schema: ExtractionSchema, document: ParsedDocument) -> ExtractionResult:
         self._call_log = []
-        self._cumulative_cost = 0.0
+        self._doc_spend = 0.0
+        self._doc_settled = 0.0
+        self._cost_exhausted = False
         self._consecutive_failures = 0
         det = deterministic_extract(schema, document)
         warnings = list(det.warnings)
@@ -87,6 +106,7 @@ class ExtractionEngine:
             return ExtractionResult(
                 entries=det.entries, warnings=warnings, llm=None, llm_responses=[],
                 mode="table", provenance=provenance, call_log=list(self._call_log),
+                cost_exposure_usd=0.0, cost_settled_usd=0.0,
             )
         if schema.primary_key and document.kind in ("xlsx", "csv"):
             return self._fallback_grid(schema, document, det, warnings, conflicts)
@@ -94,17 +114,8 @@ class ExtractionEngine:
 
     # ---------- budget / call plumbing ----------
 
-    def _budget_left(self) -> bool:
-        return len(self._call_log) < self.max_calls and self._cumulative_cost < self.max_cost_usd
-
-    def _budget_warnings(self, warnings: list[str]):
-        if len(self._call_log) >= self.max_calls:
-            warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
-        if self._cumulative_cost >= self.max_cost_usd:
-            warnings.append(
-                f"cost budget reached (${self._cumulative_cost:.4f} >= ${self.max_cost_usd:.2f});"
-                " remaining fields left null"
-            )
+    def _calls_left(self) -> bool:
+        return len(self._call_log) < self.max_calls
 
     def _record(
         self,
@@ -113,12 +124,14 @@ class ExtractionEngine:
         duration_ms: int,
         status: str,
         response: LlmResponse | None = None,
+        estimate: float = 0.0,
+        actual_usd: float | None = None,
         note: str = "",
     ) -> dict:
-        tokens_in = response.tokens_in if response else 0
-        tokens_out = response.tokens_out if response else 0
-        cost = _response_cost(response)
-        self._cumulative_cost += cost
+        """Pure log writer — cost mutations happen in `_attempt` only, so
+        settled cost is never counted twice."""
+        if actual_usd is None and response is not None:
+            actual_usd = usage_cost(response)
         record = {
             "call": len(self._call_log) + 1,
             "model": self.model,
@@ -126,10 +139,11 @@ class ExtractionEngine:
             "context_chars": context_chars,
             "duration_ms": duration_ms,
             "status": status,
-            "tokens_in": tokens_in,
-            "tokens_out": tokens_out,
-            "cost_usd": round(cost, 6),
-            "cumulative_cost_usd": round(self._cumulative_cost, 6),
+            "tokens_in": response.tokens_in if response else 0,
+            "tokens_out": response.tokens_out if response else 0,
+            "reserved_usd": round(estimate, 6),
+            "cost_usd": round(actual_usd, 6) if actual_usd is not None else 0.0,
+            "cumulative_cost_usd": round(self._doc_spend, 6),
             "note": note,
         }
         self._call_log.append(record)
@@ -138,42 +152,96 @@ class ExtractionEngine:
     def _attempt(
         self, sub: ExtractionSchema, context_doc: ParsedDocument, stage: str, warnings: list[str]
     ) -> tuple[ParsedExtraction | None, LlmResponse | None]:
-        """One LLM attempt with budget check, observability, and graceful failure."""
-        if not self._budget_left():
-            self._budget_warnings(warnings)
+        """One LLM attempt with budget checks, a pre-call cost reservation (via
+        the gateway's ledger), observability, and graceful failure."""
+        if not self._calls_left():
+            warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
             return None, None
         rendered = render_document(context_doc)
         fields = list(sub.fields)
         messages = build_messages(sub, context_doc)
+        estimate = self.gateway.estimate_cost_usd(messages, self.model)
+        if self.max_cost_usd is not None and self._doc_spend + estimate > self.max_cost_usd:
+            self._cost_exhausted = True
+            warnings.append(
+                f"cost budget reached (${self._doc_spend + estimate:.4f} projected"
+                f" >= ${self.max_cost_usd:.2f}); remaining fields left null"
+            )
+            return None, None
         started = time.monotonic()
+        self._doc_spend += estimate
         try:
             response = self.gateway.complete(self.model, messages)
+        except LlmBudgetError as exc:
+            self._doc_spend -= estimate
+            duration = int((time.monotonic() - started) * 1000)
+            self._record(fields, len(rendered), duration, "budget_refused", estimate=estimate, note=str(exc)[:150])
+            self._cost_exhausted = True
+            warnings.append(f"llm fallback failed (budget): {str(exc)[:150]}")
+            return None, None
         except LlmTimeoutError as exc:
             duration = int((time.monotonic() - started) * 1000)
-            self._record(fields, len(rendered), duration, "timeout", note=str(exc)[:150])
+            self._record(fields, len(rendered), duration, "timeout", estimate=estimate, note=str(exc)[:150])
             self._consecutive_failures += 1
             warnings.append(f"llm fallback failed (timeout): {str(exc)[:150]}")
             return None, None
+        except LlmBadResponseError as exc:
+            duration = int((time.monotonic() - started) * 1000)
+            self._apply_billed_cost(exc.actual_cost_usd, estimate)
+            self._record(
+                fields, len(rendered), duration, "error", estimate=estimate,
+                actual_usd=exc.actual_cost_usd, note=str(exc)[:150],
+            )
+            self._consecutive_failures += 1
+            warnings.append(f"llm fallback failed (error): {str(exc)[:150]}")
+            return None, None
         except LlmError as exc:
             duration = int((time.monotonic() - started) * 1000)
-            self._record(fields, len(rendered), duration, "error", note=str(exc)[:150])
+            self._doc_spend -= estimate
+            self._record(fields, len(rendered), duration, "error", estimate=estimate, note=str(exc)[:150])
             self._consecutive_failures += 1
             warnings.append(f"llm fallback failed (error): {str(exc)[:150]}")
             return None, None
         duration = int((time.monotonic() - started) * 1000)
+        actual = usage_cost(response)
+        if actual is not None:
+            self._doc_spend += actual - estimate
+            self._doc_settled += actual
         try:
             parsed = parse_extraction_response(response.content, sub)
         except ExtractionParseError as exc:
+            note = f"{exc}; raw: {exc.raw_content[:100]!r}"
+            if response.finish_reason == "length":
+                note += "; response truncated at max_tokens"
             self._record(
                 fields, len(rendered), duration, "parse_error", response=response,
-                note=f"{exc}; raw: {exc.raw_content[:100]!r}",
+                estimate=estimate, note=note,
             )
             self._consecutive_failures = 0
             warnings.append(f"llm fallback failed (parse): {exc}; raw: {exc.raw_content[:100]!r}")
+            if response.finish_reason == "length":
+                warnings.append(
+                    "response hit the max_tokens limit; increase --max-tokens or"
+                    " reduce chunk size"
+                )
             return None, None
-        self._record(fields, len(rendered), duration, "success", response=response)
+        if response.finish_reason == "length":
+            warnings.append(
+                "response parsed but hit the max_tokens limit; increase --max-tokens"
+                " or reduce chunk size"
+            )
+        self._record(fields, len(rendered), duration, "success", response=response, estimate=estimate)
         self._consecutive_failures = 0
         return parsed, response
+
+    def _apply_billed_cost(self, billed: float | None, estimate: float):
+        """A response arrived (the request may be billed): never refund the
+        reservation. Book the provider cost when known (signed adjustment —
+        exposure converges to the actual bill); otherwise keep the conservative
+        estimate."""
+        if billed is not None:
+            self._doc_spend += billed - estimate
+            self._doc_settled += billed
 
     def _gateway_broken(self, warnings: list[str]) -> bool:
         if self._consecutive_failures >= MIN_CONSECUTIVE_FAILURES:
@@ -211,8 +279,10 @@ class ExtractionEngine:
         for stage, budget in stages:
             if not [k for k in schema.fields if entry[k].value is None]:
                 break
-            if not self._budget_left():
-                self._budget_warnings(warnings)
+            if not self._calls_left():
+                warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
+            if self._cost_exhausted:
+                break
                 break
             if self._gateway_broken(warnings):
                 break
@@ -230,8 +300,10 @@ class ExtractionEngine:
                 still = [k for k in schema.fields if entry[k].value is None]
                 if not still:
                     break
-                if not self._budget_left():
-                    self._budget_warnings(warnings)
+                if not self._calls_left():
+                    warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
+                if self._cost_exhausted:
+                    break
                     break
                 if self._gateway_broken(warnings):
                     break
@@ -290,8 +362,10 @@ class ExtractionEngine:
             ("full", None),
         )
         for stage, budget in stages:
-            if not self._budget_left():
-                self._budget_warnings(warnings)
+            if not self._calls_left():
+                warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
+            if self._cost_exhausted:
+                break
                 break
             if self._gateway_broken(warnings):
                 break
@@ -305,8 +379,10 @@ class ExtractionEngine:
                     warnings.append(note)
                 plan = [context_doc]
             for context_doc in plan:
-                if not self._budget_left():
-                    self._budget_warnings(warnings)
+                if not self._calls_left():
+                    warnings.append(f"call budget reached ({self.max_calls} calls); remaining fields left null")
+                if self._cost_exhausted:
+                    break
                     break
                 if self._gateway_broken(warnings):
                     break
@@ -355,6 +431,8 @@ class ExtractionEngine:
             llm=responses[-1] if responses else None, llm_responses=responses,
             mode="single", provenance=provenance, call_log=list(self._call_log),
             conflicts=conflicts,
+            cost_exposure_usd=round(self._doc_spend, 6),
+            cost_settled_usd=round(self._doc_settled, 6),
         )
 
     def _finish_grid(
@@ -393,6 +471,8 @@ class ExtractionEngine:
             llm=responses[-1] if responses else None, llm_responses=responses,
             mode=mode, provenance=provenance, call_log=list(self._call_log),
             conflicts=conflicts or [],
+            cost_exposure_usd=round(self._doc_spend, 6),
+            cost_settled_usd=round(self._doc_settled, 6),
         )
 
     def _relevant_fields(
@@ -499,13 +579,3 @@ def _document_has_text(document: ParsedDocument) -> bool:
         for row in sheet.rows
         for cell in row
     )
-
-
-def _response_cost(response: LlmResponse | None) -> float:
-    if response is None:
-        return 0.0
-    usage = getattr(response.raw, "usage", None)
-    cost = getattr(usage, "cost", None)
-    if isinstance(cost, (int, float)) and cost >= 0:
-        return float(cost)
-    return 0.0

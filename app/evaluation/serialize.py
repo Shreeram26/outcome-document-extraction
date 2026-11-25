@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from app.extraction.engine import ExtractionResult
+from app.extraction.llm import usage_cost
 
 
 def field_result_to_dict(fr) -> dict:
@@ -25,26 +26,32 @@ def field_result_to_dict(fr) -> dict:
 
 def result_to_contract(result: ExtractionResult, schema_name: str, latency_ms: int) -> dict:
     """Contract-shaped result: top-level schema key, entries carrying every field,
-    and metadata with model calls, tokens, cost and latency (aggregated over all
-    LLM calls made for the document, chunked or not)."""
+    and metadata with model calls, tokens, cost and latency.
+
+    Cost reporting is conservative: `cost_usd` is the total EXPOSURE for the
+    document (settled provider-reported cost plus any retained reservations,
+    e.g. timed-out calls that may still be billed), while `cost_settled_usd` is
+    only the provider-confirmed portion."""
     entries = [
         {key: field_result_to_dict(fr) for key, fr in entry.items()} for entry in result.entries
     ]
-    responses = result.llm_responses
     models: dict[str, dict] = {}
-    for response in responses:
+    for response in result.llm_responses:
         entry = models.setdefault(
-            response.model, {"calls": 0, "tokens_in": 0, "tokens_out": 0, "cost_usd": 0.0}
+            response.model, {"calls": 0, "tokens_in": 0, "tokens_out": 0, "settled_cost_usd": 0.0}
         )
         entry["calls"] += 1
         entry["tokens_in"] += response.tokens_in
         entry["tokens_out"] += response.tokens_out
-        entry["cost_usd"] += _usage_cost(response)
+        actual = usage_cost(response)
+        if actual is not None:
+            entry["settled_cost_usd"] += actual
     metadata: dict = {
         "model_calls": len(result.call_log),
         "tokens_in": sum(m["tokens_in"] for m in models.values()),
         "tokens_out": sum(m["tokens_out"] for m in models.values()),
-        "cost_usd": round(sum(m["cost_usd"] for m in models.values()), 6),
+        "cost_usd": round(result.cost_exposure_usd, 6),
+        "cost_settled_usd": round(result.cost_settled_usd, 6),
         "latency_ms": int(latency_ms),
         "calls": list(result.call_log),
     }
@@ -52,16 +59,7 @@ def result_to_contract(result: ExtractionResult, schema_name: str, latency_ms: i
         metadata["conflicts"] = list(result.conflicts)
     if models:
         metadata["models"] = {
-            name: {**m, "cost_usd": round(m["cost_usd"], 6)} for name, m in models.items()
+            name: {**m, "settled_cost_usd": round(m["settled_cost_usd"], 6)}
+            for name, m in models.items()
         }
     return {"schema": schema_name, "entries": entries, "metadata": metadata}
-
-
-def _usage_cost(llm) -> float:
-    """Provider-reported cost when available (OpenRouter returns usage.cost);
-    0.0 otherwise — tokens are always reported."""
-    usage = getattr(llm.raw, "usage", None)
-    cost = getattr(usage, "cost", None)
-    if isinstance(cost, (int, float)) and cost >= 0:
-        return float(cost)
-    return 0.0

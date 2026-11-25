@@ -89,6 +89,7 @@ def evaluate_document(
         "tokens_in": contract["metadata"]["tokens_in"],
         "tokens_out": contract["metadata"]["tokens_out"],
         "cost_usd": contract["metadata"]["cost_usd"],
+        "cost_settled_usd": contract["metadata"].get("cost_settled_usd", 0.0),
         "call_log": list(result.call_log),
         "conflicts": list(result.conflicts),
         "contract_valid": not contract_errors,
@@ -225,56 +226,6 @@ def _worst_fields(documents: list[dict], limit: int = 15) -> list[dict]:
     return rows[:limit]
 
 
-class RunCostCap:
-    """Transport-level wrapper enforcing a hard cumulative spend cap across an
-    entire evaluation run (all documents). Once spent reaches the cap, further
-    calls are refused with LlmError before any network usage; the engine degrades
-    gracefully and the refusal is recorded in the call log."""
-
-    def __init__(self, completions, cap_usd: float):
-        self._completions = completions
-        self.cap_usd = cap_usd
-        self.spent = 0.0
-        self.tripped = False
-        self.refused_calls = 0
-
-    def create(self, **kwargs):
-        if self.spent >= self.cap_usd:
-            self.tripped = True
-            self.refused_calls += 1
-            raise LlmError(
-                f"run cost cap ${self.cap_usd:.2f} reached (spent ${self.spent:.4f}); call refused"
-            )
-        response = self._completions.create(**kwargs)
-        usage = getattr(response, "usage", None)
-        cost = getattr(usage, "cost", None)
-        if isinstance(cost, (int, float)) and cost >= 0:
-            self.spent += float(cost)
-            if self.spent >= self.cap_usd:
-                self.tripped = True
-        return response
-
-    def status(self) -> dict:
-        return {
-            "cap_usd": self.cap_usd,
-            "spent_usd": round(self.spent, 6),
-            "tripped": self.tripped,
-            "refused_calls": self.refused_calls,
-        }
-
-
-def apply_run_cost_cap(engine: ExtractionEngine, cap_usd: float) -> RunCostCap:
-    """Force-build the gateway's client and wrap it with a run-level cost cap."""
-    from types import SimpleNamespace
-
-    gateway = engine.gateway
-    client = gateway._get_client()
-    gateway._transport = SimpleNamespace(
-        chat=SimpleNamespace(completions=RunCostCap(client.chat.completions, cap_usd))
-    )
-    return gateway._transport.chat.completions
-
-
 def select_items(items: list[CorpusItem], document_ids: list[str] | None) -> list[CorpusItem]:
     """Filter the corpus to the requested document ids (all when None)."""
     if not document_ids:
@@ -293,16 +244,25 @@ def build_engine(
     chunk_chars: int | None = None,
     max_calls: int | None = None,
     max_cost_usd: float | None = None,
+    run_cost_cap: float | None = None,
+    max_tokens: int | None = None,
 ) -> ExtractionEngine:
+    """Build an engine whose gateway shares one CostLedger enforcing the
+    run-level cap (exposure = settled + retained reservations)."""
     from types import SimpleNamespace
 
-    kwargs = {}
+    from app.extraction.ledger import CostLedger
+
+    engine_kwargs: dict = {}
     if chunk_chars is not None:
-        kwargs["chunk_chars"] = chunk_chars
+        engine_kwargs["chunk_chars"] = chunk_chars
     if max_calls is not None:
-        kwargs["max_calls"] = max_calls
+        engine_kwargs["max_calls"] = max_calls
     if max_cost_usd is not None:
-        kwargs["max_cost_usd"] = max_cost_usd
+        engine_kwargs["max_cost_usd"] = max_cost_usd
+    gateway_kwargs: dict = {"ledger": CostLedger(cap_usd=run_cost_cap) if run_cost_cap else None}
+    if max_tokens is not None:
+        gateway_kwargs["default_max_tokens"] = max_tokens
     if skip_llm:
         class _NoLlm:
             def create(self, **_kwargs):  # pragma: no cover - trivial stub
@@ -311,10 +271,10 @@ def build_engine(
         transport = SimpleNamespace(
             chat=SimpleNamespace(completions=SimpleNamespace(create=_NoLlm().create))
         )
-        return ExtractionEngine(LlmGateway(transport=transport), model, **kwargs)
+        return ExtractionEngine(LlmGateway(transport=transport, **gateway_kwargs), model, **engine_kwargs)
     if dry_run:
         dry_response = SimpleNamespace(
-            choices=[SimpleNamespace(message=SimpleNamespace(content='{"entries": []}'))],
+            choices=[SimpleNamespace(message=SimpleNamespace(content='{"entries": []}'), finish_reason="stop")],
             usage=SimpleNamespace(prompt_tokens=0, completion_tokens=0, cost=0.0),
         )
 
@@ -325,8 +285,8 @@ def build_engine(
         transport = SimpleNamespace(
             chat=SimpleNamespace(completions=SimpleNamespace(create=_DryRun().create))
         )
-        return ExtractionEngine(LlmGateway(transport=transport), model, **kwargs)
-    return ExtractionEngine(LlmGateway(), model, **kwargs)
+        return ExtractionEngine(LlmGateway(transport=transport, **gateway_kwargs), model, **engine_kwargs)
+    return ExtractionEngine(LlmGateway(**gateway_kwargs), model, **engine_kwargs)
 
 
 def main(argv=None) -> int:
@@ -348,6 +308,7 @@ def main(argv=None) -> int:
     ap.add_argument("--max-calls", type=int, default=None, help="max LLM calls per document")
     ap.add_argument("--max-cost", type=float, default=None, help="max cumulative cost per document (USD)")
     ap.add_argument("--chunk-chars", type=int, default=None, help="max context characters per call")
+    ap.add_argument("--max-tokens", type=int, default=None, help="max output tokens per LLM call (truncation guard)")
     ap.add_argument(
         "--run-cost-cap", type=float, default=None,
         help="hard cumulative spend cap for the whole run (USD, provider-reported)",
@@ -368,15 +329,16 @@ def main(argv=None) -> int:
         chunk_chars=args.chunk_chars,
         max_calls=args.max_calls,
         max_cost_usd=args.max_cost,
+        max_tokens=args.max_tokens,
     )
-    run_cap = apply_run_cost_cap(engine, args.run_cost_cap) if args.run_cost_cap else None
+    run_cap_status = engine.gateway.ledger.status() if engine.gateway.ledger else None
     outputs_dir = None if args.dry_run else Path(args.outputs_dir)
     report = evaluate_corpus(engine, items, write_outputs_dir=outputs_dir)
     full = {
         "model": None if args.skip_llm or args.dry_run else args.model,
         "skip_llm": args.skip_llm,
         "dry_run": args.dry_run,
-        "run_cost_cap": run_cap.status() if run_cap else None,
+        "run_cost_cap": run_cap_status,
         "documents": report["documents"],
         "overall": report["overall"],
     }
@@ -393,8 +355,8 @@ def main(argv=None) -> int:
         f" cost=${overall['cost_usd']:.4f}"
     )
     print(f"report: {report_path}")
-    if run_cap:
-        print(f"run cost cap: {run_cap.status()}")
+    if run_cap_status:
+        print(f"run cost cap (ledger): {run_cap_status}")
     return 0 if overall["contract_valid"] == overall["documents"] else 1
 
 

@@ -219,40 +219,49 @@ def test_skip_llm_engine_degrades_without_raising(tmp_path):
 
 
 def test_run_cost_cap_refuses_calls_and_trips(tmp_path):
-    from app.evaluation import apply_run_cost_cap
+    from app.evaluation import build_engine
 
     pdf = _write_pdf(tmp_path, "Widget Name and Widget Total are mentioned here")
     item = _corpus_item(tmp_path)
     item.file = pdf
-    transport, stub = make_transport([fake_response('{"entries": []}', cost=0.01)] * 10)
-    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
-    cap = apply_run_cost_cap(engine, 0.015)
+    transport, stub = make_transport([fake_response('{"entries": []}')] * 10)
+    from types import SimpleNamespace
+
+    engine = build_engine("google/gemini-3.8-flash", run_cost_cap=0.005)
+    engine.gateway._transport = SimpleNamespace(
+        chat=SimpleNamespace(completions=stub)
+    )
     contract, report = evaluate_document(engine, item)
-    assert cap.tripped is True
-    assert cap.spent >= 0.015
-    assert cap.refused_calls >= 1
-    successful = [c for c in report["call_log"] if c["status"] == "success"]
-    refused = [c for c in report["call_log"] if c["status"] == "error"]
-    assert len(successful) == 2
+    ledger = engine.gateway.ledger
+    assert ledger is not None and ledger.tripped is True
+    assert ledger.refused_calls >= 1
+    assert stub.calls == []
+    refused = [c for c in report["call_log"] if c["status"] == "budget_refused"]
     assert len(refused) >= 1
-    assert any("run cost cap" in w for w in report["warnings"])
+    assert any("budget" in w for w in report["warnings"])
     assert report["contract_valid"] is True
     assert report["field_provenance"]["unresolved"] == ["widget_name", "widget_total"]
 
 
 def test_run_cost_cap_not_tripped_under_threshold(tmp_path):
-    from app.evaluation import apply_run_cost_cap
+    from app.evaluation import build_engine
 
     pdf = _write_pdf(tmp_path, "Widget Name and Widget Total are mentioned here")
     item = _corpus_item(tmp_path)
     item.file = pdf
-    transport, stub = make_transport([fake_response('{"entries": []}', cost=0.001)] * 10)
-    engine = ExtractionEngine(LlmGateway(transport=transport), model="google/gemini-3.8-flash")
-    cap = apply_run_cost_cap(engine, 0.15)
-    engine.max_calls = 3
+    transport, stub = make_transport([fake_response('{"entries": []}')] * 10)
+    from types import SimpleNamespace
+
+    engine = build_engine("google/gemini-3.8-flash", run_cost_cap=0.20, max_calls=3)
+    engine.gateway._transport = SimpleNamespace(
+        chat=SimpleNamespace(completions=stub)
+    )
     evaluate_document(engine, item)
-    assert cap.tripped is False
-    assert abs(cap.spent - 0.003) < 1e-9
+    ledger = engine.gateway.ledger
+    assert ledger.tripped is False
+    assert len(stub.calls) == 3
+    assert ledger.exposure_usd > 0
+    assert ledger.exposure_usd < 0.20
 
 
 def test_select_items_filters_and_validates():

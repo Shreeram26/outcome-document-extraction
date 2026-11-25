@@ -3,13 +3,25 @@
 All calls go through the LLM_BASE_URL / LLM_API_KEY environment variables per the
 assignment contract; model ids are restricted to the assignment's allow-list.
 The OpenAI SDK is imported lazily and the transport is injectable, so tests never
-make network calls or spend credits."""
+make network calls or spend credits.
+
+Cost control: when a CostLedger is attached, every call reserves an estimated
+maximum cost BEFORE it is launched (input tokens estimated from message sizes,
+output bounded by an enforced max_tokens, priced per model and multiplied by a
+safety factor). The reservation is settled with the provider-reported cost on
+completion, retained when the call is abandoned by the watchdog (the provider
+may still bill it), reconciled when an abandoned request eventually completes,
+and released when a request fails without producing a response. A reservation
+that would push total exposure past the cap is refused before any network use."""
 from __future__ import annotations
 
+import math
 import os
 import threading
 from dataclasses import dataclass
 from typing import Any
+
+from .ledger import CostLedger, Reservation, usage_cost
 
 ALLOWED_MODELS = frozenset(
     {
@@ -27,6 +39,23 @@ ALLOWED_MODELS = frozenset(
 
 DEFAULT_TIMEOUT_SECONDS = 120.0
 DEFAULT_WALL_CLOCK_SECONDS = 150.0
+DEFAULT_MAX_TOKENS = 16000
+DEFAULT_SAFETY_FACTOR = 1.25
+
+# Budgeting estimates only (USD per 1M tokens); settlement always uses the
+# provider-reported usage.cost when present. Conservative for unknown models.
+PRICING_USD_PER_MTOK: dict[str, dict[str, float]] = {
+    "google/gemini-3.8-flash": {"input": 0.50, "output": 2.50},
+    "google/gemini-3.1-pro-preview": {"input": 5.0, "output": 25.0},
+    "anthropic/claude-haiku-5.5": {"input": 1.0, "output": 5.0},
+    "anthropic/claude-sonnet-5.5": {"input": 3.0, "output": 15.0},
+    "openai/gpt-6-luna": {"input": 0.75, "output": 4.0},
+    "openai/gpt-6.1-sol": {"input": 4.0, "output": 20.0},
+    "z-ai/glm-5.3-flash": {"input": 0.30, "output": 1.50},
+    "qwen/qwen3-vl-235b-a22b-instruct": {"input": 0.60, "output": 3.0},
+    "deepseek/deepseek-v3.2": {"input": 0.40, "output": 2.0},
+    "default": {"input": 3.0, "output": 15.0},
+}
 
 
 class LlmError(Exception):
@@ -37,12 +66,29 @@ class LlmTimeoutError(LlmError):
     """Raised when a call exceeds the gateway's hard wall-clock deadline."""
 
 
+class LlmBudgetError(LlmError):
+    """Raised when the cost ledger refuses a reservation (cap would be exceeded)."""
+
+
+class LlmBadResponseError(LlmError):
+    """Raised when a response arrived but is unusable (e.g. no content). The
+    request may already have incurred provider cost: `actual_cost_usd` carries
+    the provider-reported cost when known, so the caller must not refund the
+    reservation blindly."""
+
+    def __init__(self, message: str, actual_cost_usd: float | None = None):
+        super().__init__(message)
+        self.actual_cost_usd = actual_cost_usd
+        self.response_arrived = True
+
+
 @dataclass(frozen=True)
 class LlmResponse:
     model: str
     content: str
     tokens_in: int
     tokens_out: int
+    finish_reason: str | None = None
     raw: Any = None
 
 
@@ -54,13 +100,39 @@ class LlmGateway:
         timeout: float = DEFAULT_TIMEOUT_SECONDS,
         wall_clock: float = DEFAULT_WALL_CLOCK_SECONDS,
         transport: Any = None,
+        ledger: CostLedger | None = None,
+        default_max_tokens: int | None = DEFAULT_MAX_TOKENS,
+        pricing: dict[str, dict[str, float]] | None = None,
+        safety_factor: float = DEFAULT_SAFETY_FACTOR,
     ):
+        if default_max_tokens is None or default_max_tokens <= 0:
+            raise ValueError(
+                "default_max_tokens must be a positive integer; an unbounded or"
+                " non-positive output limit makes cost reservations meaningless"
+            )
         self._base_url = base_url
         self._api_key = api_key
         self._timeout = timeout
         self._wall_clock = wall_clock
         self._transport = transport
         self._client: Any = None
+        self.ledger = ledger
+        self.default_max_tokens = default_max_tokens
+        self._pricing = pricing or PRICING_USD_PER_MTOK
+        self.safety_factor = safety_factor
+
+    def estimate_cost_usd(
+        self, messages: list[dict[str, str]], model: str, max_tokens: int | None = None
+    ) -> float:
+        """Conservative pre-call cost estimate: input tokens from message sizes,
+        output tokens bounded by the enforced max_tokens, priced per model and
+        multiplied by the safety factor."""
+        effective = max_tokens if max_tokens is not None else self.default_max_tokens
+        in_tokens = sum(math.ceil(len(m.get("content", "")) / 4) for m in messages) + 32
+        out_tokens = effective or 0
+        price = self._pricing.get(model, self._pricing.get("default", {"input": 3.0, "output": 15.0}))
+        estimate = (in_tokens * price["input"] + out_tokens * price["output"]) / 1_000_000
+        return estimate * self.safety_factor
 
     def complete(
         self,
@@ -73,51 +145,89 @@ class LlmGateway:
             raise LlmError(
                 f"model {model!r} is not allowed; allowed: {sorted(ALLOWED_MODELS)}"
             )
+        if max_tokens is not None and max_tokens <= 0:
+            raise ValueError("max_tokens must be a positive integer when provided")
         client = self._get_client()
+        effective_max = max_tokens if max_tokens is not None else self.default_max_tokens
         kwargs: dict[str, Any] = {
             "model": model,
             "messages": messages,
             "temperature": temperature,
+            "max_tokens": effective_max,
         }
-        if max_tokens is not None:
-            kwargs["max_tokens"] = max_tokens
-        response = self._call_with_watchdog(client, kwargs, model)
+        reservation: Reservation | None = None
+        if self.ledger is not None:
+            estimate = self.estimate_cost_usd(messages, model, effective_max)
+            reservation = self.ledger.try_reserve(estimate, model=model, meta={"max_tokens": effective_max})
+            if reservation is None:
+                raise LlmBudgetError(
+                    "cost budget exhausted: reservation refused"
+                    f" (est ${estimate:.4f}, exposure ${self.ledger.exposure_usd:.4f}"
+                    f" >= cap ${self.ledger.cap_usd:.2f})"
+                )
+        response = self._call_with_watchdog(client, kwargs, model, reservation)
         choice = response.choices[0]
         content = getattr(choice.message, "content", None)
         if content is None:
-            raise LlmError(f"model {model} returned no content")
+            raise LlmBadResponseError(
+                f"model {model} returned no content",
+                actual_cost_usd=usage_cost(response),
+            )
         usage = getattr(response, "usage", None)
         return LlmResponse(
             model=model,
             content=content,
             tokens_in=int(getattr(usage, "prompt_tokens", 0) or 0),
             tokens_out=int(getattr(usage, "completion_tokens", 0) or 0),
+            finish_reason=getattr(choice, "finish_reason", None),
             raw=response,
         )
 
-    def _call_with_watchdog(self, client: Any, kwargs: dict[str, Any], model: str) -> Any:
+    def _call_with_watchdog(
+        self, client: Any, kwargs: dict[str, Any], model: str, reservation: Reservation | None
+    ) -> Any:
         """Run the call in a worker thread with a hard wall-clock deadline.
         Provider keep-alives can defeat client read timeouts, so a hung call
-        must still become an LlmError instead of blocking forever."""
+        must still become an LlmTimeoutError instead of blocking forever.
+
+        The worker reconciles its own reservation: a normal completion settles
+        it with the provider-reported cost; a completion arriving after the
+        watchdog abandoned it reconciles the retained estimate against the
+        actual bill."""
         outcome: dict[str, Any] = {}
 
         def run():
             try:
-                outcome["response"] = client.chat.completions.create(**kwargs)
+                response = client.chat.completions.create(**kwargs)
             except Exception as exc:
                 outcome["error"] = exc
+                if reservation is not None:
+                    outcome["reservation"] = self.ledger.failure(reservation)
+                return
+            if reservation is not None:
+                booked = self.ledger.complete(reservation, usage_cost(response))
+                if booked in ("reconciled", "retained"):
+                    return
+            outcome["response"] = response
 
         worker = threading.Thread(target=run, daemon=True)
         worker.start()
         worker.join(self._wall_clock)
-        if worker.is_alive():
-            raise LlmTimeoutError(
-                f"LLM call timed out after {self._wall_clock:.0f}s for {model} "
-                "(provider kept the connection alive without responding)"
-            )
+        if "response" in outcome:
+            return outcome["response"]
         if "error" in outcome:
             raise LlmError(f"LLM call failed for {model}: {outcome['error']}") from outcome["error"]
-        return outcome["response"]
+        if worker.is_alive():
+            if reservation is not None:
+                self.ledger.abandon(reservation)
+            if "response" in outcome:
+                return outcome["response"]
+            raise LlmTimeoutError(
+                f"LLM call timed out after {self._wall_clock:.0f}s for {model} "
+                "(provider kept the connection alive without responding;"
+                " reservation retained until the request settles)"
+            )
+        raise LlmError(f"LLM worker for {model} finished without a result")
 
     def _get_client(self) -> Any:
         if self._transport is not None:
